@@ -2,7 +2,7 @@
   <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
     <div class="d-flex align-items-center flex-wrap mr-1">
       <div class="d-flex align-items-baseline flex-wrap mr-5">
-        <h5 class="text-dark font-weight-bold my-1"> _title_ </h5>
+        <h5 class="text-dark font-weight-bold my-1"> @stack('title') </h5>
       </div>
     </div>
     <div class="d-flex align-items-center">
