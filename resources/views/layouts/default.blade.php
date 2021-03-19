@@ -11,16 +11,16 @@
       </div>
 
       @if ($message = Session::get('success'))
-      <div id="toast-container" class="toast-bottom-right">
-        <div class="toast toast-success" aria-live="polite" style="">
+      <div id="toast-container-effect" class="toast-bottom-right">
+        <div class="toast toast-success" aria-live="polite">
           <div class="toast-message">{{ $message }}</div>
         </div>
       </div>
       @endif
 
       @if ($message = Session::get('error'))
-      <div id="toast-container" class="toast-bottom-right">
-        <div class="toast toast-error" aria-live="polite" style="">
+      <div id="toast-container-effect" class="toast-bottom-right">
+        <div class="toast toast-error" aria-live="polite">
           <div class="toast-message">{{ $message }}</div>
         </div>
       </div>
@@ -40,9 +40,9 @@
 
           <div class="d-flex flex-column-fluid">
             <div class="container-fluid">
-          @stack('content')
-        </div>
-        </div>
+              @stack('content')
+            </div>
+          </div>
         </div>
 
         @include('includes.footer')

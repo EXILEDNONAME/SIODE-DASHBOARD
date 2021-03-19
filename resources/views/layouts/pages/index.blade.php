@@ -83,12 +83,15 @@
 @endpush
 
 @push('js')
+<script src="/assets/backend/js/pages/features/miscellaneous/bootstrap-notify.js?v=7.0.5"></script>
+<script src="/assets/backend/js/pages/features/miscellaneous/toastr.js?v=7.0.5"></script>
 <script src="/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
 <script src="/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js?v=7.0.5"></script>
 <script src="/assets/backend/js/pages/crud/datatables/search-options/advanced-search.js?v=7.0.5"></script>
 <script>
-$("#toast-container").toast({ delay: 5000 });
-$("#toast-container").toast('show');
+$(document).ready(function() {
+  $('#toast-container-effect').fadeOut(5000);
+});
 
 "use strict";
 var KTDatatablesExtensionsKeytable = function() {
