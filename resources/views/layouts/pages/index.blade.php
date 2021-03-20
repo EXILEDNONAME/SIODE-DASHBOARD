@@ -62,50 +62,6 @@
       </div>
 
       <div class="card-body">
-        <div class="collapse" id="kt_datatable_group_action_form">
-          <a href="javascript:;" class="btn btn-sm btn-outline-dark mr-1 pull-right"><i class="fas fa-plus"></i> </a>
-          <div class="dropdown dropdown-inline">
-            <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-download"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right">
-              <ul class="navi navi-hover py-5">
-                <li class="navi-item">
-                  <a href="javascript:void(0);" id="export_copy" class="navi-link">
-                    <i class="navi-icon fa fa-copy"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Copy As Text"> {{ trans('default.button.export.copy') }} </span>
-                  </a>
-                </li>
-                <li class="navi-item">
-                  <a href="javascript:void(0);" id="export_excel" class="navi-link">
-                    <i class="navi-icon fa fa-file-excel"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Export To Excel"> {{ trans('default.button.export.excel') }} </span>
-                  </a>
-                </li>
-                <li class="navi-item">
-                  <a href="javascript:void(0);" id="export_pdf" class="navi-link">
-                    <i class="navi-icon fa fa-file-pdf"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Export To PDF"> {{ trans('default.button.export.pdf') }} </span>
-                  </a>
-                </li>
-                <li class="navi-item">
-                  <a href="javascript:void(0);" id="export_csv" class="navi-link">
-                    <i class="navi-icon fa fa-file"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="CSV"> {{ trans('default.button.export.csv') }} </span>
-                  </a>
-                </li>
-                <li class="navi-item">
-                  <a href="javascript:void(0);" id="export_print" class="navi-link">
-                    <i class="navi-icon fa fa-print"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Print"> {{ trans('default.button.export.print') }} </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <hr>
-        </div>
-
         <div class="table-responsive">
           <table width="100%" class="table table-striped-table-bordered table-hover table-checkable" id="exilednoname">
             <thead>
