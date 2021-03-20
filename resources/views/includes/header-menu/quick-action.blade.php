@@ -1,9 +1,7 @@
 <div class="dropdown">
-  <!--begin::Toggle-->
   <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
     <div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
       <span class="svg-icon svg-icon-xl svg-icon-primary">
-        <!--begin::Svg Icon | path:/assets/backend/media/svg/icons/Media/Equalizer.svg-->
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <rect x="0" y="0" width="24" height="24" />
@@ -13,26 +11,18 @@
             <rect fill="#000000" x="3" y="13" width="3" height="7" rx="1.5" />
           </g>
         </svg>
-        <!--end::Svg Icon-->
       </span>
     </div>
   </div>
-  <!--end::Toggle-->
-  <!--begin::Dropdown-->
   <div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
-    <!--begin:Header-->
     <div class="d-flex flex-column flex-center py-10 bgi-size-cover bgi-no-repeat rounded-top" style="background-image: url(/assets/backend/media/misc/bg-1.jpg)">
       <h4 class="text-white font-weight-bold">Quick Actions</h4>
       <span class="btn btn-success btn-sm font-weight-bold font-size-sm mt-2">23 tasks pending</span>
     </div>
-    <!--end:Header-->
-    <!--begin:Nav-->
     <div class="row row-paddingless">
-      <!--begin:Item-->
       <div class="col-6">
         <a href="#" class="d-block py-10 px-5 text-center bg-hover-light border-right border-bottom">
           <span class="svg-icon svg-icon-3x svg-icon-success">
-            <!--begin::Svg Icon | path:/assets/backend/media/svg/icons/Shopping/Euro.svg-->
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <rect x="0" y="0" width="24" height="24" />
@@ -40,18 +30,14 @@
                 <path d="M17.369,7.618 C16.976998,7.08599734 16.4660031,6.69750122 15.836,6.4525 C15.2059968,6.20749878 14.590003,6.085 13.988,6.085 C13.2179962,6.085 12.5180032,6.2249986 11.888,6.505 C11.2579969,6.7850014 10.7155023,7.16999755 10.2605,7.66 C9.80549773,8.15000245 9.45550123,8.72399671 9.2105,9.382 C8.96549878,10.0400033 8.843,10.7539961 8.843,11.524 C8.843,12.3360041 8.96199881,13.0779966 9.2,13.75 C9.43800119,14.4220034 9.7774978,14.9994976 10.2185,15.4825 C10.6595022,15.9655024 11.1879969,16.3399987 11.804,16.606 C12.4200031,16.8720013 13.1129962,17.005 13.883,17.005 C14.681004,17.005 15.3879969,16.8475016 16.004,16.5325 C16.6200031,16.2174984 17.1169981,15.8010026 17.495,15.283 L19.616,16.774 C18.9579967,17.6000041 18.1530048,18.2404977 17.201,18.6955 C16.2489952,19.1505023 15.1360064,19.378 13.862,19.378 C12.6999942,19.378 11.6325049,19.1855019 10.6595,18.8005 C9.68649514,18.4154981 8.8500035,17.8765035 8.15,17.1835 C7.4499965,16.4904965 6.90400196,15.6645048 6.512,14.7055 C6.11999804,13.7464952 5.924,12.6860058 5.924,11.524 C5.924,10.333994 6.13049794,9.25950479 6.5435,8.3005 C6.95650207,7.34149521 7.5234964,6.52600336 8.2445,5.854 C8.96550361,5.18199664 9.8159951,4.66400182 10.796,4.3 C11.7760049,3.93599818 12.8399943,3.754 13.988,3.754 C14.4640024,3.754 14.9609974,3.79949954 15.479,3.8905 C15.9970026,3.98150045 16.4939976,4.12149906 16.97,4.3105 C17.4460024,4.49950095 17.8939979,4.7339986 18.314,5.014 C18.7340021,5.2940014 19.0909985,5.62999804 19.385,6.022 L17.369,7.618 Z" fill="#000000" />
               </g>
             </svg>
-            <!--end::Svg Icon-->
           </span>
           <span class="d-block text-dark-75 font-weight-bold font-size-h6 mt-2 mb-1">Accounting</span>
           <span class="d-block text-dark-50 font-size-lg">eCommerce</span>
         </a>
       </div>
-      <!--end:Item-->
-      <!--begin:Item-->
       <div class="col-6">
         <a href="#" class="d-block py-10 px-5 text-center bg-hover-light border-bottom">
           <span class="svg-icon svg-icon-3x svg-icon-success">
-            <!--begin::Svg Icon | path:/assets/backend/media/svg/icons/Communication/Mail-attachment.svg-->
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <rect x="0" y="0" width="24" height="24" />
@@ -59,18 +45,14 @@
                 <path d="M9,10.3333333 L9,12.1190476 C9,13.7101537 10.3431458,15 12,15 C13.6568542,15 15,13.7101537 15,12.1190476 L15,10.3333333 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 L9,10.3333333 Z M10.0909091,11.1212121 L12,12.5 L13.9090909,11.1212121 L13.9090909,12.1190476 C13.9090909,13.1315697 13.0543618,13.952381 12,13.952381 C10.9456382,13.952381 10.0909091,13.1315697 10.0909091,12.1190476 L10.0909091,11.1212121 Z" fill="#000000" />
               </g>
             </svg>
-            <!--end::Svg Icon-->
           </span>
           <span class="d-block text-dark-75 font-weight-bold font-size-h6 mt-2 mb-1">Administration</span>
           <span class="d-block text-dark-50 font-size-lg">Console</span>
         </a>
       </div>
-      <!--end:Item-->
-      <!--begin:Item-->
       <div class="col-6">
         <a href="#" class="d-block py-10 px-5 text-center bg-hover-light border-right">
           <span class="svg-icon svg-icon-3x svg-icon-success">
-            <!--begin::Svg Icon | path:/assets/backend/media/svg/icons/Shopping/Box2.svg-->
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <rect x="0" y="0" width="24" height="24" />
@@ -78,18 +60,14 @@
                 <path d="M4.21611835,7.74669402 C4.30015839,7.64056877 4.40623188,7.55087574 4.5299008,7.48500698 L11.5299008,3.75665466 C11.8237589,3.60013944 12.1762411,3.60013944 12.4700992,3.75665466 L19.4700992,7.48500698 C19.5654307,7.53578262 19.6503066,7.60071528 19.7226939,7.67641889 L12.0479413,12.1074394 C11.9974761,12.1365754 11.9509488,12.1699127 11.9085461,12.2067543 C11.8661433,12.1699127 11.819616,12.1365754 11.7691509,12.1074394 L4.21611835,7.74669402 Z" fill="#000000" opacity="0.3" />
               </g>
             </svg>
-            <!--end::Svg Icon-->
           </span>
           <span class="d-block text-dark-75 font-weight-bold font-size-h6 mt-2 mb-1">Projects</span>
           <span class="d-block text-dark-50 font-size-lg">Pending Tasks</span>
         </a>
       </div>
-      <!--end:Item-->
-      <!--begin:Item-->
       <div class="col-6">
         <a href="#" class="d-block py-10 px-5 text-center bg-hover-light">
           <span class="svg-icon svg-icon-3x svg-icon-success">
-            <!--begin::Svg Icon | path:/assets/backend/media/svg/icons/Communication/Group.svg-->
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
               <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <polygon points="0 0 24 0 24 24 0 24" />
@@ -97,15 +75,11 @@
                 <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
               </g>
             </svg>
-            <!--end::Svg Icon-->
           </span>
           <span class="d-block text-dark-75 font-weight-bold font-size-h6 mt-2 mb-1">Customers</span>
           <span class="d-block text-dark-50 font-size-lg">Latest cases</span>
         </a>
       </div>
-      <!--end:Item-->
     </div>
-    <!--end:Nav-->
   </div>
-  <!--end::Dropdown-->
 </div>

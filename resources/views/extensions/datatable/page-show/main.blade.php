@@ -25,12 +25,3 @@
   <td class="align-middle font-weight-bold"> Last Updated At </td>
   <td class="align-middle"> {{ \Carbon\Carbon::parse($data->updated_at)->format('d F Y, H:i') }} </td>
 </tr>
-
-<tr>
-  <td class="align-middle font-weight-bold"> QR </td>
-  <td class="align-middle">
-    <a href="#" data-toggle="modal" data-target="#qrcode_modal">
-      {!! QrCode::size(50)->generate('URL::full()'); !!}
-    </a>
-  </td>
-</tr>

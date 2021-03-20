@@ -5,13 +5,14 @@
 @endpush
 
 @push('content')
+
 <div class="row">
   <div class="col-xl-12">
-    <div class="card card-custom bgi-no-repeat bgi-size-cover gutter-b card-sticky" id="kt_page_sticky_card">
+    <div class="card card-custom" data-card="true" id="kt_card_3">
 
-      <div class="card-header" style="">
+      <div class="card-header">
         <div class="card-title">
-          <h5 class="text-dark font-weight-bold"> {{ trans('default.title.page-index') }} </h5>
+          <h3 class="card-label">  {{ trans('default.title.page-index') }} </h3>
         </div>
 
         <div class="card-toolbar">
@@ -19,7 +20,7 @@
           <a id="file-refresh" class="btn btn-sm btn-icon btn-clean btn-icon-md" data-toggle="kt-tooltip" title="" data-original-title="Refresh"><i class="la la-refresh"></i></a>
           <div class="dropdown dropdown-inline">
             <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-angle-down"></i>
+              <i class="fas fa-download"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
               <ul class="navi navi-hover py-5">
@@ -56,10 +57,55 @@
               </ul>
             </div>
           </div>
+          <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="ki ki-arrow-down icon-nm"></i></a>
         </div>
       </div>
 
-      <div class="card-body d-flex">
+      <div class="card-body">
+        <div class="collapse" id="kt_datatable_group_action_form">
+          <a href="javascript:;" class="btn btn-sm btn-outline-dark mr-1 pull-right"><i class="fas fa-plus"></i> </a>
+          <div class="dropdown dropdown-inline">
+            <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-download"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <ul class="navi navi-hover py-5">
+                <li class="navi-item">
+                  <a href="javascript:void(0);" id="export_copy" class="navi-link">
+                    <i class="navi-icon fa fa-copy"></i>
+                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Copy As Text"> {{ trans('default.button.export.copy') }} </span>
+                  </a>
+                </li>
+                <li class="navi-item">
+                  <a href="javascript:void(0);" id="export_excel" class="navi-link">
+                    <i class="navi-icon fa fa-file-excel"></i>
+                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Export To Excel"> {{ trans('default.button.export.excel') }} </span>
+                  </a>
+                </li>
+                <li class="navi-item">
+                  <a href="javascript:void(0);" id="export_pdf" class="navi-link">
+                    <i class="navi-icon fa fa-file-pdf"></i>
+                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Export To PDF"> {{ trans('default.button.export.pdf') }} </span>
+                  </a>
+                </li>
+                <li class="navi-item">
+                  <a href="javascript:void(0);" id="export_csv" class="navi-link">
+                    <i class="navi-icon fa fa-file"></i>
+                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="CSV"> {{ trans('default.button.export.csv') }} </span>
+                  </a>
+                </li>
+                <li class="navi-item">
+                  <a href="javascript:void(0);" id="export_print" class="navi-link">
+                    <i class="navi-icon fa fa-print"></i>
+                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Print"> {{ trans('default.button.export.print') }} </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+
         <div class="table-responsive">
           <table width="100%" class="table table-striped-table-bordered table-hover table-checkable" id="exilednoname">
             <thead>
@@ -88,6 +134,7 @@
 <script src="/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
 <script src="/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js?v=7.0.5"></script>
 <script src="/assets/backend/js/pages/crud/datatables/search-options/advanced-search.js?v=7.0.5"></script>
+<script src="/assets/backend/js/pages/features/cards/tools.js?v=7.0.5"></script>
 <script>
 $(document).ready(function() {
   $('#toast-container-effect').fadeOut(5000);

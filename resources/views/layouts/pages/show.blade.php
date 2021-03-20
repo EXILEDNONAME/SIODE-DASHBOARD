@@ -13,6 +13,8 @@
           <a href="{{ URL::current() }}/../#" class="btn btn-light-primary font-weight-bolder mr-2">
             <i class="ki ki-long-arrow-back icon-xs"></i> {{ trans('default.button.back') }}
           </a>
+          <a href="javascript(0):;" data-toggle="modal" class="btn btn-light-primary mr-2" data-target="#qrcode_modal"><i class="fas fa-qrcode"></i></a>
+          <a href="javascript(0):;" data-toggle="modal" class="btn btn-light-primary mr-2" data-target="#modal_single_print"><i class="fas fa-print"></i></a>
           <div class="btn-group">
             <button type="button" class="btn btn-light-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right" style="">
