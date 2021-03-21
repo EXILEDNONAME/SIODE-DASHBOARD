@@ -14,12 +14,12 @@ class User extends Authenticatable {
   use Notifiable, LogsActivity;
 
   protected $fillable = [
+    'id_role',
     'name',
     'username',
     'password',
     'remember_token',
     'api_token',
-    'id_access',
     'email',
     'phone',
     'address_1',

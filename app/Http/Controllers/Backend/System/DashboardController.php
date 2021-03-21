@@ -27,6 +27,10 @@ class DashboardController extends Controller {
     $this->model = 'App\User';
   }
 
+  public function filemanager() {
+    return view('pages.backend.system.file-manager.index');
+  }
+
   /**
   **************************************************
   * @return Index
@@ -34,20 +38,7 @@ class DashboardController extends Controller {
   **/
 
   public function index(Request $request) {
-    $data_chart = $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-01%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-02%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-03%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-04%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-05%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-06%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-07%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-08%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-09%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-10%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-11%')->count(); $data_chart .= ', ';
-    $data_chart .= $this->model::select(\DB::raw("COUNT(*) as count"))->where('created_at', 'like', \Carbon\Carbon::now()->format('Y') . '-12%')->count();
     return view($this->path . '.index', compact('data_chart'));
-
   }
 
   /**

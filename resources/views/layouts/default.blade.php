@@ -10,22 +10,6 @@
 				@include('includes.sidebar')
 			</div>
 
-			@if ($message = Session::get('success'))
-			<div id="toast-container-effect" class="toast-bottom-right">
-				<div class="toast toast-success" aria-live="polite">
-					<div class="toast-message">{{ $message }}</div>
-				</div>
-			</div>
-			@endif
-
-			@if ($message = Session::get('error'))
-			<div id="toast-container-effect" class="toast-bottom-right">
-				<div class="toast toast-error" aria-live="polite">
-					<div class="toast-message">{{ $message }}</div>
-				</div>
-			</div>
-			@endif
-
 			<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
 				<div id="kt_header" class="header header-fixed">
 					<div class="container-fluid d-flex align-items-stretch justify-content-between">

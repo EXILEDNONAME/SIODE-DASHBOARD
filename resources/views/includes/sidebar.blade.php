@@ -25,7 +25,7 @@
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
-      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard')) ? 'menu-item-active menu-item-open' : '' }}">
+      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
           <span class="menu-text"> Dummies </span>
@@ -34,26 +34,26 @@
         <div class="menu-submenu">
           <i class="menu-arrow"></i>
           <ul class="menu-subnav">
-            <li class="menu-item {{ (request()->is('dashboard/users*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/users" class="menu-link">
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-invoices*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-invoices" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Table Invoices </span>
               </a>
             </li>
-            <li class="menu-item {{ (request()->is('dashboard/accesses*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/accesses" class="menu-link">
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-generals*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-generals" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Table Generals </span>
               </a>
             </li>
-            <li class="menu-item {{ (request()->is('dashboard/roles*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/roles" class="menu-link">
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-relations*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-relations" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Table Relations </span>
               </a>
             </li>
-            <li class="menu-item {{ (request()->is('dashboard/users*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/users" class="menu-link">
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-reports" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Table Reports </span>
               </a>
@@ -61,8 +61,8 @@
           </ul>
         </div>
       </li>
-      <li class="menu-item">
-        <a href="index.html" class="menu-link">
+      <li class="menu-item {{ (request()->is('dashboard/file-manager*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+        <a href="file-manager" class="menu-link">
           <i class="menu-icon fas fa-hdd"></i>
           <span class="menu-text"> File Manager </span>
         </a>

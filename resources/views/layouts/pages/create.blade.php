@@ -16,6 +16,9 @@
       </div>
 
       <div class="card-body">
+        @if ($message = Session::get('error'))
+        <ul class="alert alert-danger"> {{ $message }} </ul>
+        @endif
         @if ($errors->any())
         <ul class="alert alert-danger">
           @foreach ($errors->all() as $error)

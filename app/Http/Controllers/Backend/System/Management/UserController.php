@@ -77,12 +77,8 @@ class UserController extends Controller {
   **/
 
   public function store(Request $request) {
-    $validated = $request->validate([
-      'name' => 'required|unique:users|min:3',
-    ]);
-
-    $store = User::insert([
-      'id_access' => $request['id_access'],
+    $users = [
+      'id_role' => $request['id_role'],
       'username' => $request['username'],
       'name' => $request['name'],
       'email' => $request['email'],
@@ -90,8 +86,8 @@ class UserController extends Controller {
       'password' => Hash::make($request['password']),
       'address_1' => $request['address_1'],
       'address_2' => $request['address_2'],
-    ]);
-
+    ];
+    User::insert($users);
     return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
   }
 
