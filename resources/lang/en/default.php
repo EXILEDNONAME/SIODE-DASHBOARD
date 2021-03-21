@@ -16,8 +16,11 @@ return [
       'item-created' => 'Item Created',
       'item-updated' => 'Item Updated',
       'item-deleted' => 'Item Deleted',
+      'delete'       => 'Item Deleted',
     ],
-    'error'  => 'Sorry, Something is wrong :(',
+    'error'  => [
+      'restrict' => 'Sorry, Something is wrong :(',
+    ],
   ],
 
   'title' => [

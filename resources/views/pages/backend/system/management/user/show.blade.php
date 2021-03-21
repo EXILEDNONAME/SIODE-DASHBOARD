@@ -1,5 +1,5 @@
-@extends('layouts.pages.show', ['status' => 'true'])
-@push('title', 'Management Accesses')
+@extends('layouts.pages.show', ['header' => 'true'])
+@push('title', 'Management Users')
 
 @push('content-body')
 <div class="table-responsive">

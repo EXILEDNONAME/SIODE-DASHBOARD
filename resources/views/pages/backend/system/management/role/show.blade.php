@@ -1,9 +1,13 @@
-@extends('layouts.pages.show', ['status' => 'true'])
-@push('title', 'Management Accesses')
+@extends('layouts.pages.show', ['header' => 'true'])
+@push('title', 'Management Roles')
 
 @push('content-body')
 <div class="table-responsive">
   <table width="100%" class="table table-stiped table-bordered">
+    <tr>
+      <td class="align-middle font-weight-bold"> Access </td>
+      <td class="align-middle"> {{ $data->accesses->name }} </td>
+    </tr>
     <tr>
       <td class="align-middle font-weight-bold"> Name </td>
       <td class="align-middle"> {{ $data->name }} </td>

@@ -339,7 +339,7 @@ var KTDatatablesExtensionsKeytable = function() {
           },
           error: function (data) {
             toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-            toastr.error("{{ trans('default.notification.error.item-single-delete') }}");
+            toastr.error("{{ trans('default.notification.error.restrict') }}");
           }
         });
       }
@@ -361,7 +361,7 @@ var KTDatatablesExtensionsKeytable = function() {
           },
           error: function (data) {
             toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-            toastr.error("{{ trans('default.notification.error.item-single-delete') }}");
+            toastr.error("{{ trans('default.notification.error.restrict') }}");
           }
         });
       }
@@ -382,7 +382,7 @@ var KTDatatablesExtensionsKeytable = function() {
         },
         error: function (data) {
           toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-          toastr.error("{{ trans('default.notification.error.item-single-delete') }}");
+          toastr.error("{{ trans('default.notification.error.restrict') }}");
         }
       });
     });
@@ -402,7 +402,7 @@ var KTDatatablesExtensionsKeytable = function() {
         },
         error: function (data) {
           toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-          toastr.error("{{ trans('default.notification.error.item-single-delete') }}");
+          toastr.error("{{ trans('default.notification.error.restrict') }}");
         }
       });
     });
@@ -428,7 +428,7 @@ var KTDatatablesExtensionsKeytable = function() {
           },
           error: function (data) {
             toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-            toastr.error("{{ trans('default.notification.error.item-delete-all') }}");
+            toastr.error("{{ trans('default.notification.error.restrict') }}");
           }
         });
       }
@@ -440,7 +440,7 @@ var KTDatatablesExtensionsKeytable = function() {
       @if (request()->is('dashboard/management/users*'))
       if ( id == 1) {
         toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-        toastr.error("{{ trans('default.notification.error.item-single-delete') }}");
+        toastr.error("{{ trans('default.notification.error.restrict') }}");
       }
       else {
         if(confirm("Are You sure want to delete !")){
@@ -455,7 +455,7 @@ var KTDatatablesExtensionsKeytable = function() {
             },
             error: function (data) {
               toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-              toastr.error("{{ trans('default.notification.error.item-single-delete') }}");
+              toastr.error("{{ trans('default.notification.error.restrict') }}");
             }
           });
         }
@@ -473,7 +473,7 @@ var KTDatatablesExtensionsKeytable = function() {
           },
           error: function (data) {
             toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-            toastr.error("{{ trans('default.notification.error.item-single-delete') }}");
+            toastr.error("{{ trans('default.notification.error.restrict') }}");
           }
         });
       }

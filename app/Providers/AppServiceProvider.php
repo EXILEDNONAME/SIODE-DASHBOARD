@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class AppServiceProvider extends ServiceProvider {
 
     public function register() {
-        //
+        require_once app_path() . '/Helpers/System/Management/Roles.php';
     }
 
     public function boot() {

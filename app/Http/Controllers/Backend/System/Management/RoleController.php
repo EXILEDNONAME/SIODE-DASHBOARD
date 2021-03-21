@@ -19,7 +19,7 @@ class RoleController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware('auth');
+    $this->middleware(['administrator', 'auth']);
     $this->url = '/dashboard/management/roles';
     $this->path = 'pages.backend.system.management.role';
     $this->model = 'App\Role';
