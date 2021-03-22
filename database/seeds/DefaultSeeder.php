@@ -7,5 +7,6 @@ class DefaultSeeder extends Seeder {
     $this->call(Accesses::class);
     $this->call(Roles::class);
     $this->call(Users::class);
+    $this->call(Menus::class);
   }
 }
