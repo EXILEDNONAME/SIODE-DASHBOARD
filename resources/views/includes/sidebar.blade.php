@@ -21,6 +21,12 @@
         </a>
       </li>
 
+      <!-- MAIN -->
+      <li class="menu-section">
+        <h4 class="menu-text"> Main </h4>
+        <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+      </li>
+
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
@@ -104,6 +110,30 @@
               <a href="/dashboard/management/users" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Users </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+        <a href="javascript:;" class="menu-link menu-toggle">
+          <span class="menu-icon"><i class="menu-icon fas fa-shield-alt"></i></span>
+          <span class="menu-text"> Styles </span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="menu-submenu">
+          <i class="menu-arrow"></i>
+          <ul class="menu-subnav">
+            <li class="menu-item {{ (request()->is('dashboard/management')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/management/accesses" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Generals </span>
+              </a>
+            </li>
+            <li class="menu-item {{ (request()->is('dashboard/management')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/management/roles" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Menus </span>
               </a>
             </li>
           </ul>
