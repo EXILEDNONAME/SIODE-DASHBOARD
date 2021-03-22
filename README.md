@@ -5,5 +5,5 @@
 - Create Invoices
 - Create Reports
 
-- Create Forgot Password
+- Template Forgot Password
 - Create Messages

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 Use App\User;
 
@@ -83,6 +84,7 @@ class UserController extends Controller {
       'name' => $request['name'],
       'email' => $request['email'],
       'phone' => $request['phone'],
+      'api_token' => hash('sha256', Str::random(60)),
       'password' => Hash::make($request['password']),
       'address_1' => $request['address_1'],
       'address_2' => $request['address_2'],
