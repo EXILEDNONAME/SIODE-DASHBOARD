@@ -11,6 +11,7 @@ class AppServiceProvider extends ServiceProvider {
     public function register() {
         require_once app_path() . '/Helpers/System/Management/Access.php';
         require_once app_path() . '/Helpers/System/Management/Role.php';
+        require_once app_path() . '/Helpers/System/Dummy.php';
     }
 
     public function boot() {

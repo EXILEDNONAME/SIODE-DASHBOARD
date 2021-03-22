@@ -33,7 +33,7 @@ class TableRelationController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::select('*');
+    $data = $this->model::with(['dummy_table_generals'])->select('dummy_table_relations.*');
     if(request()->ajax()) {
       return DataTables::of($data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
