@@ -97,6 +97,8 @@
     </div>
   </div>
 </div>
+
+@include('includes.activities')
 @endpush
 
 @push('js')
@@ -105,7 +107,7 @@
 <script src="/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
 <script src="/assets/backend/js/pages/crud/forms/widgets/bootstrap-datepicker.js?v=7.0.5"></script>
 <script src="/assets/backend/js/pages/crud/datatables/search-options/advanced-search.js?v=7.0.5"></script>
-<script src="/assets/backend/js/pages/features/cards/tools.js?v=7.0.5"></script>
+
 <script>
 $(document).ready(function() {
   $('#toast-container-effect').fadeOut(5000);
