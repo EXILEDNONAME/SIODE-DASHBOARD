@@ -130,8 +130,8 @@
                 <span class="menu-text"> Generals </span>
               </a>
             </li>
-            <li class="menu-item {{ (request()->is('dashboard/management')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/roles" class="menu-link">
+            <li class="menu-item {{ (request()->is('dashboard/style/menus*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/style/menus" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Menus </span>
               </a>
