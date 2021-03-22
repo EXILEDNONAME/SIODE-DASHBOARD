@@ -4,3 +4,6 @@
 - Create Dummy Tables (General & Relation)
 - Create Invoices
 - Create Reports
+
+- Create Forgot Password
+- Create Messages
