@@ -27,6 +27,31 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
+      <?php
+      // data main menu
+      $main_menu = DB::table('menu_items')->get();
+      foreach ($main_menu as $main) {
+        $sub_menu = DB::table('menu_items')->where('parent', '>', $main->id)->get();
+
+        if ($sub_menu->count() > 0) {
+          // main menu dengan sub menu
+          echo "<li class='treeview'>" . $main->label .
+          '<span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+          </span>';
+          // sub menu nya disini
+          echo "<ul class='treeview-menu'>";
+          foreach ($sub_menu->count() as $sub) {
+            echo "<li>" . $sub->link, '<i class="' . $sub->label . '"></i>' . $sub->label . "</li>";
+          }
+          echo"</ul></li>";
+        } else {
+          // main menu tanpa sub menu
+          echo "<li>" . $main->label . "</li>";
+        }
+      }
+      ?>
+
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
@@ -68,7 +93,7 @@
         </div>
       </li>
       <li class="menu-item {{ (request()->is('dashboard/file-manager*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-        <a href="file-manager" class="menu-link">
+        <a href="/dashboard/file-manager" class="menu-link">
           <i class="menu-icon fas fa-hdd"></i>
           <span class="menu-text"> File Manager </span>
         </a>
@@ -114,6 +139,12 @@
             </li>
           </ul>
         </div>
+      </li>
+      <li class="menu-item {{ (request()->is('dashboard/permissions*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+        <a href="/dashboard/permissions" class="menu-link">
+          <i class="menu-icon fas fa-hdd"></i>
+          <span class="menu-text"> Permissions </span>
+        </a>
       </li>
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">

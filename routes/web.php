@@ -17,3 +17,19 @@ Route::get('lang/{language}', 'LocalizationController@switch')->name('localizati
 // SYSTEM
 require __DIR__.'/backend/system/dummy.php';
 require __DIR__.'/backend/system/management.php';
+
+// PERMISSIONS
+Route::group([
+  'as' => 'system.permission',
+  'prefix' => 'dashboard/permissions',
+  'namespace' => 'Backend\System',
+], function(){
+  Route::get('status-done/{id}', 'PermissionController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'PermissionController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'PermissionController@enable')->name('enable');
+  Route::get('disable/{id}', 'PermissionController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'PermissionController@status')->name('status');
+  Route::get('delete/{id}', 'PermissionController@delete')->name('delete');
+  Route::get('deleteall', 'PermissionController@deleteall')->name('deleteall');
+  Route::resource('/', 'PermissionController')->parameters(['' => 'id']);
+});
