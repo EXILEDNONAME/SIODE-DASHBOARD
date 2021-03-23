@@ -9,10 +9,20 @@ class Menu extends Model {
 
   use LogsActivity;
 
-  protected $table = 'menus';
+  protected $table = 'menu_items';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 
   protected static $logAttributes = ['*'];
+
+  public function parent()
+  {
+    return $this->belongsTo('App\Menu', 'parent');
+  }
+
+  public function children()
+  {
+    return $this->hasMany('App\Menu', 'parent');
+  }
 
 }

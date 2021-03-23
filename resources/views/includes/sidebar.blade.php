@@ -27,46 +27,49 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
-      <?php
-      // data main menu
-      $main_menu = DB::table('menu_items')->get();
-      foreach ($main_menu as $main) {
-        $sub_menu = DB::table('menu_items')->where('parent', 0)->get();
+      @foreach(App\Menu::orderBy('sort','asc')->get() as $menuItem)
 
-        if ($main->parent > 0) {
-          // main menu dengan sub menu
-          echo '
-          <li class="menu-item menu-item-submenu">
-            <a href="javascript:;" class="menu-link menu-toggle">
-              <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
-              <span class="menu-text">'. $main->label .' </span>
-              <i class="menu-arrow"></i>
-            </a>
-          ';
-          // sub menu nya disini
-          echo '
-          <div class="menu-submenu">
-            <i class="menu-arrow"></i>
-            <ul class="menu-subnav">
-            ';
-          foreach ($sub_menu as $sub) {
-            echo "<li>" . $sub->label . "</li>";
-          }
-          echo"</ul></li>";
-        }
-        if ($main->parent == 0) {
-          // main menu tanpa sub menu
-          echo '
-          <li class="menu-item" aria-haspopup="true">
-            <a href="/dashboard/file-manager" class="menu-link">
-              <i class="menu-icon fas fa-hdd"></i>
-              <span class="menu-text">' . $main->label . ' </span>
+      @if( $menuItem->parent == 0 )
+      <li class="menu-item {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-submenu menu-item-open' : '' }}">
+        <a href='javascript:;' class='{{ $menuItem->link ? "menu-link menu-toggle" : "menu-link" }}'>
+
+          <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
+          <span class="menu-text"> {{ $menuItem->label }} </span>
+          @if( ! $menuItem->children->isEmpty()) <i class="menu-arrow"></i> @endif
+        </a>
+        @endif
+
+        @if( ! $menuItem->children->isEmpty() )
+        <div class="menu-submenu">
+          <ul class="menu-subnav">
+            @foreach($menuItem->children as $subMenuItem)
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-invoices*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-invoices" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> {{ $subMenuItem->label }} </span>
+              </a>
+            </li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
+      </li>
+
+      @endforeach
+
+      <!--  -->
+      <div class="menu-submenu">
+        <i class="menu-arrow"></i>
+        <ul class="menu-subnav">
+          <li class="menu-item {{ (request()->is('dashboard/dummy/table-invoices*')) ? 'menu-item-active' : '' }}">
+            <a href="/dashboard/dummy/table-invoices" class="menu-link">
+              <i class="menu-bullet menu-bullet-dot"><span></span></i>
+              <span class="menu-text"> Table Invoices </span>
             </a>
           </li>
-          <li></li>';
-        }
-      }
-      ?>
+        </ul>
+      </div>
+      <!--  -->
 
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>

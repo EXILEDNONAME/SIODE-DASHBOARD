@@ -1,12 +1,12 @@
 ## Dashboard Revision
 
-- Create Management Menus
+- Templating Management Menus
+- Edit Table Dummy
+
 - Create Delete Selected
 - Create Dummy Tables (General & Relation)
 - Create Invoices
 - Create Reports
 - Create Activities Global
 - Create Activities Single
-
-- Template Forgot Password
 - Create Messages
