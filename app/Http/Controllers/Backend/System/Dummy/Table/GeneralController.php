@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\System\Dummy;
+namespace App\Http\Controllers\Backend\System\Dummy\Table;
 
 use Auth;
 use DataTables;
@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-class TableRelationController extends Controller {
+class GeneralController extends Controller {
 
   /**
   **************************************************
@@ -20,9 +20,9 @@ class TableRelationController extends Controller {
 
   public function __construct() {
     $this->middleware(['auth']);
-    $this->url = '/dashboard/dummy/table-relations';
-    $this->path = 'pages.backend.system.dummy.table-relation';
-    $this->model = 'App\Models\Backend\System\Dummy\TableRelation';
+    $this->url = '/dashboard/dummy/table/generals';
+    $this->path = 'pages.backend.system.dummy.table.general';
+    $this->model = 'App\Models\Backend\System\Dummy\Table\General';
   }
 
   /**
@@ -33,7 +33,7 @@ class TableRelationController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::with(['dummy_table_generals'])->select('dummy_table_relations.*');
+    $data = $this->model::select('*');
     if(request()->ajax()) {
       return DataTables::of($data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')

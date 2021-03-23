@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\Backend\System\Dummy;
+namespace App\Models\Backend\System\Dummy\Table;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class TableGeneral extends Model {
+class General extends Model {
 
   use LogsActivity;
 

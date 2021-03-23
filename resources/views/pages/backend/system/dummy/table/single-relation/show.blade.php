@@ -1,5 +1,5 @@
 @extends('layouts.pages.show', ['status' => 'true'])
-@push('title', 'Dummy Table Relations')
+@push('title', 'Table Single Relations')
 
 @push('content-body')
 <div class="table-responsive">

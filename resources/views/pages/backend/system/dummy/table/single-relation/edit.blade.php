@@ -1,5 +1,5 @@
 @extends('layouts.pages.edit', ['header' => 'true'])
-@push('title', 'Dummy Table Relations')
+@push('title', 'Table Single Relations')
 
 @push('content-body')
 <form method="POST" action="{{ URL::current() }}/../../{{ $data->id }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">

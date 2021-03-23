@@ -1,5 +1,5 @@
 @extends('layouts.pages.show', ['status' => 'true'])
-@push('title', 'Dummy Table Generals')
+@push('title', 'Table Filters')
 
 @push('content-body')
 <div class="table-responsive">

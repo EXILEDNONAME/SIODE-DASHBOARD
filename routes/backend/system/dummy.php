@@ -1,65 +1,97 @@
 <?php
 
-// DUMMY - TABLE INVOICES
+// DUMMY - TABLE FILTERS
 Route::group([
-  'as' => 'system.dummy.table-invoices.',
-  'prefix' => 'dashboard/dummy/table-invoices',
-  'namespace' => 'Backend\System\Dummy',
+  'as' => 'system.dummy.table.filters.',
+  'prefix' => 'dashboard/dummy/table/filters',
+  'namespace' => 'Backend\System\Dummy\Table',
 ], function(){
-  Route::get('status-done/{id}', 'TableInvoiceController@status_done')->name('status-done');
-  Route::get('status-pending/{id}', 'TableInvoiceController@status_pending')->name('status-pending');
-  Route::get('enable/{id}', 'TableInvoiceController@enable')->name('enable');
-  Route::get('disable/{id}', 'TableInvoiceController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'TableInvoiceController@status')->name('status');
-  Route::get('delete/{id}', 'TableInvoiceController@delete')->name('delete');
-  Route::get('deleteall', 'TableInvoiceController@deleteall')->name('deleteall');
-  Route::resource('/', 'TableInvoiceController')->parameters(['' => 'id']);
+  Route::get('status-done/{id}', 'FilterController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'FilterController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'FilterController@enable')->name('enable');
+  Route::get('disable/{id}', 'FilterController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'FilterController@status')->name('status');
+  Route::get('delete/{id}', 'FilterController@delete')->name('delete');
+  Route::get('deleteall', 'FilterController@deleteall')->name('deleteall');
+  Route::resource('/', 'FilterController')->parameters(['' => 'id']);
 });
 
 // DUMMY - TABLE GENERALS
 Route::group([
-  'as' => 'system.dummy.table-generals.',
-  'prefix' => 'dashboard/dummy/table-generals',
-  'namespace' => 'Backend\System\Dummy',
+  'as' => 'system.dummy.table.generals.',
+  'prefix' => 'dashboard/dummy/table/generals',
+  'namespace' => 'Backend\System\Dummy\Table',
 ], function(){
-  Route::get('status-done/{id}', 'TableGeneralController@status_done')->name('status-done');
-  Route::get('status-pending/{id}', 'TableGeneralController@status_pending')->name('status-pending');
-  Route::get('enable/{id}', 'TableGeneralController@enable')->name('enable');
-  Route::get('disable/{id}', 'TableGeneralController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'TableGeneralController@status')->name('status');
-  Route::get('delete/{id}', 'TableGeneralController@delete')->name('delete');
-  Route::get('deleteall', 'TableGeneralController@deleteall')->name('deleteall');
-  Route::resource('/', 'TableGeneralController')->parameters(['' => 'id']);
+  Route::get('status-done/{id}', 'GeneralController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'GeneralController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'GeneralController@enable')->name('enable');
+  Route::get('disable/{id}', 'GeneralController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'GeneralController@status')->name('status');
+  Route::get('delete/{id}', 'GeneralController@delete')->name('delete');
+  Route::get('deleteall', 'GeneralController@deleteall')->name('deleteall');
+  Route::resource('/', 'GeneralController')->parameters(['' => 'id']);
 });
 
-// DUMMY - TABLE RELATIONS
+// DUMMY - TABLE SINGLE RELATIONS
 Route::group([
-  'as' => 'system.dummy.table-relations.',
-  'prefix' => 'dashboard/dummy/table-relations',
-  'namespace' => 'Backend\System\Dummy',
+  'as' => 'system.dummy.table.single-relations.',
+  'prefix' => 'dashboard/dummy/table/single-relations',
+  'namespace' => 'Backend\System\Dummy\Table',
 ], function(){
-  Route::get('status-done/{id}', 'TableRelationController@status_done')->name('status-done');
-  Route::get('status-pending/{id}', 'TableRelationController@status_pending')->name('status-pending');
-  Route::get('enable/{id}', 'TableRelationController@enable')->name('enable');
-  Route::get('disable/{id}', 'TableRelationController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'TableRelationController@status')->name('status');
-  Route::get('delete/{id}', 'TableRelationController@delete')->name('delete');
-  Route::get('deleteall', 'TableRelationController@deleteall')->name('deleteall');
-  Route::resource('/', 'TableRelationController')->parameters(['' => 'id']);
+  Route::get('status-done/{id}', 'SingleRelationController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'SingleRelationController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'SingleRelationController@enable')->name('enable');
+  Route::get('disable/{id}', 'SingleRelationController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'SingleRelationController@status')->name('status');
+  Route::get('delete/{id}', 'SingleRelationController@delete')->name('delete');
+  Route::get('deleteall', 'SingleRelationController@deleteall')->name('deleteall');
+  Route::resource('/', 'SingleRelationController')->parameters(['' => 'id']);
 });
 
-// DUMMY - TABLE REPORTS
+// DUMMY - TABLE MULTI RELATIONS
 Route::group([
-  'as' => 'system.dummy.table-reports.',
-  'prefix' => 'dashboard/dummy/table-reports',
+  'as' => 'system.dummy.table.multi-relations.',
+  'prefix' => 'dashboard/dummy/table/multi-relations',
+  'namespace' => 'Backend\System\Dummy\Table',
+], function(){
+  Route::get('status-done/{id}', 'MultiRelationController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'MultiRelationController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'MultiRelationController@enable')->name('enable');
+  Route::get('disable/{id}', 'MultiRelationController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'MultiRelationController@status')->name('status');
+  Route::get('delete/{id}', 'MultiRelationController@delete')->name('delete');
+  Route::get('deleteall', 'MultiRelationController@deleteall')->name('deleteall');
+  Route::resource('/', 'MultiRelationController')->parameters(['' => 'id']);
+});
+
+// DUMMY - INVOICES
+Route::group([
+  'as' => 'system.dummy.invoices.',
+  'prefix' => 'dashboard/dummy/invoices',
   'namespace' => 'Backend\System\Dummy',
 ], function(){
-  Route::get('status-done/{id}', 'TableReportController@status_done')->name('status-done');
-  Route::get('status-pending/{id}', 'TableReportController@status_pending')->name('status-pending');
-  Route::get('enable/{id}', 'TableReportController@enable')->name('enable');
-  Route::get('disable/{id}', 'TableReportController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'TableReportController@status')->name('status');
-  Route::get('delete/{id}', 'TableReportController@delete')->name('delete');
-  Route::get('deleteall', 'TableReportController@deleteall')->name('deleteall');
-  Route::resource('/', 'TableReportController')->parameters(['' => 'id']);
+  Route::get('status-done/{id}', 'InvoiceController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'InvoiceController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'InvoiceController@enable')->name('enable');
+  Route::get('disable/{id}', 'InvoiceController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'InvoiceController@status')->name('status');
+  Route::get('delete/{id}', 'InvoiceController@delete')->name('delete');
+  Route::get('deleteall', 'InvoiceController@deleteall')->name('deleteall');
+  Route::resource('/', 'InvoiceController')->parameters(['' => 'id']);
+});
+
+// DUMMY - REPORTS
+Route::group([
+  'as' => 'system.dummy.reports.',
+  'prefix' => 'dashboard/dummy/reports',
+  'namespace' => 'Backend\System\Dummy',
+], function(){
+  Route::get('status-done/{id}', 'ReportController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'ReportController@status_pending')->name('status-pending');
+  Route::get('enable/{id}', 'ReportController@enable')->name('enable');
+  Route::get('disable/{id}', 'ReportController@disable')->name('disable');
+  Route::get('status/{id}/{slug}', 'ReportController@status')->name('status');
+  Route::get('delete/{id}', 'ReportController@delete')->name('delete');
+  Route::get('deleteall', 'ReportController@deleteall')->name('deleteall');
+  Route::resource('/', 'ReportController')->parameters(['' => 'id']);
 });

@@ -30,7 +30,7 @@
       @foreach(App\Menu::orderBy('sort','asc')->get() as $menuItem)
 
       @if( $menuItem->parent == 0 )
-      <li class="menu-item {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-submenu menu-item-open' : '' }}">
+      <li class="menu-item {{ (request()->is('dashboard/xxx*')) ? 'menu-item-active menu-item-submenu menu-item-open' : '' }}">
         <a href='javascript:;' class='{{ $menuItem->link ? "menu-link menu-toggle" : "menu-link" }}'>
 
           <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -43,7 +43,7 @@
         <div class="menu-submenu">
           <ul class="menu-subnav">
             @foreach($menuItem->children as $subMenuItem)
-            <li class="menu-item {{ (request()->is('dashboard/dummy/table-invoices*')) ? 'menu-item-active' : '' }}">
+            <li class="menu-item {{ (request()->is('dashboard/xxx*')) ? 'menu-item-active' : '' }}">
               <a href="/dashboard/dummy/table-invoices" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> {{ $subMenuItem->label }} </span>
@@ -56,20 +56,6 @@
       </li>
 
       @endforeach
-
-      <!--  -->
-      <div class="menu-submenu">
-        <i class="menu-arrow"></i>
-        <ul class="menu-subnav">
-          <li class="menu-item {{ (request()->is('dashboard/dummy/table-invoices*')) ? 'menu-item-active' : '' }}">
-            <a href="/dashboard/dummy/table-invoices" class="menu-link">
-              <i class="menu-bullet menu-bullet-dot"><span></span></i>
-              <span class="menu-text"> Table Invoices </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!--  -->
 
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
@@ -84,29 +70,53 @@
         <div class="menu-submenu">
           <i class="menu-arrow"></i>
           <ul class="menu-subnav">
-            <li class="menu-item {{ (request()->is('dashboard/dummy/table-invoices*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/dummy/table-invoices" class="menu-link">
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-reports" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Table Invoices </span>
-              </a>
-            </li>
-            <li class="menu-item {{ (request()->is('dashboard/dummy/table-generals*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/dummy/table-generals" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Table Generals </span>
-              </a>
-            </li>
-            <li class="menu-item {{ (request()->is('dashboard/dummy/table-relations*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/dummy/table-relations" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Table Relations </span>
+                <span class="menu-text"> Invoices </span>
               </a>
             </li>
             <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
               <a href="/dashboard/dummy/table-reports" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Table Reports </span>
+                <span class="menu-text"> Reports </span>
               </a>
+            </li>
+            <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
+              <a href="javascript:;" class="menu-link menu-toggle">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Tables </span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="menu-submenu">
+                <i class="menu-arrow"></i>
+                <ul class="menu-subnav">
+                  <li class="menu-item {{ (request()->is('dashboard/dummy/table/filters*')) ? 'menu-item-active' : '' }}">
+                    <a href="/dashboard/dummy/table/filters" class="menu-link">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text"> Filters </span>
+                    </a>
+                  </li>
+                  <li class="menu-item {{ (request()->is('dashboard/dummy/table/generals*')) ? 'menu-item-active' : '' }}">
+                    <a href="/dashboard/dummy/table/generals" class="menu-link">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text"> Generals </span>
+                    </a>
+                  </li>
+                  <li class="menu-item {{ (request()->is('dashboard/dummy/table/single-relations*')) ? 'menu-item-active' : '' }}">
+                    <a href="/dashboard/dummy/table/single-relations" class="menu-link">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text"> Single Relations </span>
+                    </a>
+                  </li>
+                  <li class="menu-item {{ (request()->is('dashboard/dummy/table/multi-relations*')) ? 'menu-item-active' : '' }}">
+                    <a href="/dashboard/dummy/table/multi-relations" class="menu-link">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text"> Multi Relations </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
           </ul>
         </div>

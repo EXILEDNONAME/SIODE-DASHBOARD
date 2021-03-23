@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Models\Backend\System\Dummy;
+namespace App\Models\Backend\System\Dummy\Table;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
-use App\Models\Backend\System\Dummy\TableGeneral;
+use App\Models\Backend\System\Dummy\SingleRelation;
 
-class TableRelation extends Model {
+class MultiRelation extends Model {
 
   use LogsActivity;
 
-  protected $table = 'dummy_table_relations';
+  protected $table = 'dummy_table_multi_relations';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 
   protected static $logAttributes = ['*'];
 
   public function dummy_table_generals(){
-    return $this->belongsTo(TableGeneral::class, 'id_general');
+    return $this->belongsTo(SingleRelation::class, 'id_single_relation');
   }
 
 }

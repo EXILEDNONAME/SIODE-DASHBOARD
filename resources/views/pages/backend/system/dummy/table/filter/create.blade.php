@@ -1,5 +1,5 @@
 @extends('layouts.pages.create', ['header' => 'true'])
-@push('title', 'Dummy Table Relations')
+@push('title', 'Table Filters')
 
 @push('content-body')
 <form method="POST" action="{{ URL::current() }}/../" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">

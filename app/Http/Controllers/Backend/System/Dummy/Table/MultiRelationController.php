@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\System\Dummy;
+namespace App\Http\Controllers\Backend\System\Dummy\Table;
 
 use Auth;
 use DataTables;
@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-class TableGeneralController extends Controller {
+class MultiRelationController extends Controller {
 
   /**
   **************************************************
@@ -20,9 +20,9 @@ class TableGeneralController extends Controller {
 
   public function __construct() {
     $this->middleware(['auth']);
-    $this->url = '/dashboard/dummy/table-generals';
-    $this->path = 'pages.backend.system.dummy.table-general';
-    $this->model = 'App\Models\Backend\System\Dummy\TableGeneral';
+    $this->url = '/dashboard/dummy/table/multi-relations';
+    $this->path = 'pages.backend.system.dummy.table.multi-relation';
+    $this->model = 'App\Models\Backend\System\Dummy\Table\MultiRelation';
   }
 
   /**
