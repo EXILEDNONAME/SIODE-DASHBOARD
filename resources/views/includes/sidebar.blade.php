@@ -31,23 +31,39 @@
       // data main menu
       $main_menu = DB::table('menu_items')->get();
       foreach ($main_menu as $main) {
-        $sub_menu = DB::table('menu_items')->where('parent', '>', $main->id)->get();
+        $sub_menu = DB::table('menu_items')->where('parent', 0)->get();
 
-        if ($sub_menu->count() > 0) {
+        if ($main->parent > 0) {
           // main menu dengan sub menu
-          echo "<li class='treeview'>" . $main->label .
-          '<span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-          </span>';
+          echo '
+          <li class="menu-item menu-item-submenu">
+            <a href="javascript:;" class="menu-link menu-toggle">
+              <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
+              <span class="menu-text">'. $main->label .' </span>
+              <i class="menu-arrow"></i>
+            </a>
+          ';
           // sub menu nya disini
-          echo "<ul class='treeview-menu'>";
-          foreach ($sub_menu->count() as $sub) {
-            echo "<li>" . $sub->link, '<i class="' . $sub->label . '"></i>' . $sub->label . "</li>";
+          echo '
+          <div class="menu-submenu">
+            <i class="menu-arrow"></i>
+            <ul class="menu-subnav">
+            ';
+          foreach ($sub_menu as $sub) {
+            echo "<li>" . $sub->label . "</li>";
           }
           echo"</ul></li>";
-        } else {
+        }
+        if ($main->parent == 0) {
           // main menu tanpa sub menu
-          echo "<li>" . $main->label . "</li>";
+          echo '
+          <li class="menu-item" aria-haspopup="true">
+            <a href="/dashboard/file-manager" class="menu-link">
+              <i class="menu-icon fas fa-hdd"></i>
+              <span class="menu-text">' . $main->label . ' </span>
+            </a>
+          </li>
+          <li></li>';
         }
       }
       ?>
