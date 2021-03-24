@@ -91,12 +91,6 @@
               <div class="menu-submenu">
                 <i class="menu-arrow"></i>
                 <ul class="menu-subnav">
-                  <li class="menu-item {{ (request()->is('dashboard/dummy/table/filters*')) ? 'menu-item-active' : '' }}">
-                    <a href="/dashboard/dummy/table/filters" class="menu-link">
-                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                      <span class="menu-text"> Filters </span>
-                    </a>
-                  </li>
                   <li class="menu-item {{ (request()->is('dashboard/dummy/table/generals*')) ? 'menu-item-active' : '' }}">
                     <a href="/dashboard/dummy/table/generals" class="menu-link">
                       <i class="menu-bullet menu-bullet-dot"><span></span></i>
@@ -113,6 +107,12 @@
                     <a href="/dashboard/dummy/table/multi-relations" class="menu-link">
                       <i class="menu-bullet menu-bullet-dot"><span></span></i>
                       <span class="menu-text"> Multi Relations </span>
+                    </a>
+                  </li>
+                  <li class="menu-item {{ (request()->is('dashboard/dummy/table/filters*')) ? 'menu-item-active' : '' }}">
+                    <a href="/dashboard/dummy/table/filters" class="menu-link">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text"> Filters </span>
                     </a>
                   </li>
                 </ul>

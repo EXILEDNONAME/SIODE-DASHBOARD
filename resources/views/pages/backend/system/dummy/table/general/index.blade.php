@@ -1,4 +1,4 @@
-@extends('layouts.pages.index', ['status' => 'true'])
+@extends('layouts.pages.index')
 @push('title', 'Table Generals')
 
 @push('content-head')

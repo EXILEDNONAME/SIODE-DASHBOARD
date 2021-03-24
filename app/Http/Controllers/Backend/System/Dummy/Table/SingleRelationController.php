@@ -38,6 +38,7 @@ class SingleRelationController extends Controller {
       return DataTables::of($data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
+      ->editColumn('dummy_table_generals', function($order) { return $order->dummy_table_generals->name; })
       ->rawColumns(['action', 'checkbox'])
       ->addIndexColumn()
       ->make(true);
