@@ -4,7 +4,7 @@ namespace App\Models\Backend\System\Dummy\Table;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
-use App\Models\Backend\System\Dummy\SingleRelation;
+use App\Models\Backend\System\Dummy\Table\SingleRelation;
 
 class MultiRelation extends Model {
 
@@ -16,7 +16,7 @@ class MultiRelation extends Model {
 
   protected static $logAttributes = ['*'];
 
-  public function dummy_table_generals(){
+  public function dummy_table_single_relations(){
     return $this->belongsTo(SingleRelation::class, 'id_single_relation');
   }
 

@@ -3,8 +3,8 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> Relation From General </label>
     <div class="col-lg-9">
-      {!! Form::select('id_general', dummy_generals(), (isset($data->id_general) ? $data->id_general : NULL), ['placeholder' => '- Select Relation From General -', 'class' => 'form-control', 'required' => 'required']) !!}
-      @error('id_general') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+      {!! Form::select('id_single_relation', dummy_table_single_relations(), (isset($data->id_single_relation) ? $data->id_single_relation : NULL), ['placeholder' => '- Select Relation From Single Relation -', 'class' => 'form-control', 'required' => 'required']) !!}
+      @error('id_single_relation') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
 

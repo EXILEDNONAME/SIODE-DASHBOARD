@@ -33,11 +33,13 @@ class MultiRelationController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::select('*');
+    $data = $this->model::all();
     if(request()->ajax()) {
       return DataTables::of($data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
+      ->editColumn('dummy_table_generals', function($order) { return $order->dummy_table_single_relations->dummy_table_generals->name; })
+      ->editColumn('dummy_table_single_relations', function($order) { return $order->dummy_table_single_relations->name; })
       ->rawColumns(['action', 'checkbox'])
       ->addIndexColumn()
       ->make(true);

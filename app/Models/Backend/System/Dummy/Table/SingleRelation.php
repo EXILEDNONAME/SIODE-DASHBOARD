@@ -4,7 +4,7 @@ namespace App\Models\Backend\System\Dummy\Table;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
-use App\Models\Backend\System\Dummy\TableGeneral;
+use App\Models\Backend\System\Dummy\Table\General;
 
 class SingleRelation extends Model {
 
@@ -17,7 +17,7 @@ class SingleRelation extends Model {
   protected static $logAttributes = ['*'];
 
   public function dummy_table_generals(){
-    return $this->belongsTo(TableGeneral::class, 'id_general');
+    return $this->belongsTo(General::class, 'id_general');
   }
 
 }

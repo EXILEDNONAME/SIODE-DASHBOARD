@@ -2,13 +2,15 @@
 @push('title', 'Table Multi Relations')
 
 @push('content-head')
-<th> Relation </th>
+<th> Table General </th>
+<th> Table Single Relation </th>
 <th> Name </th>
 <th> Description </th>
 @endpush
 
 @push('content-body')
-{ data: 'dummy_table_generals.name' },
+{ data: 'dummy_table_generals', orderable : false, searchable : false },
+{ data: 'dummy_table_single_relations' },
 { data: 'name' },
 { data: 'description' },
 @endpush

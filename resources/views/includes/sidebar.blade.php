@@ -82,7 +82,7 @@
                 <span class="menu-text"> Reports </span>
               </a>
             </li>
-            <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
+            <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy/table*')) ? 'menu-item-active menu-item-open' : '' }}">
               <a href="javascript:;" class="menu-link menu-toggle">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Tables </span>
