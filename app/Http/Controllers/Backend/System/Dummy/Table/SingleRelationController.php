@@ -131,6 +131,8 @@ class SingleRelationController extends Controller {
   **************************************************
   * @return Enable
   * @return Disable
+  * @return Status-Done
+  * @return Status-Pending
   **************************************************
   **/
 
@@ -141,6 +143,16 @@ class SingleRelationController extends Controller {
 
   public function disable($id) {
     $data = $this->model::where('id', $id)->update([ 'active' => 2 ]);
+    return Response::json($data);
+  }
+
+  public function status_done($id) {
+    $data = $this->model::where('id', $id)->update([ 'status' => 1 ]);
+    return Response::json($data);
+  }
+
+  public function status_pending($id) {
+    $data = $this->model::where('id', $id)->update([ 'status' => 2 ]);
     return Response::json($data);
   }
 

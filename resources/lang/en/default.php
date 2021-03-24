@@ -7,16 +7,21 @@ return [
     'view'    => 'View',
     'edit'    => 'Edit',
     'delete'  => 'Delete',
+    'done'    => 'Done',
+    'pending' => 'Pending',
+    'finish'  => 'Finish',
   ],
 
   'notification' => [
     'success'  => [
-      'active-enable' => 'Item Active',
-      'active-disable' => 'Item Non-Active',
-      'item-created' => 'Item Created',
-      'item-updated' => 'Item Updated',
-      'item-deleted' => 'Item Deleted',
-      'delete'       => 'Item Deleted',
+      'active-enable'   => 'Item Active',
+      'active-disable'  => 'Item Non-Active',
+      'item-created'    => 'Item Created',
+      'item-updated'    => 'Item Updated',
+      'item-deleted'    => 'Item Deleted',
+      'delete'          => 'Item Deleted',
+      'status-done'     => 'Set Item Done',
+      'status-pending'  => 'Set Item Pending',
     ],
     'error'  => [
       'restrict' => 'Sorry, Something is wrong :(',

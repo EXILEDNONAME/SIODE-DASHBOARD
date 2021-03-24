@@ -93,7 +93,7 @@
 
               @stack('filter-header')
 
-              @if ( !empty($content) && $content == 'withStatus')
+              @if ( !empty($status) && $status == 'true')
               <div class="col-md-2 my-2 my-md-0">
                 <div class="d-flex align-items-center">
                   <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
@@ -123,7 +123,7 @@
               <tr>
                 <th class="no-export"> </th>
                 <th> No. </th>
-                @if ( !empty($content) && $content == 'withStatus')
+                @if ( !empty($status) && $status == 'true')
                 <th class="no-export"> Status </th>
                 @endif
                 @stack('content-head')
@@ -171,7 +171,7 @@ var KTDatatablesExtensionsKeytable = function() {
         "data" : function (d) {
           d.filter_active = $('#filter_active').val();
           @stack('filter-function')
-          @if ( !empty($content) && $content == 'withStatus')
+          @if ( !empty($status) && $status == 'true')
           d.filter_status = $('.filter-status').val();
           @endif
         }
@@ -259,7 +259,7 @@ var KTDatatablesExtensionsKeytable = function() {
             return meta.row + meta.settings._iDisplayStart + 1;
           }
         },
-        @if ( !empty($content) && $content == 'withStatus')
+        @if ( !empty($status) && $status == 'true')
         {
           data: 'status', orderable: true, 'className': 'align-middle', 'width': '1',
           render: function ( data, type, row ) {
@@ -300,7 +300,7 @@ var KTDatatablesExtensionsKeytable = function() {
 
     @stack('filter-data')
 
-    @if ( !empty($content) && $content == 'withStatus')
+    @if ( !empty($status) && $status == 'true')
     $('.filter-status').change(function () {
       table.column(2)
       .search( $(this).val() )
