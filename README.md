@@ -1,8 +1,8 @@
 ## Dashboard Revision
 
-- Edit Table Dummy
 - Create Filter Template
 --------------------------------------------------
+- File Manager Access
 - Create Delete Selected
 - Create Chart Traffics
 - Create Activities Global
