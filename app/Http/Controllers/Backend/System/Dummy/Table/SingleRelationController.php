@@ -19,7 +19,7 @@ class SingleRelationController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware(['auth']);
+    $this->middleware(['administrator', 'auth']);
     $this->url = '/dashboard/dummy/table/single-relations';
     $this->path = 'pages.backend.system.dummy.table.single-relation';
     $this->model = 'App\Models\Backend\System\Dummy\Table\SingleRelation';

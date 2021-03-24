@@ -19,7 +19,7 @@ class GeneralController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware(['auth']);
+    $this->middleware(['administrator', 'auth']);
     $this->url = '/dashboard/dummy/table/generals';
     $this->path = 'pages.backend.system.dummy.table.general';
     $this->model = 'App\Models\Backend\System\Dummy\Table\General';

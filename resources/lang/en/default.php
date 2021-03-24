@@ -4,12 +4,15 @@ return [
   'label' => [
     'yes'     => 'Yes',
     'no'      => 'No',
+    'create'  => 'Create',
     'view'    => 'View',
     'edit'    => 'Edit',
     'delete'  => 'Delete',
     'done'    => 'Done',
     'pending' => 'Pending',
     'finish'  => 'Finish',
+    'export'  => 'Export',
+    'refresh' => 'Refresh',
   ],
 
   'notification' => [
@@ -41,11 +44,16 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'export' => [
-      'copy'  => 'Copy',
-      'excel' => 'Excel',
-      'pdf'   => 'PDF',
-      'csv'   => 'CSV',
-      'print' => 'Print',
+      'copy'              => 'Copy',
+      'excel'             => 'Excel',
+      'pdf'               => 'PDF',
+      'csv'               => 'CSV',
+      'print'             => 'Print',
+      'copy-description'  => 'Copy as Text',
+      'excel-description' => 'Export to Excel',
+      'pdf-description'   => 'Export to PDF',
+      'csv-description'   => 'Export to CSV',
+      'print-description' => 'Print',
     ]
   ],
 ];

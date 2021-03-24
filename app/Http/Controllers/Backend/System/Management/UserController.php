@@ -23,7 +23,7 @@ class UserController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware('auth');
+    $this->middleware(['administrator', 'auth']);
     $this->url = '/dashboard/management/users';
     $this->path = 'pages.backend.system.management.user';
     $this->model = 'App\User';

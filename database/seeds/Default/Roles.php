@@ -16,6 +16,11 @@ class Roles extends Seeder
         'name'              => 'Administrator',
         'created_at'        => Carbon::now(),
       ],
+      [
+        'id_access'         => '2',
+        'name'              => 'User',
+        'created_at'        => Carbon::now(),
+      ],
     ];
 
     Role::insert($data);

@@ -11,6 +11,10 @@ class Accesses extends Seeder {
         'name'              => 'Administrator',
         'created_at'        => Carbon::now(),
       ],
+      [
+        'name'              => 'User',
+        'created_at'        => Carbon::now(),
+      ],
     ];
 
     Access::insert($data);

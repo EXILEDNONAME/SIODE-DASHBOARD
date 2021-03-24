@@ -8,6 +8,7 @@
           <span class="menu-text"> Dashboard </span>
         </a>
       </li>
+      @if( access('Administrator'))
       <li class="menu-item">
         <a href="index.html" class="menu-link">
           <i class="menu-icon fas fa-envelope"></i>
@@ -20,12 +21,31 @@
           <span class="menu-text"> Notifications </span>
         </a>
       </li>
-
+      @endif
+      
       <!-- MAIN -->
       <li class="menu-section">
         <h4 class="menu-text"> Main </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
+
+      @if( access('Administrator'))
+      <li class="menu-item">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon fas fa-bookmark"></i>
+          <span class="menu-text"> Administrator </span>
+        </a>
+      </li>
+      @endif
+
+      @if( access('User'))
+      <li class="menu-item">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon fas fa-bookmark"></i>
+          <span class="menu-text"> User </span>
+        </a>
+      </li>
+      @endif
 
       @foreach(App\Menu::orderBy('sort','asc')->get() as $menuItem)
 
@@ -57,6 +77,7 @@
 
       @endforeach
 
+      @if( access('Administrator'))
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
@@ -133,12 +154,15 @@
           <span class="menu-text"> Generator </span>
         </a>
       </li>
+      @endif
 
       <!-- SETTINGS -->
       <li class="menu-section">
         <h4 class="menu-text"> Settings </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
+
+      @if( access('Administrator'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/management*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-shield-alt"></i></span>
@@ -171,13 +195,13 @@
       </li>
       <li class="menu-item {{ (request()->is('dashboard/permissions*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a href="/dashboard/permissions" class="menu-link">
-          <i class="menu-icon fas fa-hdd"></i>
+          <i class="menu-icon fas fa-shield-alt"></i>
           <span class="menu-text"> Permissions </span>
         </a>
       </li>
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
-          <span class="menu-icon"><i class="menu-icon fas fa-shield-alt"></i></span>
+          <span class="menu-icon"><i class="menu-icon fas fa-brush"></i></span>
           <span class="menu-text"> Styles </span>
           <i class="menu-arrow"></i>
         </a>
@@ -198,6 +222,14 @@
             </li>
           </ul>
         </div>
+      </li>
+      @endif
+
+      <li class="menu-item {{ (request()->is('dashboard/permissions*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+        <a href="/dashboard/profiles" class="menu-link">
+          <i class="menu-icon fas fa-user"></i>
+          <span class="menu-text"> Profile </span>
+        </a>
       </li>
       <li class="menu-item">
         <a href="/dashboard/logout" class="menu-link" onclick="return confirm('Are you sure?')">

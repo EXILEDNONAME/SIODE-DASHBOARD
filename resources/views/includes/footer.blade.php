@@ -2,7 +2,7 @@
   <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
     <div class="text-dark order-2 order-md-1">
       <span class="text-muted font-weight-bold mr-2">2021©</span>
-      <a href="#" target="_blank" class="text-dark-75 text-hover-primary"> {{ env('APP_NAME')}}</a>
+      <a href="#" target="_blank" class="text-dark-75 text-hover-primary"> {{ env('APP_NAME')}} </a>
     </div>
     <div class="nav nav-dark">
       <a href="#" target="_blank" class="nav-link pl-0 pr-5">About</a>

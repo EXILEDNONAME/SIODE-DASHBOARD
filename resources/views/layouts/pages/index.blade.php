@@ -31,48 +31,46 @@
         </div>
 
         <div class="card-toolbar">
-          <a href="{{ URL::current() }}/create" class="btn btn-sm btn-icon btn-clean btn-icon-md" data-toggle="kt-tooltip" title="" data-original-title="Create"><i class="fas fa-plus"></i></a>
-          <a id="file-refresh" class="btn btn-sm btn-icon btn-clean btn-icon-md" data-toggle="kt-tooltip" title="" data-original-title="Refresh"><i class="la la-refresh"></i></a>
+          <a href="{{ URL::current() }}/create" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.create') }}"><i class="fas fa-plus"></i></a>
+          <a id="file-refresh" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.refresh') }}"><i class="la la-refresh"></i></a>
           <div class="dropdown dropdown-inline">
             <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-download"></i>
+              <i class="fas fa-download"  data-toggle="tooltip" title="{{ trans('default.label.export') }}"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
               <ul class="navi navi-hover py-5">
-                <li class="navi-item">
+                <li class="navi-item" data-toggle="tooltip" title="{{ trans('default.button.export.copy-description') }}">
                   <a href="javascript:void(0);" id="export_copy" class="navi-link">
-                    <i class="navi-icon fa fa-copy"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Copy As Text"> {{ trans('default.button.export.copy') }} </span>
+                    <i class="navi-icon fa fa-copy"></i> {{ trans('default.button.export.copy') }}
                   </a>
                 </li>
-                <li class="navi-item">
+                <li class="navi-item" data-toggle="tooltip" title="{{ trans('default.button.export.excel-description') }}">
                   <a href="javascript:void(0);" id="export_excel" class="navi-link">
-                    <i class="navi-icon fa fa-file-excel"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Export To Excel"> {{ trans('default.button.export.excel') }} </span>
+                    <i class="navi-icon fa fa-file-excel"></i> {{ trans('default.button.export.excel') }}
                   </a>
                 </li>
-                <li class="navi-item">
+                <li class="navi-item" data-toggle="tooltip" title="{{ trans('default.button.export.pdf-description') }}">
                   <a href="javascript:void(0);" id="export_pdf" class="navi-link">
-                    <i class="navi-icon fa fa-file-pdf"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Export To PDF"> {{ trans('default.button.export.pdf') }} </span>
+                    <i class="navi-icon fa fa-file-pdf"></i> {{ trans('default.button.export.pdf') }}
                   </a>
                 </li>
-                <li class="navi-item">
+                <li class="navi-item" data-toggle="tooltip" title="{{ trans('default.button.export.csv-description') }}">
                   <a href="javascript:void(0);" id="export_csv" class="navi-link">
-                    <i class="navi-icon fa fa-file"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="CSV"> {{ trans('default.button.export.csv') }} </span>
+                    <i class="navi-icon fa fa-file"></i> {{ trans('default.button.export.csv') }}
                   </a>
                 </li>
-                <li class="navi-item">
+                <li class="navi-item" data-toggle="tooltip" title="{{ trans('default.button.export.print-description') }}">
                   <a href="javascript:void(0);" id="export_print" class="navi-link">
-                    <i class="navi-icon fa fa-print"></i>
-                    <span class="kt-nav__link-text" data-toggle="kt-tooltip" title="" data-original-title="Print"> {{ trans('default.button.export.print') }} </span>
+                    <i class="navi-icon fa fa-print"></i> {{ trans('default.button.export.print') }}
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="ki ki-arrow-down icon-nm"></i></a>
+          <div class="collapse" id="kt_datatable_group_action_form">
+            <a href="{{ URL::current() }}/create" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.refresh') }}"><i class="text-danger fas fa-trash"></i></a>
+          </div>
+          <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="fas fa-caret-down"></i></a>
         </div>
       </div>
 
@@ -106,7 +104,7 @@
               </div>
               @endif
 
-              <div class="col-md-2 my-2 my-md-0">
+              <div class="col-md-1 my-1 my-md-0">
                 <div class="d-flex align-items-center">
                   <button type="reset" name="reset" id="reset" class="form-control btn btn-sm btn-outline-info" data-toggle="tooltip" title="{{ trans('default.button.reset-filter') }}">
                     <i class="la la-refresh"></i>

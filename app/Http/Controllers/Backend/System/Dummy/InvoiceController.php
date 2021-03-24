@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-class TableInvoiceController extends Controller {
+class InvoiceController extends Controller {
 
   /**
   **************************************************
