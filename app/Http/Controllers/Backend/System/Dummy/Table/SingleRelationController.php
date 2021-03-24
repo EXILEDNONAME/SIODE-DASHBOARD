@@ -33,7 +33,7 @@ class SingleRelationController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::with(['dummy_table_generals'])->select('dummy_table_single_relations.*');
+    $data = $this->model::all();
     if(request()->ajax()) {
       return DataTables::of($data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')

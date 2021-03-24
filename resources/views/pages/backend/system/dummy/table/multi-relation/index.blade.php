@@ -9,7 +9,7 @@
 @endpush
 
 @push('content-body')
-{ data: 'dummy_table_generals', orderable : false, searchable : false },
+{ data: 'dummy_table_generals' },
 { data: 'dummy_table_single_relations' },
 { data: 'name' },
 { data: 'description' },
