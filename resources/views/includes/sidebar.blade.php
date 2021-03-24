@@ -31,7 +31,7 @@
 
       @if( $menuItem->parent == 0 )
       <li class="menu-item {{ (request()->is('dashboard/xxx*')) ? 'menu-item-active menu-item-submenu menu-item-open' : '' }}">
-        <a href='javascript:;' class='{{ $menuItem->link ? "menu-link menu-toggle" : "menu-link" }}'>
+        <a href='{{ $menuItem->link }}' class='{{ $menuItem->link ? "menu-link menu-toggle" : "menu-link" }}'>
 
           <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
           <span class="menu-text"> {{ $menuItem->label }} </span>
@@ -44,7 +44,7 @@
           <ul class="menu-subnav">
             @foreach($menuItem->children as $subMenuItem)
             <li class="menu-item {{ (request()->is('dashboard/xxx*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/dummy/table-invoices" class="menu-link">
+              <a href="{{ $menuItem->link }}" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> {{ $subMenuItem->label }} </span>
               </a>

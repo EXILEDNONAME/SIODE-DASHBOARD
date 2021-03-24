@@ -31,6 +31,7 @@ return [
   ],
 
   'button' => [
+    'reset-filter' => 'Reset Filter',
     'back' => 'Back',
     'edit' => 'Edit',
     'delete' => 'Delete',

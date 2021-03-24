@@ -77,6 +77,46 @@
       </div>
 
       <div class="card-body">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="row align-items-center">
+
+              <div class="col-sm-2 my-2 my-lg-0">
+                <div class="d-flex align-items-center">
+                  <select data-column="-2" class="form-control filter-active">
+                    <option value=""> - Select Active - </option>
+                    <option value="1"> Yes </option>
+                    <option value="2"> No </option>
+                  </select>
+                </div>
+              </div>
+
+              @stack('filter-header')
+
+              @if ( !empty($content) && $content == 'withStatus')
+              <div class="col-md-2 my-2 my-md-0">
+                <div class="d-flex align-items-center">
+                  <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
+                  <select data-column="2" class="form-control filter-status">
+                    <option value=""> - Filter Status - </option>
+                    <option value="1"> Done </option>
+                    <option value="2"> Pending </option>
+                  </select>
+                </div>
+              </div>
+              @endif
+
+              <div class="col-md-2 my-2 my-md-0">
+                <div class="d-flex align-items-center">
+                  <button type="reset" name="reset" id="reset" class="form-control btn btn-sm btn-outline-info" data-toggle="tooltip" title="{{ trans('default.button.reset-filter') }}">
+                    <i class="la la-refresh"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
         <div class="table-responsive">
           <table width="100%" class="table table-striped-table-bordered table-hover table-checkable" id="exilednoname">
             <thead>
