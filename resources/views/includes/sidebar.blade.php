@@ -22,7 +22,7 @@
         </a>
       </li>
       @endif
-      
+
       <!-- MAIN -->
       <li class="menu-section">
         <h4 class="menu-text"> Main </h4>
@@ -44,6 +44,51 @@
           <i class="menu-icon fas fa-bookmark"></i>
           <span class="menu-text"> User </span>
         </a>
+      </li>
+      @endif
+
+      @if( access('Jasamarga'))
+      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
+        <a href="javascript:;" class="menu-link menu-toggle">
+          <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
+          <span class="menu-text"> Jasamarga </span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="menu-submenu">
+          <i class="menu-arrow"></i>
+          <ul class="menu-subnav">
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-reports" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Devices </span>
+              </a>
+            </li>
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-reports" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Intercomes </span>
+              </a>
+            </li>
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-reports" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Locations </span>
+              </a>
+            </li>
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-reports" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Maintenances </span>
+              </a>
+            </li>
+            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
+              <a href="/dashboard/dummy/table-reports" class="menu-link">
+                <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                <span class="menu-text"> Users </span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </li>
       @endif
 

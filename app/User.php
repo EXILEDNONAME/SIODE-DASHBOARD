@@ -9,7 +9,7 @@ use App\Notifications\ResetPasswordNotification;
 use Spatie\Activitylog\Traits\LogsActivity;
 use App\Role;
 
-class User extends Authenticatable {
+class User extends Authenticatable implements MustVerifyEmail {
 
   use Notifiable, LogsActivity;
 
@@ -24,6 +24,7 @@ class User extends Authenticatable {
     'phone',
     'address_1',
     'address_2',
+    'email_verified_at',
     'active',
     'status',
     'photo_profile'

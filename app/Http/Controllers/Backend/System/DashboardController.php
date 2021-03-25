@@ -21,7 +21,7 @@ class DashboardController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware('auth');
+    $this->middleware(['auth', 'verified']);
     $this->url = '/dashboard';
     $this->path = 'pages.backend.system.dashboard';
     $this->model = 'App\User';
