@@ -8,13 +8,17 @@
           <span class="menu-text"> Dashboard </span>
         </a>
       </li>
-      @if( access('Administrator'))
+
+      @if( access('messages'))
       <li class="menu-item">
         <a href="index.html" class="menu-link">
           <i class="menu-icon fas fa-envelope"></i>
           <span class="menu-text"> Messages </span>
         </a>
       </li>
+      @endif
+
+      @if( access('notifications'))
       <li class="menu-item">
         <a href="index.html" class="menu-link">
           <i class="menu-icon fas fa-bell"></i>
@@ -29,25 +33,7 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
-      @if( access('Administrator'))
-      <li class="menu-item">
-        <a href="index.html" class="menu-link">
-          <i class="menu-icon fas fa-bookmark"></i>
-          <span class="menu-text"> Administrator </span>
-        </a>
-      </li>
-      @endif
-
-      @if( access('User'))
-      <li class="menu-item">
-        <a href="index.html" class="menu-link">
-          <i class="menu-icon fas fa-bookmark"></i>
-          <span class="menu-text"> User </span>
-        </a>
-      </li>
-      @endif
-
-      @if( access('Jasamarga'))
+      @if( access('jasamarga'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -122,11 +108,12 @@
 
       @endforeach
 
-      @if( access('Administrator'))
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
+
+      @if( access('Dummies'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -187,12 +174,18 @@
           </ul>
         </div>
       </li>
+      @endif
+
+      @if( access('file-manager'))
       <li class="menu-item {{ (request()->is('dashboard/file-manager*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a href="/dashboard/file-manager" class="menu-link">
           <i class="menu-icon fas fa-hdd"></i>
           <span class="menu-text"> File Manager </span>
         </a>
       </li>
+      @endif
+
+      @if( access('generator'))
       <li class="menu-item">
         <a href="index.html" class="menu-link">
           <i class="menu-icon fas fa-recycle"></i>
@@ -207,7 +200,7 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
-      @if( access('Administrator'))
+      @if( access('managements'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/management*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-shield-alt"></i></span>
@@ -238,12 +231,9 @@
           </ul>
         </div>
       </li>
-      <li class="menu-item {{ (request()->is('dashboard/permissions*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-        <a href="/dashboard/permissions" class="menu-link">
-          <i class="menu-icon fas fa-shield-alt"></i>
-          <span class="menu-text"> Permissions </span>
-        </a>
-      </li>
+      @endif
+
+      @if( access('styles'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-brush"></i></span>

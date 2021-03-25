@@ -10,8 +10,11 @@ function activities($model) {
 }
 
 function access($name) {
-  if ( Auth::User()->roles->accesses->name == $name ) {
-    $items = Access::where('name', Auth::User()->roles->accesses->name )->first();
+  $id = Auth::User()->roles->accesses->id;
+
+
+  if ( Access::where('subject', 'like', '%' . $name . '%')->where('id', $id)->first()) {
+    $items = Access::where('subject', 'like', '%' . $name . '%')->where('id', $id)->first();
     return $items;
   }
 }

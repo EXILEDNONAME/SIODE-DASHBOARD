@@ -60,7 +60,7 @@
                 <span class="mr-3">
                   <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, </span><br>
                   @if (!empty($item->causer->name))
-                  ({{ $item->causer->name }}) - Deleted Item {{ $data_object['name'] }}
+                  ({{ $item->causer->name }}) - Deleted Item {{ $data_object['subject'] }}
                   @else
                   <s> User Not Found </s>
                   @endif

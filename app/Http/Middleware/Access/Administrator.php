@@ -7,11 +7,11 @@ use Closure;
 
 class Administrator {
   public function handle(Request $request, Closure $next) {
-    if( Auth::user()->roles->accesses->name  == 'Administrator') {
+    if( Auth::user()->roles->name == 'Administrator') {
       return $next($request);
     }
     else {
-      return redirect('/dashboard');
+      return redirect('/error');
     }
   }
 }
