@@ -1,7 +1,6 @@
 <?php
 
 use App\Access;
-use App\Role;
 use Spatie\Activitylog\Models\Activity;
 
 function activities($model) {
@@ -9,12 +8,12 @@ function activities($model) {
   return $items;
 }
 
-function access($name) {
-  $id = Auth::User()->roles->accesses->id;
-  if ( Access::where('subject', 'like', '%' . $name . '%')->where('id', $id)->first()) {
+function Menu($name) {
+  $id = Auth::User()->id_access;
 
-    if( Auth::user()->roles->name == 'Administrator') {
-      $items = Access::where('subject', 'like', '%' . $name . '%')->where('id', $id)->first();
+  if ( Access::where('name', 'like', '%' . $name . '%')->where('id', $id)->first()) {
+    if( Auth::user()->accesses->name == 'Administrator') {
+      $items = Access::where('name', 'like', '%' . $name . '%')->where('id', $id)->first();
       return $items;
     }
     else {

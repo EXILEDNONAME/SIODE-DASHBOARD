@@ -1,4 +1,4 @@
-@extends('layouts.pages.index')
+@extends('layouts.pages.index', ['status' => 'true'])
 @push('title', 'Jasamarga Maintenances')
 
 @push('content-head')

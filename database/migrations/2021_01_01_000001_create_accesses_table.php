@@ -8,7 +8,7 @@ class CreateAccessesTable extends Migration {
   public function up() {
     Schema::create('accesses', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('subject');
+      $table->string('name');
       $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('status')->default(1);

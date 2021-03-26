@@ -20,29 +20,29 @@ Route::group([
   'prefix' => 'dashboard/jasamarga/maintenances',
   'namespace' => 'Backend\Main\Jasamarga',
 ], function () {
-  Route::get('/', 'MaintenanceController@index')->name('index')->middleware('jasamarga:admin');
-  Route::get('/create', 'MaintenanceController@create')->name('create')->middleware('auth', 'verified', 'administrator');
-  Route::post('/', 'MaintenanceController@store')->name('store')->middleware('auth');
-  Route::get('{id}/edit', 'MaintenanceController@edit')->name('edit')->middleware('auth');
-  Route::patch('{id}', 'MaintenanceController@update')->name('update')->middleware('auth');
-  Route::get('{id}', 'MaintenanceController@show')->name('show')->middleware('auth');
-  Route::delete('/{id}','MaintenanceController@destroy')->name('destroy')->middleware('auth');
-  Route::get('enable/{id}', 'MaintenanceController@enable')->name('enable')->middleware('auth', 'administrator');
-  Route::get('disable/{id}', 'MaintenanceController@disable')->name('disable')->middleware('auth');
-  Route::get('status-done/{id}', 'MaintenanceController@status_done')->name('status-done')->middleware('auth');
-  Route::get('status-pending/{id}', 'MaintenanceController@status_pending')->name('status-pending')->middleware('auth');
-  Route::get('status/{id}/{slug}', 'MaintenanceController@status')->name('status')->middleware('auth');
-  Route::get('delete/{id}', 'MaintenanceController@delete')->name('delete')->middleware('auth');
-  Route::get('deleteall', 'MaintenanceController@deleteall')->name('deleteall')->middleware('auth');
+  Route::get('/', 'MaintenanceController@index')->name('index')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('/create', 'MaintenanceController@create')->name('create')->middleware('accesses:["administrator-jasamarga"]');
+  Route::post('/', 'MaintenanceController@store')->name('store')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('{id}/edit', 'MaintenanceController@edit')->name('edit')->middleware('accesses:["administrator-jasamarga"]');
+  Route::patch('{id}', 'MaintenanceController@update')->name('update')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('{id}', 'MaintenanceController@show')->name('show')->middleware('accesses:["administrator-jasamarga"]');
+  Route::delete('/{id}','MaintenanceController@destroy')->name('destroy')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('enable/{id}', 'MaintenanceController@enable')->name('enable')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('disable/{id}', 'MaintenanceController@disable')->name('disable')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('status-done/{id}', 'MaintenanceController@status_done')->name('status-done')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('status-pending/{id}', 'MaintenanceController@status_pending')->name('status-pending')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('status/{id}/{slug}', 'MaintenanceController@status')->name('status')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('delete/{id}', 'MaintenanceController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('deleteall', 'MaintenanceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
 });
 
 // VMS - MAINTENANCES
 Route::group([
   'as' => 'main.vms.maintenance.',
   'prefix' => 'dashboard/vms/maintenances',
-  'namespace' => 'Backend\Main\VMS',
+  'namespace' => 'Backend\Main\Vms',
 ], function () {
-  Route::get('/', 'MaintenanceController@index')->name('index');
+  Route::get('/', 'MaintenanceController@index')->name('index')->middleware('access:administrator, vms');
   Route::post('/', 'MaintenanceController@store')->name('store');
   Route::get('{id}', 'MaintenanceController@show')->name('show');
   Route::patch('{id}', 'MaintenanceController@update')->name('update');

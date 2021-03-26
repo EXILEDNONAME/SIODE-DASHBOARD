@@ -7,14 +7,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\ResetPasswordNotification;
 use Spatie\Activitylog\Traits\LogsActivity;
-use App\Role;
+use App\Access;
 
 class User extends Authenticatable implements MustVerifyEmail {
 
   use Notifiable, LogsActivity;
 
   protected $fillable = [
-    'id_role',
+    'id_access',
     'name',
     'username',
     'password',
@@ -36,8 +36,8 @@ class User extends Authenticatable implements MustVerifyEmail {
 
   protected static $logAttributes = ['*'];
 
-  public function roles(){
-    return $this->belongsTo(Role::class, 'id_role');
+  public function accesses(){
+    return $this->belongsTo(Access::class, 'id_access');
   }
 
   public function sendPasswordResetNotification($token) {

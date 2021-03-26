@@ -8,12 +8,12 @@ class Accesses extends Seeder {
   public function run() {
     $data = [
       [
-        'subject'           => '[ "messages", "file-manager", "dummies", "generator", "managements" ]',
-        'created_at'        => Carbon::now(),
+        'name'          => 'Full-Administrator',
+        'created_at'    => Carbon::now(),
       ],
       [
-        'subject'           => '[ "messages" ]',
-        'created_at'        => Carbon::now(),
+        'name'          => 'Administrator',
+        'created_at'    => Carbon::now(),
       ],
     ];
 

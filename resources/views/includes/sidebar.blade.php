@@ -3,57 +3,28 @@
     <ul class="menu-nav">
 
       <li class="menu-item">
-        <a href="index.html" class="menu-link">
+        <a href="/dashboard" class="menu-link">
           <i class="menu-icon fas fa-desktop"></i>
           <span class="menu-text"> Dashboard </span>
         </a>
       </li>
 
-      @if( access('messages'))
       <li class="menu-item">
         <a href="index.html" class="menu-link">
           <i class="menu-icon fas fa-envelope"></i>
           <span class="menu-text"> Messages </span>
         </a>
       </li>
-      @endif
 
-      @if( access('notifications'))
       <li class="menu-item">
         <a href="index.html" class="menu-link">
           <i class="menu-icon fas fa-bell"></i>
           <span class="menu-text"> Notifications </span>
         </a>
       </li>
-      @endif
 
-      <!-- MAIN -->
-      <li class="menu-section">
-        <h4 class="menu-text"> Main </h4>
-        <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
-      </li>
-
-      @if( access('administrator'))
-      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/jasamarga*')) ? 'menu-item-active menu-item-open' : '' }}">
-        <a href="javascript:;" class="menu-link menu-toggle">
-          <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
-          <span class="menu-text"> Jasamarga </span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="menu-submenu">
-          <i class="menu-arrow"></i>
-          <ul class="menu-subnav">
-            <li class="menu-item {{ (request()->is('dashboard/jasamarga/maintenances*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/jasamarga/maintenances" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Maintenances </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      @endif
-
+      @include('includes.sidebar-item')
+      
       @foreach(App\Menu::orderBy('sort','asc')->get() as $menuItem)
 
       @if( $menuItem->parent == 0 )
@@ -89,7 +60,7 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
-      @if( access('Dummies'))
+
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -150,25 +121,20 @@
           </ul>
         </div>
       </li>
-      @endif
 
-      @if( access('file-manager'))
       <li class="menu-item {{ (request()->is('dashboard/file-manager*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a href="/dashboard/file-manager" class="menu-link">
           <i class="menu-icon fas fa-hdd"></i>
           <span class="menu-text"> File Manager </span>
         </a>
       </li>
-      @endif
 
-      @if( access('generator'))
       <li class="menu-item">
         <a href="index.html" class="menu-link">
           <i class="menu-icon fas fa-recycle"></i>
           <span class="menu-text"> Generator </span>
         </a>
       </li>
-      @endif
 
       <!-- SETTINGS -->
       <li class="menu-section">
@@ -176,7 +142,7 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
-      @if( access('managements'))
+
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/management*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-shield-alt"></i></span>
@@ -207,9 +173,7 @@
           </ul>
         </div>
       </li>
-      @endif
 
-      @if( access('styles'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-brush"></i></span>
@@ -234,7 +198,6 @@
           </ul>
         </div>
       </li>
-      @endif
 
       <li class="menu-item {{ (request()->is('dashboard/permissions*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a href="/dashboard/profiles" class="menu-link">
