@@ -11,7 +11,7 @@ class Administrator {
       return $next($request);
     }
     else {
-      return redirect('/error');
+      return redirect('/dashboard');
     }
   }
 }

@@ -48,8 +48,8 @@ class Kernel extends HttpKernel {
     'administrator'           => \App\Http\Middleware\Access\Administrator::class,
     'user'                    => \App\Http\Middleware\Access\User::class,
 
-    // Main Accesses
-    'jasamarga'                    => \App\Http\Middleware\Access\Jasamarga::class,
+    // System Main
+    'jasamarga'         => \App\Http\Middleware\Jasamarga::class,
   ];
 
   protected $middlewarePriority = [

@@ -1,5 +1,7 @@
 ## Dashboard Revision
 
+- Create Role Middleware
+- Edit Route
 - Create Register & Welcome Pages
 - Create Delete Selected
 - Create Chart Traffics

@@ -11,11 +11,15 @@ function activities($model) {
 
 function access($name) {
   $id = Auth::User()->roles->accesses->id;
-
-
   if ( Access::where('subject', 'like', '%' . $name . '%')->where('id', $id)->first()) {
-    $items = Access::where('subject', 'like', '%' . $name . '%')->where('id', $id)->first();
-    return $items;
+
+    if( Auth::user()->roles->name == 'Administrator') {
+      $items = Access::where('subject', 'like', '%' . $name . '%')->where('id', $id)->first();
+      return $items;
+    }
+    else {
+      return redirect('/dashboard');
+    }
   }
 }
 

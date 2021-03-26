@@ -4,32 +4,22 @@ Route::group([
   'as' => 'system.management.access.',
   'prefix' => 'dashboard/management/accesses',
   'namespace' => 'Backend\System\Management',
-   ], function () {
-       Route::get('/', 'AccessController@index');
-       Route::get('create', 'AccessController@create');
-       Route::post('/', 'AccessController@store');
-       Route::get('{id}/edit', 'AccessController@edit');
-       Route::patch('{id}', 'AccessController@update');
-       Route::get('{id}', 'AccessController@show');
-       Route::delete('/{id}','AccessController@destroy');
-   }
-);
-
-// MANAGEMENT ACCESSES
-// Route::group([
-//   'as' => 'system.management.access.',
-//   'prefix' => 'dashboard/management/accesses',
-//   'namespace' => 'Backend\System\Management',
-// ], function(){
-//   Route::get('status-done/{id}', 'AccessController@status_done')->name('status-done');
-//   Route::get('status-pending/{id}', 'AccessController@status_pending')->name('status-pending');
-//   Route::get('enable/{id}', 'AccessController@enable')->name('enable');
-//   Route::get('disable/{id}', 'AccessController@disable')->name('disable');
-//   Route::get('status/{id}/{slug}', 'AccessController@status')->name('status');
-//   Route::get('delete/{id}', 'AccessController@delete')->name('delete');
-//   Route::get('deleteall', 'AccessController@deleteall')->name('deleteall');
-//   Route::resource('/', 'AccessController')->parameters(['' => 'id']);
-// });
+], function () {
+  Route::get('/', 'AccessController@index');
+  Route::get('create', 'AccessController@create');
+  Route::post('/', 'AccessController@store');
+  Route::get('{id}/edit', 'AccessController@edit');
+  Route::patch('{id}', 'AccessController@update');
+  Route::get('{id}', 'AccessController@show');
+  Route::delete('/{id}','AccessController@destroy');
+  Route::get('enable/{id}', 'AccessController@enable')->name('enable');
+  Route::get('disable/{id}', 'AccessController@disable')->name('disable');
+  Route::get('status-done/{id}', 'AccessController@status_done')->name('status-done');
+  Route::get('status-pending/{id}', 'AccessController@status_pending')->name('status-pending');
+  Route::get('status/{id}/{slug}', 'AccessController@status')->name('status');
+  Route::get('delete/{id}', 'AccessController@delete')->name('delete');
+  Route::get('deleteall', 'AccessController@deleteall')->name('deleteall');
+});
 
 // MANAGEMENT ROLES
 Route::group([
