@@ -17,7 +17,7 @@ var KTAppSettings = {
   "font-family": "Poppins"
 };
 </script>
-<script src="/assets/backend/plugins/global/plugins.bundle.js"></script>
-<script src="/assets/backend/plugins/custom/prismjs/prismjs.bundle.js"></script>
-<script src="/assets/backend/js/scripts.bundle.js"></script>
-<script src="/assets/backend/js/pages/widgets.js"></script>
+<script src="/assets/backend/plugins/global/plugins.bundle.js?v=7.0.5"></script>
+<script src="/assets/backend/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.5"></script>
+<script src="/assets/backend/js/scripts.bundle.js?v=7.0.5"></script>
+<script src="/assets/backend/js/pages/widgets.js?v=7.0.5"></script>

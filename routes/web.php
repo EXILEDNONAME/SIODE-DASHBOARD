@@ -14,6 +14,28 @@ Route::get('lang/{language}', 'LocalizationController@switch')->name('localizati
 require __DIR__.'/backend/system/dummy.php';
 require __DIR__.'/backend/system/management.php';
 
+// JASAMARGA - DEVICES
+Route::group([
+  'as' => 'main.jasamarga.device.',
+  'prefix' => 'dashboard/jasamarga/devices',
+  'namespace' => 'Backend\Main\Jasamarga',
+], function () {
+  Route::get('/', 'DeviceController@index')->name('index')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('/create', 'DeviceController@create')->name('create')->middleware('accesses:["administrator-jasamarga"]');
+  Route::post('/', 'DeviceController@store')->name('store')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('{id}/edit', 'DeviceController@edit')->name('edit')->middleware('accesses:["administrator-jasamarga"]');
+  Route::patch('{id}', 'DeviceController@update')->name('update')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('{id}', 'DeviceController@show')->name('show')->middleware('accesses:["administrator-jasamarga"]');
+  Route::delete('/{id}','DeviceController@destroy')->name('destroy')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('enable/{id}', 'DeviceController@enable')->name('enable')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('disable/{id}', 'DeviceController@disable')->name('disable')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('status-done/{id}', 'DeviceController@status_done')->name('status-done')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('status-pending/{id}', 'DeviceController@status_pending')->name('status-pending')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('status/{id}/{slug}', 'DeviceController@status')->name('status')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('delete/{id}', 'DeviceController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
+  Route::get('deleteall', 'DeviceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
+});
+
 // JASAMARGA - MAINTENANCES
 Route::group([
   'as' => 'main.jasamarga.maintenance.',

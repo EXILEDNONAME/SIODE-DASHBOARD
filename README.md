@@ -17,3 +17,10 @@
 - Page Index, Single Print For Reports
 - Templating Management Menus
 --------------------------------------------------
+
+- To Do
+-- Create JM Devices
+-- Create JM Locations
+-- Create JM Intercomes
+-- Create JM Maintenances
+-- Create JM Users

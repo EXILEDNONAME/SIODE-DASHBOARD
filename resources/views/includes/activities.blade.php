@@ -27,19 +27,21 @@
             @if (!empty($activity) && !empty($activity->count()))
             @foreach($activity as $item)
             <div class="timeline-item">
+              @foreach($item['properties'] as $data_object)
               @if ($item->description == 'created')
               <span class="timeline-badge bg-success"></span>
               <div class="timeline-content justify-content-between">
                 <span class="mr-3">
-                  <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, </span><br>
                   @if (!empty($item->causer->name))
-                  ({{ $item->causer->name }}) - Created Item
+                  <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, {{ $item->causer->name }} </span><br>
+                   Created New Item
                   @else
                   <s> User Not Found </s>
                   @endif
                 </span>
               </div>
               @endif
+              @endforeach
               @if ($item->description == 'updated')
               <span class="timeline-badge bg-warning"></span>
               <div class="timeline-content justify-content-between">
@@ -60,7 +62,7 @@
                 <span class="mr-3">
                   <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, </span><br>
                   @if (!empty($item->causer->name))
-                  ({{ $item->causer->name }}) - Deleted Item {{ $data_object['subject'] }}
+                  ({{ $item->causer->name }}) - Deleted Item {{ $data_object['name'] }}
                   @else
                   <s> User Not Found </s>
                   @endif
@@ -99,12 +101,9 @@
     </div>
   </div>
 
-
 </div>
 
 @push('js')
-<script src="/assets/backend/js/pages/widgets.js?v=7.0.5"></script>
-
 @if ( !empty($chart) && $chart == 'true')
 <script>
 "use strict";
@@ -151,7 +150,6 @@ function generateData(count, yrange) {
 var KTApexChartsDemo = function () {
   var _demo1 = function () {
     const apexChart = "#chart";
-    // var data = <?php echo '[' . $chart .']'; ?>;
     var created = [{{ chart_created($model) }}];
     var options = {
       series: [

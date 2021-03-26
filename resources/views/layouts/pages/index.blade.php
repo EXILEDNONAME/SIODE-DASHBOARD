@@ -94,7 +94,6 @@
               @if ( !empty($status) && $status == 'true')
               <div class="col-md-2 my-2 my-md-0">
                 <div class="d-flex align-items-center">
-                  <label class="mr-3 mb-0 d-none d-md-block">Status:</label>
                   <select data-column="2" class="form-control filter-status">
                     <option value=""> - Filter Status - </option>
                     <option value="1"> Done </option>
@@ -136,7 +135,7 @@
   </div>
 </div>
 
-@include('includes.activities')
+<!-- include('includes.activities') -->
 @endpush
 
 @push('js')
