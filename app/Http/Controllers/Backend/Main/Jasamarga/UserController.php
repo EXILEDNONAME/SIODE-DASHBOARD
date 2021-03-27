@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\System\Dummy\Table;
+namespace App\Http\Controllers\Backend\Main\Jasamarga;
 
 use Auth;
 use DataTables;
@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-class SingleRelationController extends Controller {
+class UserController extends Controller {
 
   /**
   **************************************************
@@ -19,9 +19,10 @@ class SingleRelationController extends Controller {
   **/
 
   public function __construct() {
-    $this->url = '/dashboard/dummy/table/single-relations';
-    $this->path = 'pages.backend.system.dummy.table.single-relation';
-    $this->model = 'App\Models\Backend\System\Dummy\Table\SingleRelation';
+    $this->middleware('auth');
+    $this->url = '/dashboard/jasamarga/users';
+    $this->path = 'pages.backend.main.jasamarga.user';
+    $this->model = 'App\Models\Backend\Main\Jasamarga\User';
   }
 
   /**
@@ -37,7 +38,8 @@ class SingleRelationController extends Controller {
       return DataTables::of($data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
-      ->editColumn('dummy_table_generals', function($order) { return $order->dummy_table_generals->name; })
+      ->editColumn('jasamarga_devices', function($order) { return $order->jasamarga_devices->name; })
+      ->editColumn('jasamarga_locations', function($order) { return $order->jasamarga_locations->name; })
       ->rawColumns(['action', 'checkbox'])
       ->addIndexColumn()
       ->make(true);

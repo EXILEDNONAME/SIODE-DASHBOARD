@@ -1,4 +1,4 @@
-@extends('layouts.pages.create', ['header' => 'true'])
+@extends('layouts.pages.create')
 @push('title', 'Jasamarga Maintenances')
 
 @push('content-body')

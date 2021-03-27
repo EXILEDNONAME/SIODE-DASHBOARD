@@ -1,5 +1,5 @@
 @extends('layouts.pages.show')
-@push('title', 'Jasamarga Maintenances')
+@push('title', 'Jasamarga Officials')
 
 @push('content-body')
 <div class="table-responsive">

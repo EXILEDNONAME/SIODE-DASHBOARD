@@ -1,4 +1,4 @@
-@extends('layouts.pages.show', ['status' => 'true'])
+@extends('layouts.pages.show')
 @push('title', 'Jasamarga Maintenances')
 
 @push('content-body')
