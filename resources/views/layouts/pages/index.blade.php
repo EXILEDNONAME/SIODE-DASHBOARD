@@ -135,7 +135,7 @@
   </div>
 </div>
 
-<!-- include('includes.activities') -->
+@include('includes.activities')
 @endpush
 
 @push('js')

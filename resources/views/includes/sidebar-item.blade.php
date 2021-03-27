@@ -26,7 +26,7 @@
         </a>
       </li>
       <li class="menu-item {{ (request()->is('dashboard/jasamarga/intercomes*')) ? 'menu-item-active' : '' }}">
-        <a href="/dashboard/jasamarga/intercomes`" class="menu-link">
+        <a href="/dashboard/jasamarga/intercomes" class="menu-link">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
           <span class="menu-text"> Intercomes </span>
         </a>

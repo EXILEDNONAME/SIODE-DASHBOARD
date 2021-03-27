@@ -19,6 +19,7 @@ class DeviceController extends Controller {
   **/
 
   public function __construct() {
+    $this->middleware('auth');
     $this->url = '/dashboard/jasamarga/devices';
     $this->path = 'pages.backend.main.jasamarga.device';
     $this->model = 'App\Models\Backend\Main\Jasamarga\Device';
