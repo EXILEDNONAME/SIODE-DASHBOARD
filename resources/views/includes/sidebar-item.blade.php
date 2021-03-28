@@ -62,10 +62,34 @@
   <div class="menu-submenu">
     <i class="menu-arrow"></i>
     <ul class="menu-subnav">
+      <li class="menu-item {{ (request()->is('dashboard/vms/areas*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/vms/areas" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Areas </span>
+        </a>
+      </li>
+      <li class="menu-item {{ (request()->is('dashboard/vms/directories*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/vms/directories" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Directories </span>
+        </a>
+      </li>
       <li class="menu-item {{ (request()->is('dashboard/vms/maintenances*')) ? 'menu-item-active' : '' }}">
         <a href="/dashboard/vms/maintenances" class="menu-link">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
           <span class="menu-text"> Maintenances </span>
+        </a>
+      </li>
+      <li class="menu-item {{ (request()->is('dashboard/vms/monitorings*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/vms/monitorings" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Monitorings </span>
+        </a>
+      </li>
+      <li class="menu-item {{ (request()->is('dashboard/vms/types*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/vms/types" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Types </span>
         </a>
       </li>
     </ul>

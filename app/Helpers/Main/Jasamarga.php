@@ -2,6 +2,7 @@
 
 use App\Models\Backend\Main\Jasamarga\Device;
 use App\Models\Backend\Main\Jasamarga\Location;
+use App\Models\Backend\Main\Jasamarga\User;
 
 function jasamarga_devices() {
   $items = Device::orderBy('name','asc')->where('active', 1)->pluck('name', 'id')->toArray();
@@ -10,6 +11,11 @@ function jasamarga_devices() {
 
 function jasamarga_locations() {
   $items = Location::orderBy('name','asc')->where('active', 1)->pluck('name', 'id')->toArray();
+  return $items;
+}
+
+function jasamarga_users() {
+  $items = User::orderBy('name','asc')->where('active', 1)->pluck('name', 'id')->toArray();
   return $items;
 }
 

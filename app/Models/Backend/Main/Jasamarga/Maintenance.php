@@ -4,6 +4,7 @@ namespace App\Models\Backend\Main\Jasamarga;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
+use App\Models\Backend\Main\Jasamarga\User;
 
 class Maintenance extends Model {
 
@@ -14,5 +15,9 @@ class Maintenance extends Model {
   protected $guarded = ['id'];
 
   protected static $logAttributes = ['*'];
+
+  public function jasamarga_users(){
+      return $this->belongsTo(User::class, 'id_user');
+    }
 
 }

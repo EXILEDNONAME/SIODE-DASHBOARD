@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJasamargaMaintenancesTable extends Migration {
+class CreateVmsTypesTable extends Migration {
   public function up() {
-    Schema::create('jasamarga_maintenances', function (Blueprint $table) {
+    Schema::create('vms_types', function (Blueprint $table) {
       $table->increments('id');
       $table->string('name');
       $table->text('description')->nullable();
@@ -19,6 +19,6 @@ class CreateJasamargaMaintenancesTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('jasamarga_maintenances');
+    Schema::dropIfExists('vms_types');
   }
 }

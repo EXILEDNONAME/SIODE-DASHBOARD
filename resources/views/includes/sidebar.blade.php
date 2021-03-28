@@ -2,7 +2,7 @@
   <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
     <ul class="menu-nav">
 
-      <li class="menu-item">
+      <li class="menu-item {{ (request()->is('dashboard')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a href="/dashboard" class="menu-link">
           <i class="menu-icon fas fa-desktop"></i>
           <span class="menu-text"> Dashboard </span>
@@ -24,36 +24,8 @@
       </li>
 
       @include('includes.sidebar-item')
+
       
-      @foreach(App\Menu::orderBy('sort','asc')->get() as $menuItem)
-
-      @if( $menuItem->parent == 0 )
-      <li class="menu-item {{ (request()->is('dashboard/xxx*')) ? 'menu-item-active menu-item-submenu menu-item-open' : '' }}">
-        <a href='{{ $menuItem->link }}' class='{{ $menuItem->link ? "menu-link menu-toggle" : "menu-link" }}'>
-
-          <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
-          <span class="menu-text"> {{ $menuItem->label }} </span>
-          @if( ! $menuItem->children->isEmpty()) <i class="menu-arrow"></i> @endif
-        </a>
-        @endif
-
-        @if( ! $menuItem->children->isEmpty() )
-        <div class="menu-submenu">
-          <ul class="menu-subnav">
-            @foreach($menuItem->children as $subMenuItem)
-            <li class="menu-item {{ (request()->is('dashboard/xxx*')) ? 'menu-item-active' : '' }}">
-              <a href="{{ $menuItem->link }}" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> {{ $subMenuItem->label }} </span>
-              </a>
-            </li>
-            @endforeach
-          </ul>
-        </div>
-        @endif
-      </li>
-
-      @endforeach
 
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
@@ -168,31 +140,6 @@
               <a href="/dashboard/management/users" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Users </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li class="menu-item menu-item-submenu {{ (request()->is('dashboard')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-        <a href="javascript:;" class="menu-link menu-toggle">
-          <span class="menu-icon"><i class="menu-icon fas fa-brush"></i></span>
-          <span class="menu-text"> Styles </span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="menu-submenu">
-          <i class="menu-arrow"></i>
-          <ul class="menu-subnav">
-            <li class="menu-item {{ (request()->is('dashboard/management')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/accesses" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Generals </span>
-              </a>
-            </li>
-            <li class="menu-item {{ (request()->is('dashboard/style/menus*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/style/menus" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Menus </span>
               </a>
             </li>
           </ul>
