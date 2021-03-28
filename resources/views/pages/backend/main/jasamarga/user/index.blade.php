@@ -25,7 +25,7 @@
 {
   data: 'printer', orderable: true, 'className': 'align-middle text-center', 'width': '1',
   render: function ( data, type, row ) {
-    if ( data == 1 ) { return '<i class="flaticon2-check-mark"></i>'; }
+    if ( data == 1 ) { return '<i class="fas fa-check"></i>'; }
     else { return ''; }
   }
 },
@@ -37,7 +37,7 @@
     <select data-column="-3" class="form-control filter-printer">
       <option value=""> - Filter Printer - </option>
       <option value="1"> Yes </option>
-      <option value="0"> No </option>
+      <option value="2"> No </option>
     </select>
   </div>
 </div>

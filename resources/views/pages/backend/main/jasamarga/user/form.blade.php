@@ -35,7 +35,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> IP Address </label>
     <div class="col-lg-9">
-      {!! Form::text('ip_address', (isset($data->ip_address) ? $data->ip_address : ''), ['class' => $errors->has('ip_address') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+      {!! Form::text('ip_address', (isset($data->ip_address) ? $data->ip_address : ''), ['class' => $errors->has('ip_address') ? 'form-control is-invalid' : 'form-control']) !!}
       @error('ip_address') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
@@ -43,7 +43,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> MAC Address </label>
     <div class="col-lg-9">
-      {!! Form::text('mac_address', (isset($data->mac_address) ? $data->mac_address : ''), ['class' => $errors->has('mac_address') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+      {!! Form::text('mac_address', (isset($data->mac_address) ? $data->mac_address : ''), ['class' => $errors->has('mac_address') ? 'form-control is-invalid' : 'form-control']) !!}
       @error('mac_address') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
@@ -51,7 +51,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> PC Name </label>
     <div class="col-lg-9">
-      {!! Form::text('pc_name', (isset($data->pc_name) ? $data->pc_name : ''), ['class' => $errors->has('pc_name') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+      {!! Form::text('pc_name', (isset($data->pc_name) ? $data->pc_name : ''), ['class' => $errors->has('pc_name') ? 'form-control is-invalid' : 'form-control']) !!}
       @error('pc_name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
@@ -59,7 +59,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> PC Password </label>
     <div class="col-lg-9">
-      {!! Form::text('pc_password', (isset($data->pc_password) ? $data->pc_password : ''), ['class' => $errors->has('pc_password') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+      {!! Form::text('pc_password', (isset($data->pc_password) ? $data->pc_password : ''), ['class' => $errors->has('pc_password') ? 'form-control is-invalid' : 'form-control']) !!}
       @error('pc_password') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
@@ -67,7 +67,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> Printer </label>
     <div class="col-lg-9">
-      {{ Form::select('printer', ['2' => 'No', '1' => 'Yes'], (isset($data->printer) ? $data->printer : ''), ['class' => $errors->has('printer') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) }}
+      {{ Form::select('printer', ['2' => 'No', '1' => 'Yes'], (isset($data->printer) ? $data->printer : ''), ['class' => $errors->has('printer') ? 'form-control is-invalid' : 'form-control']) }}
       @error('printer') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
@@ -80,13 +80,7 @@
     </div>
   </div>
 
-  <div class="form-group row">
-    <label class="col-lg-3 col-form-label"> Active </label>
-    <div class="col-lg-9">
-      {{ Form::select('active', ['1' => 'Yes', '0' => 'No'], (isset($data->active) ? $data->active : '1'), ['class' => $errors->has('active') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) }}
-      @error('active') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
-    </div>
-  </div>
+  @include('extensions.datatable.page-form.main')
 
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> </label>

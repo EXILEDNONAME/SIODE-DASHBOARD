@@ -8,6 +8,6 @@
 
   <input class="form-control" name="id" type="hidden" value="{{ $data->id }}">
   <input class="form-control" name="updated_by" type="hidden" value="{{ Auth::User()->id }}">
-  @include($path . '.form', ['formMode' => 'edit'])
+  @include($path . '.form', ['status' => 'true', 'formMode' => 'edit'])
 </form>
 @endpush

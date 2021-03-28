@@ -6,6 +6,6 @@
   {{ csrf_field() }}
 
   <input class="form-control" name="created_by" type="hidden" value="{{ Auth::User()->id }}">
-  @include($path . '.form', ['formMode' => 'create'])
+  @include($path . '.form', ['status' => 'true', 'formMode' => 'create'])
 </form>
 @endpush

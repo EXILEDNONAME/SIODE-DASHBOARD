@@ -1,5 +1,5 @@
 @extends('layouts.pages.index')
-@push('title', 'Jasamarga Maintenances')
+@push('title', 'Jasamarga Devices')
 
 @push('content-head')
 <th> Name </th>

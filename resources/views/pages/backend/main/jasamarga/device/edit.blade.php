@@ -1,5 +1,5 @@
 @extends('layouts.pages.edit')
-@push('title', 'Jasamarga Maintenances')
+@push('title', 'Jasamarga Devices')
 
 @push('content-body')
 <form method="POST" action="{{ URL::current() }}/../../{{ $data->id }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
@@ -8,6 +8,6 @@
 
   <input class="form-control" name="id" type="hidden" value="{{ $data->id }}">
   <input class="form-control" name="updated_by" type="hidden" value="{{ Auth::User()->id }}">
-  @include($path . '.form', ['formMode' => 'edit'])
+  @include($path . '.form', ['status' => 'false', 'formMode' => 'edit'])
 </form>
 @endpush
