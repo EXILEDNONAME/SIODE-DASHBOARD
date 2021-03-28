@@ -18,9 +18,9 @@
 - Templating Management Menus
 --------------------------------------------------
 
-- To Do
--- Create JM Devices
--- Create JM Locations
--- Create JM Intercomes
--- Create JM Maintenances
--- Create JM Users
+# To Do
+- Create JM Devices
+- Create JM Locations
+- Create JM Intercomes
+- Create JM Maintenances
+- Create JM Users
