@@ -32,5 +32,4 @@
 
 @push('js')
 <script src="/assets/backend/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js"></script>
-<script src="/assets/backend/js/pages/crud/forms/widgets/bootstrap-timepicker.js?v=7.0.5"></script>
 @endpush
