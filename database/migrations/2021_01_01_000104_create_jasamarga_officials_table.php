@@ -9,8 +9,9 @@ class CreateJasamargaOfficialsTable extends Migration {
     Schema::create('jasamarga_officials', function (Blueprint $table) {
       $table->increments('id');
       $table->string('name');
-      $table->integer('no_intercome');
-      $table->string('location');
+      $table->integer('ip_address')->nullable();
+      $table->string('mac_address')->nullable();
+      $table->integer('port')->nullable();
       $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('status')->default(1);
