@@ -10,14 +10,14 @@
       </li>
 
       <li class="menu-item">
-        <a href="index.html" class="menu-link">
+        <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
           <i class="menu-icon fas fa-envelope"></i>
           <span class="menu-text"> Messages </span>
         </a>
       </li>
 
       <li class="menu-item">
-        <a href="index.html" class="menu-link">
+        <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
           <i class="menu-icon fas fa-bell"></i>
           <span class="menu-text"> Notifications </span>
         </a>
@@ -25,7 +25,7 @@
 
       @include('includes.sidebar-item')
 
-      
+
 
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
@@ -43,13 +43,13 @@
           <i class="menu-arrow"></i>
           <ul class="menu-subnav">
             <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/dummy/table-reports" class="menu-link">
+              <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Invoices </span>
               </a>
             </li>
             <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/dummy/table-reports" class="menu-link">
+              <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
                 <span class="menu-text"> Reports </span>
               </a>
@@ -102,7 +102,7 @@
       </li>
 
       <li class="menu-item">
-        <a href="index.html" class="menu-link">
+        <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
           <i class="menu-icon fas fa-recycle"></i>
           <span class="menu-text"> Generator </span>
         </a>
@@ -147,7 +147,7 @@
       </li>
 
       <li class="menu-item {{ (request()->is('dashboard/permissions*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-        <a href="/dashboard/profiles" class="menu-link">
+        <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
           <i class="menu-icon fas fa-user"></i>
           <span class="menu-text"> Profile </span>
         </a>
