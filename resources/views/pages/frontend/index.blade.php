@@ -56,24 +56,28 @@
             <div class="tagline ac anim fadeInUp s01 delay-0-6s">
               <h1> EXILEDNONAME </h1>
               <p class="anim fadeInUp s01 delay-0-7s"> Our Website Is Coming Soon. We`ll be here soon with our new Imagination. </p>
+              <br>
+              <center><a href="radio" target="_blank"><span style="color: #ff0000; font-weight: bold"><s> LISTEN RADIO </s></span></a></center>
             </div>
+
             <hr><center><a href="login"><p style="color: #fff"><s> LOGIN </s></p></a></center><hr>
 
-            <!-- RESPONSE -->
-            <!-- <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"> RESPONSE </button></center> -->
+          <div class="copyrights ac anim fadeInUp s01 delay-15s">
 
-            <div class="copyrights ac anim fadeInUp s01 delay-15s"> @2021 - EXILEDNONAME </div>
-          </div>
+          <br>
+          @2021 - EXILEDNONAME
+        </div>
         </div>
       </div>
+    </div>
 
-    </main>
-  </div>
+  </main>
+</div>
 
-  <script src="/assets/frontend/js/jquery-1.11.3.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="/assets/frontend/js/plugins.js"></script>
-  <script src="/assets/frontend/js/common.js"></script>
+<script src="/assets/frontend/js/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/assets/frontend/js/plugins.js"></script>
+<script src="/assets/frontend/js/common.js"></script>
 
 </body>
 </html>

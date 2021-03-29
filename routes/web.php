@@ -3,6 +3,7 @@
 Auth::routes(['register' => false, 'verify' => true]);
 
 Route::view('/', 'pages.frontend.index');
+Route::view('/radio', 'pages.frontend.radio.index');
 Route::get('/dashboard', function () { return view('layouts.default'); });
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('dashboard/file-manager', 'Backend\System\DashboardController@filemanager')->name('dashboard.file-manager');
