@@ -19,7 +19,7 @@ class MultiRelationController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware(['administrator', 'auth']);
+    $this->middleware(['auth']);
     $this->url = '/dashboard/dummy/table/multi-relations';
     $this->path = 'pages.backend.system.dummy.table.multi-relation';
     $this->model = 'App\Models\Backend\System\Dummy\Table\MultiRelation';

@@ -12,7 +12,7 @@ class CreateJasamargaMaintenancesTable extends Migration {
       $table->timestamp('date_start')->nullable();
       $table->timestamp('date_end')->nullable();
       $table->text('name');
-      $table->text('troubleshoot');
+      $table->text('troubleshoot')->nullable();
       $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('status')->default(1);

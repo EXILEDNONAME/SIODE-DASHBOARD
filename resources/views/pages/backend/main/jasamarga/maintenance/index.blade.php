@@ -5,14 +5,16 @@
 <th width="1" class="text-nowrap"> Date Start </th>
 <th width="1" class="text-nowrap"> Date End </th>
 <th> User </th>
+<th> Location </th>
 <th> Name </th>
 <th> Description </th>
 @endpush
 
 @push('content-body')
-{ data: 'date_start', 'classname' : 'text-nowrap', 'width' : 1 },
+{ data: 'date_start'},
 { data: 'date_end' },
-{ data: 'id_user' },
+{ data: 'jasamarga_users' },
+{ data: 'jasamarga_locations' },
 { data: 'name' },
 { data: 'description' },
 @endpush

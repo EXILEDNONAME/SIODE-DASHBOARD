@@ -3,7 +3,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> User </label>
     <div class="col-lg-9">
-      {!! Form::select('id_user', jasamarga_users(), (isset($data->id_user) ? $data->id_user : NULL), ['placeholder' => '- Select User -', 'class' => 'form-control', 'required' => 'required']) !!}
+      {!! Form::select('id_user', jasamarga_users_maintenances(), (isset($data->id_user) ? $data->id_user : NULL), ['placeholder' => '- Select User -', 'class' => 'form-control', 'required' => 'required']) !!}
       @error('id_user') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
@@ -29,6 +29,14 @@
     <div class="col-lg-9">
       {!! Form::text('name', (isset($data->name) ? $data->name : ''), ['class' => $errors->has('name') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
       @error('name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-lg-3 col-form-label"> Troubleshoot </label>
+    <div class="col-lg-9">
+      {!! Form::textarea('troubleshoot', (isset($data->troubleshoot) ? $data->troubleshoot : ''), ['class' => $errors->has('troubleshoot') ? 'form-control is-invalid' : 'form-control', 'rows'=>'3']) !!}
+      @error('troubleshoot') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
 
