@@ -19,8 +19,4 @@
 --------------------------------------------------
 
 # To Do
-- Create JM Devices
-- Create JM Locations
-- Create JM Intercomes
-- Create JM Maintenances
-- Create JM Users
+- Recheck Page JM
