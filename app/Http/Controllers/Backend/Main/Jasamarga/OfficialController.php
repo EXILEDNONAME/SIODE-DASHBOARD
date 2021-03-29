@@ -23,6 +23,7 @@ class OfficialController extends Controller {
     $this->url = '/dashboard/jasamarga/officials';
     $this->path = 'pages.backend.main.jasamarga.official';
     $this->model = 'App\Models\Backend\Main\Jasamarga\Official';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -35,7 +36,7 @@ class OfficialController extends Controller {
     $model = $this->model;
     $data = $this->model::all();
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
       ->rawColumns(['action', 'checkbox'])

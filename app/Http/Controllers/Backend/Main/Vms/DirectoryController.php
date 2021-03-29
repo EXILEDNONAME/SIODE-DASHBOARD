@@ -23,6 +23,7 @@ class DirectoryController extends Controller {
     $this->url = '/dashboard/vms/directories';
     $this->path = 'pages.backend.main.vms.directory';
     $this->model = 'App\Models\Backend\Main\Vms\Directory';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -35,7 +36,7 @@ class DirectoryController extends Controller {
     $model = $this->model;
     $data = $this->model::all();
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
       ->rawColumns(['action', 'checkbox'])

@@ -22,6 +22,8 @@ class MaintenanceController extends Controller {
     $this->url = '/dashboard/jasamarga/maintenances';
     $this->path = 'pages.backend.main.jasamarga.maintenance';
     $this->model = 'App\Models\Backend\Main\Jasamarga\Maintenance';
+    if (request('date_start') && request('date_end')) { $this->data = $this->model::orderby('date_start', 'desc')->whereBetween('date_start', [request('date_start'), request('date_end')])->get(); }
+    else { $this->data = $this->model::orderby('date_start', 'desc')->get(); }
   }
 
   /**
@@ -32,19 +34,14 @@ class MaintenanceController extends Controller {
 
   public function index() {
     $model = $this->model;
-
-    if (request('date_start') && request('date_end')) { $data = $this->model::orderby('date_start', 'desc')->whereBetween('date_start', [request('date_start'), request('date_end')])->get(); }
-    else { $data = $this->model::orderby('date_start', 'desc')->get(); }
-
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
       ->editColumn('date_start', function($order) { return \Carbon\Carbon::parse($order->date_start)->format('d F Y, H:i'); })
       ->editColumn('date_end', function($order) { return \Carbon\Carbon::parse($order->date_end)->format('d F Y, H:i'); })
       ->editColumn('jasamarga_users', function($order) { return $order->jasamarga_users->name; })
       ->editColumn('jasamarga_locations', function($order) { return $order->jasamarga_users->jasamarga_locations->name; })
-
       ->rawColumns(['action', 'checkbox'])
       ->addIndexColumn()
       ->make(true);

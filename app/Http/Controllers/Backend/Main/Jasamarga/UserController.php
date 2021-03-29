@@ -23,6 +23,7 @@ class UserController extends Controller {
     $this->url = '/dashboard/jasamarga/users';
     $this->path = 'pages.backend.main.jasamarga.user';
     $this->model = 'App\Models\Backend\Main\Jasamarga\User';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -33,9 +34,8 @@ class UserController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::all();
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
       ->editColumn('jasamarga_devices', function($order) { return $order->jasamarga_devices->name; })

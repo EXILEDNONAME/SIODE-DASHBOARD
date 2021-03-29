@@ -23,6 +23,7 @@ class IntercomeController extends Controller {
     $this->url = '/dashboard/jasamarga/intercomes';
     $this->path = 'pages.backend.main.jasamarga.intercome';
     $this->model = 'App\Models\Backend\Main\Jasamarga\Intercome';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -33,9 +34,8 @@ class IntercomeController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::all();
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
       ->rawColumns(['action', 'checkbox'])

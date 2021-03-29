@@ -23,6 +23,7 @@ class DeviceController extends Controller {
     $this->url = '/dashboard/jasamarga/devices';
     $this->path = 'pages.backend.main.jasamarga.device';
     $this->model = 'App\Models\Backend\Main\Jasamarga\Device';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -33,9 +34,8 @@ class DeviceController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::all();
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
       ->rawColumns(['action', 'checkbox'])
