@@ -2,15 +2,17 @@
 @push('title', 'Jasamarga Maintenances')
 
 @push('content-head')
-<th> Date Start </th>
-<th> Date End </th>
+<th width="1" class="text-nowrap"> Date Start </th>
+<th width="1" class="text-nowrap"> Date End </th>
+<th> User </th>
 <th> Name </th>
 <th> Description </th>
 @endpush
 
 @push('content-body')
-{ data: 'date_start' },
+{ data: 'date_start', 'classname' : 'text-nowrap', 'width' : 1 },
 { data: 'date_end' },
+{ data: 'id_user' },
 { data: 'name' },
 { data: 'description' },
 @endpush

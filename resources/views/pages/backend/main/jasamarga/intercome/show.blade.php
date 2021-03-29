@@ -9,8 +9,16 @@
       <td class="align-middle"> {{ $data->name }} </td>
     </tr>
     <tr>
-      <td class="align-middle font-weight-bold"> Description </td>
-      <td class="align-middle"> {{ $data->description }} </td>
+      <td class="align-middle font-weight-bold"> Location </td>
+      <td class="align-middle"> {{ $data->location }} </td>
+    </tr>
+    <tr>
+      <td class="align-middle font-weight-bold"> Section </td>
+      <td class="align-middle"> {{ $data->section }} </td>
+    </tr>
+    <tr>
+      <td class="align-middle font-weight-bold"> No. Intercome </td>
+      <td class="align-middle"> {{ $data->no_intercome }} </td>
     </tr>
     @include('extensions.datatable.page-show.main')
   </table>

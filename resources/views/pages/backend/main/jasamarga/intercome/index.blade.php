@@ -3,10 +3,14 @@
 
 @push('content-head')
 <th> Name </th>
-<th> Description </th>
+<th> Location </th>
+<th> Section </th>
+<th width="1" class="text-nowrap"> No. Intercome </th>
 @endpush
 
 @push('content-body')
 { data: 'name' },
-{ data: 'description' },
+{ data: 'location' },
+{ data: 'section' },
+{ data: 'no_intercome' },
 @endpush

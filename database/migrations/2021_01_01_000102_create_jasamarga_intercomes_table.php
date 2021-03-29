@@ -9,6 +9,9 @@ class CreateJasamargaIntercomesTable extends Migration {
     Schema::create('jasamarga_intercomes', function (Blueprint $table) {
       $table->increments('id');
       $table->string('name');
+      $table->integer('no_intercome')->nullable();
+      $table->string('location')->nullable();
+      $table->string('section')->nullable();
       $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('status')->default(1);

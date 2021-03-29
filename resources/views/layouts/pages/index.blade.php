@@ -95,9 +95,9 @@
               <div class="col-md-2 my-2 my-md-0">
                 <div class="d-flex align-items-center">
                   <select data-column="2" class="form-control filter-status">
-                    <option value=""> - Filter Status - </option>
-                    <option value="1"> Done </option>
-                    <option value="2"> Pending </option>
+                    <option value=""> - {{ trans('default.label.filter-status') }} - </option>
+                    <option value="1"> {{ trans('default.label.done') }} </option>
+                    <option value="2"> {{ trans('default.label.pending') }} </option>
                   </select>
                 </div>
               </div>

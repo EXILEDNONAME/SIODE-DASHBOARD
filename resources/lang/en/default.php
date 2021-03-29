@@ -13,6 +13,7 @@ return [
     'finish'  => 'Finish',
     'export'  => 'Export',
     'refresh' => 'Refresh',
+    'filter-status' => 'Filter Status',
   ],
 
   'notification' => [
