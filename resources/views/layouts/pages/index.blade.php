@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="collapse" id="kt_datatable_group_action_form">
-            <a href="{{ URL::current() }}/create" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.refresh') }}"><i class="text-danger fas fa-trash"></i></a>
+            <a data-url="" class="delete-all btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.refresh') }}"><i class="text-danger fas fa-trash"></i></a>
           </div>
           <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="fas fa-caret-down"></i></a>
         </div>
@@ -467,7 +467,6 @@ var KTDatatablesExtensionsKeytable = function() {
         exilednonameArr.push($(this).attr('id'));
       });
       var strEXILEDNONAME = exilednonameArr.join(",");
-
       if (confirm('Are you sure you want to permanently delete this comment?')){
         $.ajax({
           url: "{{ URL::current() }}/deleteall",
@@ -481,8 +480,7 @@ var KTDatatablesExtensionsKeytable = function() {
             toastr.success("{{ trans('default.notification.success.delete-all') }}");
           },
           error: function (data) {
-            toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
-            toastr.error("{{ trans('default.notification.error.restrict') }}");
+            //
           }
         });
       }

@@ -6,6 +6,7 @@ Route::group([
   'prefix' => 'dashboard/jasamarga/devices',
   'namespace' => 'Backend\Main\Jasamarga',
 ], function () {
+  Route::get('deleteall', 'DeviceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/', 'DeviceController@index')->name('index')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/create', 'DeviceController@create')->name('create')->middleware('accesses:["administrator-jasamarga"]');
   Route::post('/', 'DeviceController@store')->name('store')->middleware('accesses:["administrator-jasamarga"]');
@@ -19,7 +20,6 @@ Route::group([
   Route::get('status-pending/{id}', 'DeviceController@status_pending')->name('status-pending')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('status/{id}/{slug}', 'DeviceController@status')->name('status')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('delete/{id}', 'DeviceController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
-  Route::get('deleteall', 'DeviceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
 });
 
 // JASAMARGA - INTERCOMES
@@ -28,6 +28,7 @@ Route::group([
   'prefix' => 'dashboard/jasamarga/intercomes',
   'namespace' => 'Backend\Main\Jasamarga',
 ], function () {
+  Route::get('deleteall', 'IntercomeController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/', 'IntercomeController@index')->name('index')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/create', 'IntercomeController@create')->name('create')->middleware('accesses:["administrator-jasamarga"]');
   Route::post('/', 'IntercomeController@store')->name('store')->middleware('accesses:["administrator-jasamarga"]');
@@ -41,7 +42,6 @@ Route::group([
   Route::get('status-pending/{id}', 'IntercomeController@status_pending')->name('status-pending')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('status/{id}/{slug}', 'IntercomeController@status')->name('status')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('delete/{id}', 'IntercomeController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
-  Route::get('deleteall', 'IntercomeController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
 });
 
 // JASAMARGA - LOCATIONS
@@ -50,6 +50,7 @@ Route::group([
   'prefix' => 'dashboard/jasamarga/locations',
   'namespace' => 'Backend\Main\Jasamarga',
 ], function () {
+  Route::get('deleteall', 'LocationController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/', 'LocationController@index')->name('index')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/create', 'LocationController@create')->name('create')->middleware('accesses:["administrator-jasamarga"]');
   Route::post('/', 'LocationController@store')->name('store')->middleware('accesses:["administrator-jasamarga"]');
@@ -63,7 +64,6 @@ Route::group([
   Route::get('status-pending/{id}', 'LocationController@status_pending')->name('status-pending')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('status/{id}/{slug}', 'LocationController@status')->name('status')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('delete/{id}', 'LocationController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
-  Route::get('deleteall', 'LocationController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
 });
 
 // JASAMARGA - MAINTENANCES
@@ -72,6 +72,7 @@ Route::group([
   'prefix' => 'dashboard/jasamarga/maintenances',
   'namespace' => 'Backend\Main\Jasamarga',
 ], function () {
+  Route::get('deleteall', 'MaintenanceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/', 'MaintenanceController@index')->name('index')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/create', 'MaintenanceController@create')->name('create')->middleware('accesses:["administrator-jasamarga"]');
   Route::post('/', 'MaintenanceController@store')->name('store')->middleware('accesses:["administrator-jasamarga"]');
@@ -85,7 +86,6 @@ Route::group([
   Route::get('status-pending/{id}', 'MaintenanceController@status_pending')->name('status-pending')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('status/{id}/{slug}', 'MaintenanceController@status')->name('status')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('delete/{id}', 'MaintenanceController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
-  Route::get('deleteall', 'MaintenanceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
 });
 
 // JASAMARGA - OFFICIALS
@@ -94,6 +94,7 @@ Route::group([
   'prefix' => 'dashboard/jasamarga/officials',
   'namespace' => 'Backend\Main\Jasamarga',
 ], function () {
+  Route::get('deleteall', 'OfficialController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/', 'OfficialController@index')->name('index')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/create', 'OfficialController@create')->name('create')->middleware('accesses:["administrator-jasamarga"]');
   Route::post('/', 'OfficialController@store')->name('store')->middleware('accesses:["administrator-jasamarga"]');
@@ -107,7 +108,6 @@ Route::group([
   Route::get('status-pending/{id}', 'OfficialController@status_pending')->name('status-pending')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('status/{id}/{slug}', 'OfficialController@status')->name('status')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('delete/{id}', 'OfficialController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
-  Route::get('deleteall', 'OfficialController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
 });
 
 // JASAMARGA - USERS
@@ -116,6 +116,7 @@ Route::group([
   'prefix' => 'dashboard/jasamarga/users',
   'namespace' => 'Backend\Main\Jasamarga',
 ], function () {
+  Route::get('deleteall', 'UserController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/', 'UserController@index')->name('index')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('/create', 'UserController@create')->name('create')->middleware('accesses:["administrator-jasamarga"]');
   Route::post('/', 'UserController@store')->name('store')->middleware('accesses:["administrator-jasamarga"]');
@@ -129,5 +130,4 @@ Route::group([
   Route::get('status-pending/{id}', 'UserController@status_pending')->name('status-pending')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('status/{id}/{slug}', 'UserController@status')->name('status')->middleware('accesses:["administrator-jasamarga"]');
   Route::get('delete/{id}', 'UserController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
-  Route::get('deleteall', 'UserController@deleteall')->name('deleteall')->middleware('accesses:["administrator-jasamarga"]');
 });

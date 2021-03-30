@@ -23,7 +23,7 @@ class DashboardController extends Controller {
   public function __construct() {
     $this->middleware(['auth']);
     $this->url = '/dashboard';
-    $this->path = 'pages.backend.system.dashboard';
+    $this->path = 'pages.backend.dashboard';
     $this->model = 'App\User';
   }
 
@@ -38,7 +38,7 @@ class DashboardController extends Controller {
   **/
 
   public function index(Request $request) {
-    return view($this->path . '.index', compact('data_chart'));
+    return view($this->path . '.index');
   }
 
   /**

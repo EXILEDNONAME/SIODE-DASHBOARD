@@ -1,7 +1,9 @@
 <head>
   <base href="../../">
   <meta charset="utf-8">
-  <title> Dashboard | @stack('title') </title>
+  @if (request()->is('dashboard')) <title> Dashboard </title>
+  @else <title> Dashboard | @stack('title') </title>
+  @endif
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="description" content="Page with empty content">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,5 +16,5 @@
   <link href="/assets/backend/css/themes/layout/brand/dark.css?v=7.0.5" rel="stylesheet" type="text/css">
   <link href="/assets/backend/css/themes/layout/aside/dark.css?v=7.0.5" rel="stylesheet" type="text/css">
   @stack('css')
-  <link rel="shortcut icon" href="/assets/backend/media/logos/favicon.ico" />
+  <link rel="shortcut icon" type="image/jpg" href="/assets/backend/favicon.png" />
 </head>

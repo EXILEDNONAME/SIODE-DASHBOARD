@@ -6,6 +6,7 @@ Route::group([
   'prefix' => 'dashboard/vms/areas',
   'namespace' => 'Backend\Main\Vms',
 ], function () {
+  Route::get('deleteall', 'AreaController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'AreaController@index')->name('index')->middleware('accesses:["administrator-vms"]');
   Route::get('create', 'AreaController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'AreaController@store')->name('store')->middleware('accesses:["administrator-vms"]');
@@ -19,7 +20,6 @@ Route::group([
   Route::get('status-pending/{id}', 'AreaController@status_pending')->name('status-pending')->middleware('accesses:["administrator-vms"]');
   Route::get('status/{id}/{slug}', 'AreaController@status')->name('status')->middleware('accesses:["administrator-vms"]');
   Route::get('delete/{id}', 'AreaController@delete')->name('delete')->middleware('accesses:["administrator-vms"]');
-  Route::get('deleteall', 'AreaController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
 });
 
 // VMS - DIRECTORIES
@@ -28,6 +28,7 @@ Route::group([
   'prefix' => 'dashboard/vms/directories',
   'namespace' => 'Backend\Main\Vms',
 ], function () {
+  Route::get('deleteall', 'DirectoryController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'DirectoryController@index')->name('index')->middleware('accesses:["administrator-vms"]');
   Route::get('create', 'DirectoryController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'DirectoryController@store')->name('store')->middleware('accesses:["administrator-vms"]');
@@ -41,7 +42,6 @@ Route::group([
   Route::get('status-pending/{id}', 'DirectoryController@status_pending')->name('status-pending')->middleware('accesses:["administrator-vms"]');
   Route::get('status/{id}/{slug}', 'DirectoryController@status')->name('status')->middleware('accesses:["administrator-vms"]');
   Route::get('delete/{id}', 'DirectoryController@delete')->name('delete')->middleware('accesses:["administrator-vms"]');
-  Route::get('deleteall', 'DirectoryController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
 });
 
 // VMS - MAINTENANCES
@@ -50,6 +50,7 @@ Route::group([
   'prefix' => 'dashboard/vms/maintenances',
   'namespace' => 'Backend\Main\Vms',
 ], function () {
+  Route::get('deleteall', 'MaintenanceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'MaintenanceController@index')->name('index')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'MaintenanceController@store')->name('store')->middleware('accesses:["administrator-vms"]');
   Route::get('{id}', 'MaintenanceController@show')->name('show')->middleware('accesses:["administrator-vms"]');
@@ -63,7 +64,6 @@ Route::group([
   Route::get('status-pending/{id}', 'MaintenanceController@status_pending')->name('status-pending')->middleware('accesses:["administrator-vms"]');
   Route::get('status/{id}/{slug}', 'MaintenanceController@status')->name('status')->middleware('accesses:["administrator-vms"]');
   Route::get('delete/{id}', 'MaintenanceController@delete')->name('delete')->middleware('accesses:["administrator-vms"]');
-  Route::get('deleteall', 'MaintenanceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
 });
 
 // VMS - MONITORINGS
@@ -72,6 +72,7 @@ Route::group([
   'prefix' => 'dashboard/vms/monitorings',
   'namespace' => 'Backend\Main\Vms',
 ], function () {
+  Route::get('deleteall', 'MonitoringController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'MonitoringController@index')->name('index')->middleware('accesses:["administrator-vms"]');
   Route::get('create', 'MonitoringController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'MonitoringController@store')->name('store')->middleware('accesses:["administrator-vms"]');
@@ -85,7 +86,6 @@ Route::group([
   Route::get('status-pending/{id}', 'MonitoringController@status_pending')->name('status-pending')->middleware('accesses:["administrator-vms"]');
   Route::get('status/{id}/{slug}', 'MonitoringController@status')->name('status')->middleware('accesses:["administrator-vms"]');
   Route::get('delete/{id}', 'MonitoringController@delete')->name('delete')->middleware('accesses:["administrator-vms"]');
-  Route::get('deleteall', 'MonitoringController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
 });
 
 // VMS - TYPES
@@ -94,6 +94,7 @@ Route::group([
   'prefix' => 'dashboard/vms/types',
   'namespace' => 'Backend\Main\Vms',
 ], function () {
+  Route::get('deleteall', 'TypeController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'TypeController@index')->name('index')->middleware('accesses:["administrator-vms"]');
   Route::get('create', 'TypeController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'TypeController@store')->name('store')->middleware('accesses:["administrator-vms"]');
@@ -107,5 +108,4 @@ Route::group([
   Route::get('status-pending/{id}', 'TypeController@status_pending')->name('status-pending')->middleware('accesses:["administrator-vms"]');
   Route::get('status/{id}/{slug}', 'TypeController@status')->name('status')->middleware('accesses:["administrator-vms"]');
   Route::get('delete/{id}', 'TypeController@delete')->name('delete')->middleware('accesses:["administrator-vms"]');
-  Route::get('deleteall', 'TypeController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
 });
