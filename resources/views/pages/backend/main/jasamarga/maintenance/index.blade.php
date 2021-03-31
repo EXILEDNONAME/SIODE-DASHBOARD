@@ -7,7 +7,7 @@
 <th> Location </th>
 <th> User </th>
 <th> Name </th>
-<th> Description </th>
+<th> Troubleshoot </th>
 @endpush
 
 @push('content-body')
@@ -16,7 +16,7 @@
 { data: 'jasamarga_locations' },
 { data: 'jasamarga_users' },
 { data: 'name' },
-{ data: 'description' },
+{ data: 'troubleshoot' },
 @endpush
 
 @push('filter-header')
