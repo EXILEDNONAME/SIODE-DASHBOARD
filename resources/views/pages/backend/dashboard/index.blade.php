@@ -1,6 +1,5 @@
-@extends('layouts.custom.blank')
+@extends('layouts.custom.dashboard')
 @push('title', 'Dashboard')
 
 @push('content-body')
--- TEST WIDGET --
 @endpush

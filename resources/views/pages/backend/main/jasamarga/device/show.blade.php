@@ -1,5 +1,5 @@
-@extends('layouts.pages.show')
-@push('title', 'Jasamarga Device')
+@extends('layouts.pages.show', ['status' => 'true'])
+@push('title', 'Jasamarga Devices')
 
 @push('content-body')
 <div class="table-responsive">
@@ -12,6 +12,7 @@
       <td class="align-middle font-weight-bold"> Description </td>
       <td class="align-middle"> {{ $data->description }} </td>
     </tr>
+
     @include('extensions.datatable.page-show.main')
   </table>
 </div>

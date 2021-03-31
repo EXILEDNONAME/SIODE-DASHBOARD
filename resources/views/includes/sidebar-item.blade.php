@@ -38,6 +38,12 @@
           <span class="menu-text"> Maintenances </span>
         </a>
       </li>
+      <li class="menu-item {{ (request()->is('dashboard/jasamarga/monitorings*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/jasamarga/monitorings" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Monitorings </span>
+        </a>
+      </li>
       <li class="menu-item {{ (request()->is('dashboard/jasamarga/officials*')) ? 'menu-item-active' : '' }}">
         <a href="/dashboard/jasamarga/officials" class="menu-link">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
