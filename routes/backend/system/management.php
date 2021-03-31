@@ -5,50 +5,39 @@ Route::group([
   'prefix' => 'dashboard/management/accesses',
   'namespace' => 'Backend\System\Management',
 ], function () {
-  Route::get('/', 'AccessController@index');
-  Route::get('create', 'AccessController@create');
-  Route::post('/', 'AccessController@store');
-  Route::get('{id}/edit', 'AccessController@edit');
-  Route::patch('{id}', 'AccessController@update');
-  Route::get('{id}', 'AccessController@show');
-  Route::delete('/{id}','AccessController@destroy');
-  Route::get('enable/{id}', 'AccessController@enable')->name('enable');
-  Route::get('disable/{id}', 'AccessController@disable')->name('disable');
-  Route::get('status-done/{id}', 'AccessController@status_done')->name('status-done');
-  Route::get('status-pending/{id}', 'AccessController@status_pending')->name('status-pending');
-  Route::get('status/{id}/{slug}', 'AccessController@status')->name('status');
-  Route::get('delete/{id}', 'AccessController@delete')->name('delete');
-  Route::get('deleteall', 'AccessController@deleteall')->name('deleteall');
+  Route::get('deleteall', 'AccessController@deleteall')->name('deleteall')->middleware('accesses:["full-administrator"]');
+  Route::get('/', 'AccessController@index')->middleware('accesses:["full-administrator"]');
+  Route::get('create', 'AccessController@create')->middleware('accesses:["full-administrator"]');
+  Route::post('/', 'AccessController@store')->middleware('accesses:["full-administrator"]');
+  Route::get('{id}/edit', 'AccessController@edit')->middleware('accesses:["full-administrator"]');
+  Route::patch('{id}', 'AccessController@update')->middleware('accesses:["full-administrator"]');
+  Route::get('{id}', 'AccessController@show')->middleware('accesses:["full-administrator"]');
+  Route::delete('/{id}','AccessController@destroy')->middleware('accesses:["full-administrator"]');
+  Route::get('enable/{id}', 'AccessController@enable')->name('enable')->middleware('accesses:["full-administrator"]');
+  Route::get('disable/{id}', 'AccessController@disable')->name('disable')->middleware('accesses:["full-administrator"]');
+  Route::get('status-done/{id}', 'AccessController@status_done')->name('status-done')->middleware('accesses:["full-administrator"]');
+  Route::get('status-pending/{id}', 'AccessController@status_pending')->name('status-pending')->middleware('accesses:["full-administrator"]');
+  Route::get('status/{id}/{slug}', 'AccessController@status')->name('status')->middleware('accesses:["full-administrator"]');
+  Route::get('delete/{id}', 'AccessController@delete')->name('delete')->middleware('accesses:["full-administrator"]');
 });
 
-// MANAGEMENT ROLES
 Route::group([
-  'as' => 'system.management.roles.',
-  'prefix' => 'dashboard/management/roles',
-  'namespace' => 'Backend\System\Management',
-], function(){
-  Route::get('status-done/{id}', 'RoleController@status_done')->name('status-done');
-  Route::get('status-pending/{id}', 'RoleController@status_pending')->name('status-pending');
-  Route::get('enable/{id}', 'RoleController@enable')->name('enable');
-  Route::get('disable/{id}', 'RoleController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'RoleController@status')->name('status');
-  Route::get('delete/{id}', 'RoleController@delete')->name('delete');
-  Route::get('deleteall', 'RoleController@deleteall')->name('deleteall');
-  Route::resource('/', 'RoleController')->parameters(['' => 'id']);
-});
-
-// MANAGEMENT USERS
-Route::group([
-  'as' => 'system.management.users.',
+  'as' => 'system.management.user.',
   'prefix' => 'dashboard/management/users',
   'namespace' => 'Backend\System\Management',
-], function(){
-  Route::get('status-done/{id}', 'UserController@status_done')->name('status-done');
-  Route::get('status-pending/{id}', 'UserController@status_pending')->name('status-pending');
-  Route::get('enable/{id}', 'UserController@enable')->name('enable');
-  Route::get('disable/{id}', 'UserController@disable')->name('disable');
-  Route::get('status/{id}/{slug}', 'UserController@status')->name('status');
-  Route::get('delete/{id}', 'UserController@delete')->name('delete');
-  Route::get('deleteall', 'UserController@deleteall')->name('deleteall');
-  Route::resource('/', 'UserController')->parameters(['' => 'id']);
+], function () {
+  Route::get('deleteall', 'UserController@deleteall')->name('deleteall')->middleware('accesses:["full-administrator"]');
+  Route::get('/', 'UserController@index')->middleware('accesses:["full-administrator"]');
+  Route::get('create', 'UserController@create')->middleware('accesses:["full-administrator"]');
+  Route::post('/', 'UserController@store')->middleware('accesses:["full-administrator"]');
+  Route::get('{id}/edit', 'UserController@edit')->middleware('accesses:["full-administrator"]');
+  Route::patch('{id}', 'UserController@update')->middleware('accesses:["full-administrator"]');
+  Route::get('{id}', 'UserController@show')->middleware('accesses:["full-administrator"]');
+  Route::delete('/{id}','UserController@destroy')->middleware('accesses:["full-administrator"]');
+  Route::get('enable/{id}', 'UserController@enable')->name('enable')->middleware('accesses:["full-administrator"]');
+  Route::get('disable/{id}', 'UserController@disable')->name('disable')->middleware('accesses:["full-administrator"]');
+  Route::get('status-done/{id}', 'UserController@status_done')->name('status-done')->middleware('accesses:["full-administrator"]');
+  Route::get('status-pending/{id}', 'UserController@status_pending')->name('status-pending')->middleware('accesses:["full-administrator"]');
+  Route::get('status/{id}/{slug}', 'UserController@status')->name('status')->middleware('accesses:["full-administrator"]');
+  Route::get('delete/{id}', 'UserController@delete')->name('delete')->middleware('accesses:["full-administrator"]');
 });

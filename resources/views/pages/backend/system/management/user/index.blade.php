@@ -2,7 +2,7 @@
 @push('title', 'Management Users')
 
 @push('content-head')
-<th> Role </th>
+<th> Access </th>
 <th> Name </th>
 <th> Username </th>
 <th> Email </th>
@@ -10,7 +10,7 @@
 @endpush
 
 @push('content-body')
-{ data: 'roles.name' },
+{ data: 'accesses' },
 { data: 'name' },
 { data: 'username' },
 { data: 'email' },

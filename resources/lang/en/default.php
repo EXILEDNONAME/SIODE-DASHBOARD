@@ -24,6 +24,7 @@ return [
       'item-updated'    => 'Item Updated',
       'item-deleted'    => 'Item Deleted',
       'delete'          => 'Item Deleted',
+      'delete-all'      => 'Item Deleted',
       'status-done'     => 'Set Item Done',
       'status-pending'  => 'Set Item Pending',
     ],

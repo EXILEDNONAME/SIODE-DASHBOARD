@@ -2,11 +2,11 @@
 @push('title', 'Management Accesses')
 
 @push('content-head')
-<th> Subject </th>
+<th> Name </th>
 <th> Description </th>
 @endpush
 
 @push('content-body')
-{ data: 'subject' },
+{ data: 'name' },
 { data: 'description' },
 @endpush

@@ -9,6 +9,7 @@
         </a>
       </li>
 
+      @if ( Menu('full-administrator'))
       <li class="menu-item">
         <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
           <i class="menu-icon fas fa-envelope"></i>
@@ -22,16 +23,15 @@
           <span class="menu-text"> Notifications </span>
         </a>
       </li>
+      @endif
 
       @include('includes.sidebar-item')
 
-
-
+      @if ( Menu('full-administrator'))
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
-
 
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
         <a href="javascript:;" class="menu-link menu-toggle">
@@ -42,18 +42,6 @@
         <div class="menu-submenu">
           <i class="menu-arrow"></i>
           <ul class="menu-subnav">
-            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
-              <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Invoices </span>
-              </a>
-            </li>
-            <li class="menu-item {{ (request()->is('dashboard/dummy/table-reports*')) ? 'menu-item-active' : '' }}">
-              <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Reports </span>
-              </a>
-            </li>
             <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy/table*')) ? 'menu-item-active menu-item-open' : '' }}">
               <a href="javascript:;" class="menu-link menu-toggle">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
@@ -93,20 +81,25 @@
           </ul>
         </div>
       </li>
+      @endif
 
+      @if ( Menu('full-administrator'))
       <li class="menu-item {{ (request()->is('dashboard/file-manager*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a href="/dashboard/file-manager" class="menu-link">
           <i class="menu-icon fas fa-hdd"></i>
           <span class="menu-text"> File Manager </span>
         </a>
       </li>
+      @endif
 
+      @if ( Menu('full-administrator'))
       <li class="menu-item">
         <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
           <i class="menu-icon fas fa-recycle"></i>
           <span class="menu-text"> Generator </span>
         </a>
       </li>
+      @endif
 
       <!-- SETTINGS -->
       <li class="menu-section">
@@ -114,7 +107,7 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
-
+      @if ( Menu('full-administrator'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/management*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-shield-alt"></i></span>
@@ -145,9 +138,10 @@
           </ul>
         </div>
       </li>
+      @endif
 
-      <li class="menu-item {{ (request()->is('dashboard/permissions*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-        <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
+      <li class="menu-item {{ (request()->is('dashboard/profile*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+        <a href="/dashboard/profile" class="menu-link">
           <i class="menu-icon fas fa-user"></i>
           <span class="menu-text"> Profile </span>
         </a>

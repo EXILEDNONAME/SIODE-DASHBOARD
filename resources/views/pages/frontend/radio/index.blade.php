@@ -1,3 +1,4 @@
+<center>
 <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
 <script type="text/javascript">
 MRP.insert({
@@ -10,7 +11,10 @@ MRP.insert({
   'title':'EXILEDNONAME',
   'wmode':'transparent',
   'skin':'arvyskin',
-  'width': 560,
+  'width': 'auto',
   'height':30
 });
 </script>
+</center>
+<hr>
+<b> Only Works On The Local Network! </b>

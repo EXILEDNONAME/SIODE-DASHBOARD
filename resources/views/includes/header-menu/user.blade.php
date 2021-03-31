@@ -11,12 +11,12 @@
   <div class="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right">
     <ul class="navi navi-hover py-4">
       <li class="navi-item">
-        <a href="/dashboard/profile/{{ Auth::user()->name }}/timeline" class="navi-link">
+        <a href="/dashboard/profile/{{ Auth::user()->username }}/timeline" class="navi-link">
           <span class="navi-text"> Profile </span>
         </a>
       </li>
       <li class="navi-item">
-        <a href="/dashboard/logout" class="navi-link">
+          <a href="/dashboard/logout" class="navi-link" onclick="return confirm('Are you sure?')">
           <span class="navi-text"> Logout </span>
         </a>
       </li>

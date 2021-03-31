@@ -5,8 +5,8 @@
 <div class="table-responsive">
   <table width="100%" class="table table-stiped table-bordered">
     <tr>
-      <td class="align-middle font-weight-bold"> Role </td>
-      <td class="align-middle"> {{ $data->roles->name }} </td>
+      <td class="align-middle font-weight-bold"> Accesses </td>
+      <td class="align-middle"> {{ $data->accesses->name }} </td>
     </tr>
     <tr>
       <td class="align-middle font-weight-bold"> Name </td>

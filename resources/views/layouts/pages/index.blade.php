@@ -480,7 +480,8 @@ var KTDatatablesExtensionsKeytable = function() {
             toastr.success("{{ trans('default.notification.success.delete-all') }}");
           },
           error: function (data) {
-            //
+            toastr.options = { "positionClass": "toast-bottom-right", "closeButton": true, };
+            toastr.error("{{ trans('default.notification.error.restrict') }}");
           }
         });
       }

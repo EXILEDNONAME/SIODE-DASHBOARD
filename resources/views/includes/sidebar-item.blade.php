@@ -4,6 +4,7 @@
   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 </li>
 
+@if ( Menu('Full-Administrator') || Menu('Administrator') || Menu('Administrator-Jasamarga'))
 <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/jasamarga*')) ? 'menu-item-active menu-item-open' : '' }}">
   <a href="javascript:;" class="menu-link menu-toggle">
     <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -52,7 +53,9 @@
     </ul>
   </div>
 </li>
+@endif
 
+@if ( Menu('full-administrator'))
 <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/vms*')) ? 'menu-item-active menu-item-open' : '' }}">
   <a href="javascript:;" class="menu-link menu-toggle">
     <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -95,3 +98,4 @@
     </ul>
   </div>
 </li>
+@endif

@@ -19,10 +19,11 @@ class AccessController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware(['administrator', 'auth']);
+    $this->middleware('auth');
     $this->url = '/dashboard/management/accesses';
     $this->path = 'pages.backend.system.management.access';
     $this->model = 'App\Access';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -33,9 +34,8 @@ class AccessController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::select('*');
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
       ->rawColumns(['action', 'checkbox'])

@@ -10,15 +10,9 @@ function activities($model) {
 
 function Menu($name) {
   $id = Auth::User()->id_access;
-
   if ( Access::where('name', 'like', '%' . $name . '%')->where('id', $id)->first()) {
-    if( Auth::user()->accesses->name == 'Administrator') {
-      $items = Access::where('name', 'like', '%' . $name . '%')->where('id', $id)->first();
-      return $items;
-    }
-    else {
-      return redirect('/dashboard');
-    }
+    $items = Access::where('name', 'like', '%' . $name . '%')->where('id', $id)->first();
+    return $items;
   }
 }
 

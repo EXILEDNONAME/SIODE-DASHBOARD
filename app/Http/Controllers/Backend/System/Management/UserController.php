@@ -23,10 +23,11 @@ class UserController extends Controller {
   **/
 
   public function __construct() {
-    $this->middleware(['administrator', 'auth']);
+    $this->middleware('auth');
     $this->url = '/dashboard/management/users';
     $this->path = 'pages.backend.system.management.user';
     $this->model = 'App\User';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -37,11 +38,11 @@ class UserController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::with(['roles'])->select('users.*');
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
+      ->editColumn('accesses', function($order) { return $order->accesses->name; })
       ->rawColumns(['action', 'checkbox'])
       ->addIndexColumn()
       ->make(true);
@@ -187,11 +188,13 @@ class UserController extends Controller {
   **************************************************
   **/
 
-  public function deleteall(Request $request)
-  {
-    $exilednoname = $request->EXILEDNONAME;
-    $this->model::whereIn('id',explode(",",$exilednoname))->delete();
-    return Response::json($exilednoname);
+  public function deleteall(Request $request) {
+    if ( $exilednoname == 1 ) { }
+    else {
+      $exilednoname = $request->EXILEDNONAME;
+      $this->model::whereIn('id',explode(",",$exilednoname))->delete();
+      return Response::json($exilednoname);
+    }
   }
 
 }
