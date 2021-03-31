@@ -55,7 +55,7 @@
 </li>
 @endif
 
-@if ( Menu('full-administrator'))
+@if ( Menu('Full-Administrator') || Menu('Administrator') || Menu('Administrator-Vms'))
 <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/vms*')) ? 'menu-item-active menu-item-open' : '' }}">
   <a href="javascript:;" class="menu-link menu-toggle">
     <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>

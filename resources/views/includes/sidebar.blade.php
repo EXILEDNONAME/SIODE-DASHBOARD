@@ -27,12 +27,14 @@
 
       @include('includes.sidebar-item')
 
-      @if ( Menu('full-administrator'))
+      @if ( Menu('full-administrator') || Menu('administrator'))
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
+      @endif
 
+      @if ( Menu('full-administrator'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -83,7 +85,7 @@
       </li>
       @endif
 
-      @if ( Menu('full-administrator'))
+      @if ( Menu('full-administrator') || Menu('administrator'))
       <li class="menu-item {{ (request()->is('dashboard/file-manager*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a href="/dashboard/file-manager" class="menu-link">
           <i class="menu-icon fas fa-hdd"></i>
