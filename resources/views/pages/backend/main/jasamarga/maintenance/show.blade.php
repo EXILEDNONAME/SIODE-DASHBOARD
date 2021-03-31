@@ -6,11 +6,11 @@
   <table width="100%" class="table table-stiped table-bordered">
     <tr>
       <td class="align-middle font-weight-bold"> Date Start </td>
-      <td class="align-middle"> {{ \Carbon\Carbon::parse($date_start)->format('d F Y, H:i') }} </td>
+      <td class="align-middle"> {{ \Carbon\Carbon::parse($data->date_start)->format('d F Y, H:i') }} </td>
     </tr>
     <tr>
       <td class="align-middle font-weight-bold"> Date End </td>
-      <td class="align-middle"> {{ \Carbon\Carbon::parse($date_end)->format('d F Y, H:i') }} </td>
+      <td class="align-middle"> {{ \Carbon\Carbon::parse($data->date_end)->format('d F Y, H:i') }} </td>
     </tr>
     <tr>
       <td class="align-middle font-weight-bold"> Name </td>
