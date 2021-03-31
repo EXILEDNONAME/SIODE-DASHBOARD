@@ -34,7 +34,7 @@
                 <span class="mr-3">
                   @if (!empty($item->causer->name))
                   <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, {{ $item->causer->name }} </span><br>
-                   Created New Item
+                   Created New Item <b>{{ $data_object['name'] }}</b>
                   @else
                   <s> User Not Found </s>
                   @endif
@@ -46,9 +46,9 @@
               <span class="timeline-badge bg-warning"></span>
               <div class="timeline-content justify-content-between">
                 <span class="mr-3">
-                  <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, </span><br>
+                  <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, {{ $item->causer->name }} </span><br>
                   @if (!empty($item->causer->name))
-                  ({{ $item->causer->name }}) - Updated Item
+                  Updated Item <b>{{ $item['properties']['old']['name'] }}</b> to <b>{{ $item['properties']['attributes']['name'] }}</b>
                   @else
                   <s> User Not Found </s>
                   @endif
@@ -60,9 +60,9 @@
               <span class="timeline-badge bg-danger"></span>
               <div class="timeline-content justify-content-between">
                 <span class="mr-3">
-                  <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, </span><br>
+                  <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, {{ $item->causer->name }} </span><br>
                   @if (!empty($item->causer->name))
-                  ({{ $item->causer->name }}) - Deleted Item {{ $data_object['name'] }}
+                  Deleted Item <b>{{ $data_object['name'] }}</b>
                   @else
                   <s> User Not Found </s>
                   @endif

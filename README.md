@@ -5,6 +5,7 @@
 - (Finish) - Create Delete Selected
 - (Finish) - Create Single Print
 - (Finish) - Edit Print Layout Column Print Checklist
+- (Finish) - Create Activities Global
 --------------------------------------------------
 - Create Register & Welcome Pages
 - File Manager Access
@@ -16,7 +17,7 @@
 --------------------------------------------------
 
 # To Do
-- Create Activities Global
+- Fix Column Layout Row
 - Create Activities Single Data
 - Create Chart Traffics
 - Create Filter Dummy
