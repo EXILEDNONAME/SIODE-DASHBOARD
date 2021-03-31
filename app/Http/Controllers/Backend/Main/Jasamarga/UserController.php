@@ -77,7 +77,7 @@ class UserController extends Controller {
 
   public function store(Request $request) {
     $validated = $request->validate([
-      'name' => 'required|unique:.'. $this->model . '|min:3',
+      'name' => 'required|min:3',
     ]);
 
     $store = $request->all();

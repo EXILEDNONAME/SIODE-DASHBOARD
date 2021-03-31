@@ -4,8 +4,8 @@
 @push('content-head')
 <th width="1" class="text-nowrap"> Date Start </th>
 <th width="1" class="text-nowrap"> Date End </th>
-<th> User </th>
 <th> Location </th>
+<th> User </th>
 <th> Name </th>
 <th> Description </th>
 @endpush
@@ -13,8 +13,8 @@
 @push('content-body')
 { data: 'date_start'},
 { data: 'date_end' },
-{ data: 'jasamarga_users' },
 { data: 'jasamarga_locations' },
+{ data: 'jasamarga_users' },
 { data: 'name' },
 { data: 'description' },
 @endpush

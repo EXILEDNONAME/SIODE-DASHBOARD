@@ -25,7 +25,7 @@
   </div>
 
   <div class="form-group row">
-    <label class="col-lg-3 col-form-label"> npp </label>
+    <label class="col-lg-3 col-form-label"> NPP </label>
     <div class="col-lg-9">
       {!! Form::number('npp', (isset($data->npp) ? $data->npp : ''), ['class' => $errors->has('npp') ? 'form-control is-invalid' : 'form-control']) !!}
       @error('npp') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
