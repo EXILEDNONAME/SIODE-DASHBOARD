@@ -1,14 +1,15 @@
 ## Dashboard Revision
 
+- (Finish) - Create Role Middleware
+- (Finish) - Edit Route
+- (Finish) - Create Delete Selected
+- (Finish) - Create Single Print
+
 - Edit Print Layout Column Print Checklist
-- Create Role Middleware
-- Edit Route
-- Create Register & Welcome Pages
-- Create Delete Selected
-- Create Chart Traffics
 - Template Activities Global
+- Create Register & Welcome Pages
+- Create Chart Traffics
 - Create Activities Single
-- Create Single Print
 --------------------------------------------------
 - Create Filter Template
 - File Manager Access

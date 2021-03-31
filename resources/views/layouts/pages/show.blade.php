@@ -14,7 +14,8 @@
             <i class="ki ki-long-arrow-back icon-xs"></i> {{ trans('default.button.back') }}
           </a>
           <a href="javascript(0):;" data-toggle="modal" class="btn btn-light-primary mr-2" data-target="#qrcode_modal"><i class="fas fa-qrcode"></i></a>
-          <a href="javascript(0):;" data-toggle="modal" class="btn btn-light-primary mr-2" data-target="#modal_single_print"><i class="fas fa-print"></i></a>
+          <a href="javascript(0):;" data-toggle="modal" class="btn btn-light-primary mr-2" onclick="printData('printData')"><i class="fas fa-print"></i></a>
+
           <div class="btn-group">
             <button type="button" class="btn btn-light-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right" style="">
@@ -39,8 +40,10 @@
         </div>
       </div>
 
-      <div class="card-body">
-        @stack('content-body')
+      <div id="printData">
+        <div class="card-body">
+          @stack('content-body')
+        </div>
       </div>
 
       <div class="modal fade" id="qrcode_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
@@ -51,11 +54,13 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               </button>
             </div>
-            <div class="modal-body" id="el">
-              <p class="text-center"> {!! QrCode::size(300)->generate(URL::current()); !!} </p>
+            <div class="modal-body">
+              <div id="printQR">
+                <p class="text-center"> {!! QrCode::size(300)->generate(URL::current()); !!} </p>
+              </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" onclick="printContent('el')"> Print </button>
+              <button type="button" class="btn btn-secondary" onclick="printQR('printQR')"> Print </button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
             </div>
           </div>
@@ -69,15 +74,23 @@
 
 @push('js')
 <script>
+function printData(divName) {
+  var printContents = document.getElementById(divName).innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.print();
+  document.body.innerHTML = originalContents;
+}
+</script>
 
-function printContent(el){
+<script>
+function printQR(divName){
   var myWindow=window.open('','','');
-  myWindow.document.write(document.getElementById(el).innerHTML);
-
+  myWindow.document.write(document.getElementById(divName).innerHTML);
   myWindow.document.close();
   myWindow.focus();
   myWindow.print();
-  myWindow.close();
+  myWindow.document.close();
 }
 
 $('.delete').click(function(e){
