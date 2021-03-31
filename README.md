@@ -1,5 +1,6 @@
 ## Dashboard Revision
 
+- Edit Print Layout Column Print Checklist
 - Create Role Middleware
 - Edit Route
 - Create Register & Welcome Pages
