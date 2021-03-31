@@ -76,10 +76,6 @@ class UserController extends Controller {
   **/
 
   public function store(Request $request) {
-    $validated = $request->validate([
-      'name' => 'required|min:3',
-    ]);
-
     $store = $request->all();
     $this->model::create($store);
     return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
@@ -104,10 +100,6 @@ class UserController extends Controller {
   **/
 
   public function update(Request $request, $id) {
-    $validated = $request->validate([
-      'name' => 'required|unique:accesses,name,'.$id,
-    ]);
-
     $data = $this->model::findOrFail($id);
     $update = $request->all();
     $data->update($update);
