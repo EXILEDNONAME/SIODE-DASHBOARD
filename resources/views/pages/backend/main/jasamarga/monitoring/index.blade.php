@@ -9,7 +9,13 @@
 @endpush
 
 @push('content-body')
-{ data: 'status_device' },
+{
+  data: 'status_device', orderable: true, 'className': 'align-middle text-center', 'width': '1',
+  render: function ( data, type, row ) {
+    if (type === 'Export') { return data == '1' ? "Online" : "Offline"; }
+    return data;
+  }
+},
 { data: 'name' },
 { data: 'ip_address' },
 { data: 'description' },

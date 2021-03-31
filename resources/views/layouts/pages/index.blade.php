@@ -139,6 +139,7 @@
 @endpush
 
 @push('js')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 <script src="/assets/backend/js/pages/features/miscellaneous/bootstrap-notify.js?v=7.0.5"></script>
 <script src="/assets/backend/js/pages/features/miscellaneous/toastr.js?v=7.0.5"></script>
 <script src="/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
@@ -186,38 +187,44 @@ var KTDatatablesExtensionsKeytable = function() {
         {
           extend: 'print',
           exportOptions: {
-            columns: "thead th:not(.no-export)"
+            columns: "thead th:not(.no-export)",
+            orthogonal: "Export"
           },
         },
         {
           extend: 'copyHtml5',
           autoClose: 'true',
           exportOptions: {
-            columns: "thead th:not(.no-export)"
+            columns: "thead th:not(.no-export)",
+            orthogonal: "Export"
           },
         },
         {
           extend: 'excelHtml5',
           exportOptions: {
-            columns: "thead th:not(.no-export)"
+            columns: "thead th:not(.no-export)",
+            orthogonal: "Export"
           },
         },
         {
           extend: 'csvHtml5',
           exportOptions: {
-            columns: "thead th:not(.no-export)"
-          },
-        },
-        {
-          extend: 'pdfHtml5',
-          exportOptions: {
-            columns: "thead th:not(.no-export)"
+            columns: "thead th:not(.no-export)",
+            orthogonal: "Export"
           },
         },
         {
           extend: 'pdfHtml5',
           exportOptions: {
             columns: "thead th:not(.no-export)",
+            orthogonal: "Export"
+          },
+        },
+        {
+          extend: 'pdfHtml5',
+          exportOptions: {
+            columns: "thead th:not(.no-export)",
+            orthogonal: "Export",
             rows: { selected: true }
           },
         },
@@ -225,6 +232,7 @@ var KTDatatablesExtensionsKeytable = function() {
           extend: 'excelHtml5',
           exportOptions: {
             columns: "thead th:not(.no-export)",
+            orthogonal: "Export",
             rows: { selected: true }
           },
         },
@@ -233,6 +241,7 @@ var KTDatatablesExtensionsKeytable = function() {
           autoClose: 'true',
           exportOptions: {
             columns: "thead th:not(.no-export)",
+            orthogonal: "Export",
             rows: { selected: true }
           },
         },
@@ -240,6 +249,7 @@ var KTDatatablesExtensionsKeytable = function() {
           extend: 'print',
           exportOptions: {
             columns: "thead th:not(.no-export)",
+            orthogonal: "Export",
             rows: { selected: true }
           },
         },

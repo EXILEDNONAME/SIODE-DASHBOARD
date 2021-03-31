@@ -25,6 +25,7 @@
 {
   data: 'printer', orderable: true, 'className': 'align-middle text-center', 'width': '1',
   render: function ( data, type, row ) {
+    if (type === 'Export') { return data == '1' ? "Yes" : "No"; }
     if ( data == 1 ) { return '<i class="fas fa-check"></i>'; }
     else { return ''; }
   }
