@@ -27,7 +27,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> IP Address </label>
     <div class="col-lg-9">
-      {!! Form::text('ip_address', (isset($data->ip_address) ? $data->ip_address : ''), ['class' => $errors->has('ip_address') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+      {!! Form::text('ip_address', (isset($data->ip_address) ? $data->ip_address : ''), ['class' => $errors->has('ip_address') ? 'form-control is-invalid' : 'form-control']) !!}
       @error('ip_address') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
@@ -35,7 +35,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> MAC Address </label>
     <div class="col-lg-9">
-      {!! Form::text('mac_address', (isset($data->mac_address) ? $data->mac_address : ''), ['class' => $errors->has('mac_address') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+      {!! Form::text('mac_address', (isset($data->mac_address) ? $data->mac_address : '00:00:00:00:00:00'), ['class' => $errors->has('mac_address') ? 'form-control is-invalid' : 'form-control']) !!}
       @error('mac_address') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>
@@ -43,7 +43,7 @@
   <div class="form-group row">
     <label class="col-lg-3 col-form-label"> Port </label>
     <div class="col-lg-9">
-      {!! Form::number('port', (isset($data->port) ? $data->port : '80'), ['class' => $errors->has('port') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+      {!! Form::number('port', (isset($data->port) ? $data->port : '80'), ['class' => $errors->has('port') ? 'form-control is-invalid' : 'form-control']) !!}
       @error('port') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
     </div>
   </div>

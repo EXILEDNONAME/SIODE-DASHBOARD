@@ -34,11 +34,12 @@ class DirectoryController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::all();
     if(request()->ajax()) {
       return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
+      ->editColumn('vms_areas', function($order) { return $order->vms_areas->name; })
+      ->editColumn('vms_types', function($order) { return $order->vms_types->name; })
       ->rawColumns(['action', 'checkbox'])
       ->addIndexColumn()
       ->make(true);

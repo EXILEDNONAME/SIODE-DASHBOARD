@@ -22,6 +22,7 @@ class MaintenanceController extends Controller {
     $this->url = '/dashboard/vms/maintenances';
     $this->path = 'pages.backend.main.vms.maintenance';
     $this->model = 'App\Models\Backend\Main\Vms\Maintenance';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -32,9 +33,8 @@ class MaintenanceController extends Controller {
 
   public function index() {
     $model = $this->model;
-    $data = $this->model::all();
     if(request()->ajax()) {
-      return DataTables::of($data)
+      return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
       ->rawColumns(['action', 'checkbox'])
