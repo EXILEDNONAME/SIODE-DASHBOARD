@@ -109,3 +109,12 @@ Route::group([
   Route::get('status/{id}/{slug}', 'TypeController@status')->name('status')->middleware('accesses:["administrator-vms"]');
   Route::get('delete/{id}', 'TypeController@delete')->name('delete')->middleware('accesses:["administrator-vms"]');
 });
+
+// VMS - MONITORINGS
+Route::group([
+  'as' => 'main.vms.monitoring.',
+  'prefix' => 'dashboard/vms/monitorings',
+  'namespace' => 'Backend\Main\Vms',
+], function () {
+  Route::get('/', 'MonitoringController@index')->name('index')->middleware('accesses:["administrator-vms"]');
+});

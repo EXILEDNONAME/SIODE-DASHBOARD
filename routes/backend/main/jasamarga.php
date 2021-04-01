@@ -132,7 +132,7 @@ Route::group([
   Route::get('delete/{id}', 'UserController@delete')->name('delete')->middleware('accesses:["administrator-jasamarga"]');
 });
 
-// JASAMARGA - DEVICES
+// JASAMARGA - MONITORINGS
 Route::group([
   'as' => 'main.jasamarga.monitoring.',
   'prefix' => 'dashboard/jasamarga/monitorings',
