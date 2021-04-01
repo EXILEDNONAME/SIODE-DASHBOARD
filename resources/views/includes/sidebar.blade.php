@@ -125,12 +125,6 @@
                 <span class="menu-text"> Accesses </span>
               </a>
             </li>
-            <li class="menu-item {{ (request()->is('dashboard/management/roles*')) ? 'menu-item-active' : '' }}">
-              <a href="/dashboard/management/roles" class="menu-link">
-                <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                <span class="menu-text"> Roles </span>
-              </a>
-            </li>
             <li class="menu-item {{ (request()->is('dashboard/management/users*')) ? 'menu-item-active' : '' }}">
               <a href="/dashboard/management/users" class="menu-link">
                 <i class="menu-bullet menu-bullet-dot"><span></span></i>
