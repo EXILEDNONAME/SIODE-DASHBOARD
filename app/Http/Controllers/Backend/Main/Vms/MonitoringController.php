@@ -36,8 +36,9 @@ class MonitoringController extends Controller {
     $model = $this->model;
     if(request()->ajax()) {
       return DataTables::of($this->data)
-
       ->addColumn('status_device', 'extensions.datatable.status-device')
+      ->editColumn('vms_areas', function($order) { return $order->vms_areas->name; })
+      ->editColumn('vms_types', function($order) { return $order->vms_types->name; })
       ->rawColumns(['status_device'])
       ->addIndexColumn()
       ->make(true);

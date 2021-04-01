@@ -31,7 +31,6 @@
         </div>
 
         <div class="card-toolbar">
-          <a href="{{ URL::current() }}/create" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.create') }}"><i class="fas fa-plus"></i></a>
           <a id="file-refresh" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.refresh') }}"><i class="la la-refresh"></i></a>
           <div class="dropdown dropdown-inline">
             <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -67,14 +66,30 @@
               </ul>
             </div>
           </div>
-          <div class="collapse" id="kt_datatable_group_action_form">
-            <a data-url="" class="delete-all btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.refresh') }}"><i class="text-danger fas fa-trash"></i></a>
-          </div>
           <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="fas fa-caret-down"></i></a>
         </div>
       </div>
 
       <div class="card-body">
+
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="row align-items-center">
+
+              @stack('filter-header')
+
+              <div class="col-md-1 my-1 my-md-0">
+                <div class="d-flex align-items-center">
+                  <button type="reset" name="reset" id="reset" class="form-control btn btn-sm btn-outline-info" data-toggle="tooltip" title="{{ trans('default.button.reset-filter') }}">
+                    <i class="la la-refresh"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+
         <div class="table-responsive">
           <table width="100%" class="table table-striped-table-bordered table-hover table-checkable" id="exilednoname">
             <thead>
