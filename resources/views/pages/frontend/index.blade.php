@@ -7,7 +7,7 @@
   <meta name="author" content="EXILEDNONAME">
   <meta name="description" content="EXILEDNONAME">
   <meta name="keywords" content="EXILEDNONAME">
-  <title> EXILEDNONAME </title>
+  <title> {{ env('APP_NAME')}} </title>
   <link rel="stylesheet" type="text/css" href="/assets/frontend/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="/assets/frontend/css/animate.css">
   <link rel="stylesheet" type="text/css" href="/assets/frontend/css/star-animation.css">
@@ -65,7 +65,7 @@
           <div class="copyrights ac anim fadeInUp s01 delay-15s">
 
           <br>
-          @2021 - EXILEDNONAME
+          @2021 - {{ env('APP_NAME')}}
         </div>
         </div>
       </div>
