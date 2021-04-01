@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title> {{ env('APP_NAME')}} </title>
+  <title> Radio Application </title>
 </head>
 <body>
   <center>
