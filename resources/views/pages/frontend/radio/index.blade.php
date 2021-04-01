@@ -22,7 +22,8 @@
   </script>
 </center>
 <hr>
-<b> {{ env('APP_NAME')}} Radio, Local Network! </b>
+Hello, <b> {{ env('APP_NAME')}} Radio </b><br>
+Radio Application v1.0
 
 </body>
 </html>
