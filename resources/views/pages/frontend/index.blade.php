@@ -54,7 +54,7 @@
         <div id="home-page" class="page-wrapper vhm-item active-home anim s01">
           <div class="container">
             <div class="tagline ac anim fadeInUp s01 delay-0-6s">
-              <h1> EXILEDNONAME </h1>
+              <h1> {{ env('APP_NAME')}} </h1>
               <p class="anim fadeInUp s01 delay-0-7s"> Our Website Is Coming Soon. We`ll be here soon with our new Imagination. </p>
               <br>
               <center><a href="radio" target="_blank"><span style="color: #ff0000; font-weight: bold"><s> LISTEN RADIO </s></span></a></center>
