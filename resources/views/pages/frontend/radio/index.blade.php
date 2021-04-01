@@ -17,4 +17,4 @@ MRP.insert({
 </script>
 </center>
 <hr>
-<b> Only Works On The Local Network! </b>
+<b> Local Network! </b>
