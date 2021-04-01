@@ -23,7 +23,7 @@
 
 <div class="row">
   <div class="col-xl-12">
-    <div class="card card-custom" data-card="true" id="kt_card_3">
+    <div class="card card-custom gutter-b" data-card="true" id="kt_card_3">
 
       <div class="card-header">
         <div class="card-title">

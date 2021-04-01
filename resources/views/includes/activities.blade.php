@@ -1,24 +1,15 @@
-<br>
-
 <div class="row">
-  @php $activity = activities($model); @endphp
-  <div class="{{ isset($chart) ? 'col-xl-4' : 'col-xl-4' }}">
-    <div class="card card-custom" data-card="true">
-      <div class="card-header align-items-center border-0 mt-4">
-        <h3 class="card-title align-items-start flex-column">
-          <span class="font-weight-bolder text-dark">My Activity</span>
-          <span class="text-muted mt-3 font-weight-bold font-size-sm">
-            @if (!empty($activity))
-            {{ $activity->count() }} Activities
-            @else
-            0 Activities
-            @endif
-          </span>
-        </h3>
-        <div class="card-toolbar"> </div>
+  <div class="col-xl-4">
+    <div class="card card-custom gutter-b" data-card="true" id="kt_card_3">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="card-label"> My Activity </h3>
+        </div>
+        <div class="card-toolbar">
+          <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="fas fa-caret-down"></i></a>
+        </div>
       </div>
-
-      <div class="card-body">
+      <div class="card-body pt-2">
         <div class="example-preview">
           <div class="timeline timeline-2">
             <div class="timeline-bar"></div>
@@ -34,7 +25,7 @@
                 <span class="mr-3">
                   @if (!empty($item->causer->name))
                   <span class="text-muted"> {{ $item->created_at->diffForHumans() }}, {{ $item->causer->name }} </span><br>
-                   Created New Item <b>{{ $data_object['name'] }}</b>
+                  Created New Item <b>{{ $data_object['name'] }}</b>
                   @else
                   <s> User Not Found </s>
                   @endif
@@ -78,29 +69,26 @@
 
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-
-  <div class="{{ isset($chart) ? 'col-xl-8' : 'col-xl-8' }}">
-      <div class="card card-custom" data-card="true">
+  <div class="col-xl-8">
+    <!-- <div class="card card-custom card-stretch "> -->
+    <div class="card card-custom gutter-b" data-card="true" id="kt_card_3">
       <div class="card-header">
         <div class="card-title">
           <h3 class="card-label"> Traffics </h3>
         </div>
-
         <div class="card-toolbar">
-          <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="ki ki-arrow-down icon-nm"></i></a>
+          <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="fas fa-caret-down"></i></a>
         </div>
       </div>
-      <div class="card-body">
+      <div class="card-body pt-2">
         <div id="chart"></div>
       </div>
     </div>
   </div>
-
 </div>
 
 @push('js')
