@@ -7,7 +7,7 @@
     <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
     <script type="text/javascript">
     MRP.insert({
-      'url':'http://100.4.153.48:9999/exilednoname',
+      'url':'http://103.110.9.218:9999/exilednoname',
       'codec':'mp3',
       'volume':100,
       'autoplay':true,
