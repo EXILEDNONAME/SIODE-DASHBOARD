@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider {
 
         // Main
         require_once app_path() . '/Helpers/Main/Jasamarga.php';
+        require_once app_path() . '/Helpers/Main/Vms.php';
     }
 
     public function boot() {
