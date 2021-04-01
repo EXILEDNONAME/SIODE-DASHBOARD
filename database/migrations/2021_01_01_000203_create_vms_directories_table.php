@@ -11,6 +11,9 @@ class CreateVmsDirectoriesTable extends Migration {
       $table->integer('id_area')->unsigned();
       $table->integer('id_type')->unsigned();
       $table->string('name');
+      $table->string('ip_address')->nullable();
+      $table->string('mac_address')->nullable();
+      $table->integer('port')->nullable();
       $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('status')->default(1);

@@ -17,8 +17,8 @@
 --------------------------------------------------
 
 # To Do
+- Create Chart Traffics
 - Fix Column Layout Row
 - Create Activities Single Data
-- Create Chart Traffics
 - Create Filter Dummy
 - Dashboard Per-Access
