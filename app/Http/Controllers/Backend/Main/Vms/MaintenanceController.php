@@ -37,6 +37,9 @@ class MaintenanceController extends Controller {
       return DataTables::of($this->data)
       ->addColumn('checkbox', 'includes.datatable.checkbox')
       ->addColumn('action', 'includes.datatable.action')
+      ->editColumn('vms_directories', function($order) { return $order->vms_directories->name; })
+      ->editColumn('vms_areas', function($order) { return $order->vms_directories->vms_areas->name; })
+      ->editColumn('vms_types', function($order) { return $order->vms_directories->vms_types->name; })
       ->rawColumns(['action', 'checkbox'])
       ->addIndexColumn()
       ->make(true);

@@ -8,7 +8,7 @@ Route::group([
 ], function () {
   Route::get('deleteall', 'AreaController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'AreaController@index')->name('index')->middleware('accesses:["administrator-vms"]');
-  Route::get('create', 'AreaController@create')->name('create')->middleware('accesses:["administrator-vms"]');
+  Route::get('/create', 'AreaController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'AreaController@store')->name('store')->middleware('accesses:["administrator-vms"]');
   Route::get('{id}/edit', 'AreaController@edit')->name('edit')->middleware('accesses:["administrator-vms"]');
   Route::patch('{id}', 'AreaController@update')->name('update')->middleware('accesses:["administrator-vms"]');
@@ -30,7 +30,7 @@ Route::group([
 ], function () {
   Route::get('deleteall', 'DirectoryController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'DirectoryController@index')->name('index')->middleware('accesses:["administrator-vms"]');
-  Route::get('create', 'DirectoryController@create')->name('create')->middleware('accesses:["administrator-vms"]');
+  Route::get('/create', 'DirectoryController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'DirectoryController@store')->name('store')->middleware('accesses:["administrator-vms"]');
   Route::get('{id}/edit', 'DirectoryController@edit')->name('edit')->middleware('accesses:["administrator-vms"]');
   Route::patch('{id}', 'DirectoryController@update')->name('update')->middleware('accesses:["administrator-vms"]');
@@ -52,11 +52,11 @@ Route::group([
 ], function () {
   Route::get('deleteall', 'MaintenanceController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'MaintenanceController@index')->name('index')->middleware('accesses:["administrator-vms"]');
+  Route::get('/create', 'MaintenanceController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'MaintenanceController@store')->name('store')->middleware('accesses:["administrator-vms"]');
-  Route::get('{id}', 'MaintenanceController@show')->name('show')->middleware('accesses:["administrator-vms"]');
-  Route::patch('{id}', 'MaintenanceController@update')->name('update')->middleware('accesses:["administrator-vms"]');
-  Route::get('create', 'MaintenanceController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::get('{id}/edit', 'MaintenanceController@edit')->name('edit')->middleware('accesses:["administrator-vms"]');
+  Route::patch('{id}', 'MaintenanceController@update')->name('update')->middleware('accesses:["administrator-vms"]');
+  Route::get('{id}', 'MaintenanceController@show')->name('show')->middleware('accesses:["administrator-vms"]');
   Route::delete('/{id}','MaintenanceController@destroy')->name('destroy')->middleware('accesses:["administrator-vms"]');
   Route::get('enable/{id}', 'MaintenanceController@enable')->name('enable')->middleware('accesses:["administrator-vms"]');
   Route::get('disable/{id}', 'MaintenanceController@disable')->name('disable')->middleware('accesses:["administrator-vms"]');
@@ -74,7 +74,7 @@ Route::group([
 ], function () {
   Route::get('deleteall', 'MonitoringController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'MonitoringController@index')->name('index')->middleware('accesses:["administrator-vms"]');
-  Route::get('create', 'MonitoringController@create')->name('create')->middleware('accesses:["administrator-vms"]');
+  Route::get('/create', 'MonitoringController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'MonitoringController@store')->name('store')->middleware('accesses:["administrator-vms"]');
   Route::get('{id}/edit', 'MonitoringController@edit')->name('edit')->middleware('accesses:["administrator-vms"]');
   Route::patch('{id}', 'MonitoringController@update')->name('update')->middleware('accesses:["administrator-vms"]');
@@ -96,7 +96,7 @@ Route::group([
 ], function () {
   Route::get('deleteall', 'TypeController@deleteall')->name('deleteall')->middleware('accesses:["administrator-vms"]');
   Route::get('/', 'TypeController@index')->name('index')->middleware('accesses:["administrator-vms"]');
-  Route::get('create', 'TypeController@create')->name('create')->middleware('accesses:["administrator-vms"]');
+  Route::get('/create', 'TypeController@create')->name('create')->middleware('accesses:["administrator-vms"]');
   Route::post('/', 'TypeController@store')->name('store')->middleware('accesses:["administrator-vms"]');
   Route::get('{id}/edit', 'TypeController@edit')->name('edit')->middleware('accesses:["administrator-vms"]');
   Route::patch('{id}', 'TypeController@update')->name('update')->middleware('accesses:["administrator-vms"]');
