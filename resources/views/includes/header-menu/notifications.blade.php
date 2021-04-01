@@ -52,8 +52,8 @@
                 </span>
               </div>
               <div class="d-flex flex-column font-weight-bold">
-                <a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"> Alert 1 </a>
-                <span class="text-muted"> Description Alert 1 </span>
+                <a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"> Dummy Notifications </a>
+                <span class="text-muted"> Dummy Description Notifications </span>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@
                   <i class="flaticon2-paper-plane text-danger"></i>
                 </div>
                 <div class="navi-text">
-                  <div class="font-weight-bold">Finance report has been generated</div>
+                  <div class="font-weight-bold"> Dummy Events</div>
                   <div class="text-muted">25 hrs ago</div>
                 </div>
               </div>
