@@ -9,7 +9,7 @@
         </a>
       </li>
 
-      @if ( Menu('full-administrator'))
+      @if ( haveAccess('full-administrator'))
       <li class="menu-item">
         <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
           <i class="menu-icon fas fa-envelope"></i>
@@ -27,14 +27,14 @@
 
       @include('includes.sidebar-item')
 
-      @if ( Menu('full-administrator') || Menu('administrator'))
+      @if ( haveAccess('full-administrator') || haveAccess('administrator'))
       <li class="menu-section">
         <h4 class="menu-text"> Extensions </h4>
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
       @endif
 
-      @if ( Menu('full-administrator'))
+      @if ( haveAccess('full-administrator'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/dummy*')) ? 'menu-item-active menu-item-open' : '' }}">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -85,7 +85,7 @@
       </li>
       @endif
 
-      @if ( Menu('full-administrator') || Menu('administrator'))
+      @if ( haveAccess('Full-Administrator') || haveAccess('Administrator'))
       <li class="menu-item {{ (request()->is('dashboard/file-manager*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
         <a href="/dashboard/file-manager" class="menu-link">
           <i class="menu-icon fas fa-hdd"></i>
@@ -94,7 +94,7 @@
       </li>
       @endif
 
-      @if ( Menu('full-administrator'))
+      @if ( haveAccess('Full-Administrator'))
       <li class="menu-item">
         <a href="javascript:;" onclick="return alert('Maintenance!')" class="menu-link">
           <i class="menu-icon fas fa-recycle"></i>
@@ -109,7 +109,7 @@
         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
       </li>
 
-      @if ( Menu('full-administrator'))
+      @if ( haveAccess('full-administrator'))
       <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/management*')) ? 'menu-item-active menu-item-open' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
           <span class="menu-icon"><i class="menu-icon fas fa-shield-alt"></i></span>

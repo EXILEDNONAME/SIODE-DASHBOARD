@@ -2,4 +2,5 @@
 @push('title', 'Dashboard')
 
 @push('content-body')
+
 @endpush

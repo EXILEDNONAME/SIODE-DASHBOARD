@@ -4,7 +4,7 @@
   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 </li>
 
-@if ( Menu('Full-Administrator') || Menu('Administrator') || Menu('Administrator-Jasamarga'))
+@if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Jasamarga'))
 <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/jasamarga*')) ? 'menu-item-active menu-item-open' : '' }}">
   <a href="javascript:;" class="menu-link menu-toggle">
     <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -61,7 +61,7 @@
 </li>
 @endif
 
-@if ( Menu('Full-Administrator') || Menu('Administrator') || Menu('Administrator-Vms'))
+@if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Vms') || haveAccess('User-Vms'))
 <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/vms*')) ? 'menu-item-active menu-item-open' : '' }}">
   <a href="javascript:;" class="menu-link menu-toggle">
     <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
@@ -71,36 +71,46 @@
   <div class="menu-submenu">
     <i class="menu-arrow"></i>
     <ul class="menu-subnav">
+      @if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Vms'))
       <li class="menu-item {{ (request()->is('dashboard/vms/areas*')) ? 'menu-item-active' : '' }}">
         <a href="/dashboard/vms/areas" class="menu-link">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
           <span class="menu-text"> Areas </span>
         </a>
       </li>
+      @endif
+      @if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Vms'))
       <li class="menu-item {{ (request()->is('dashboard/vms/directories*')) ? 'menu-item-active' : '' }}">
         <a href="/dashboard/vms/directories" class="menu-link">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
           <span class="menu-text"> Directories </span>
         </a>
       </li>
+      @endif
+      @if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Vms') || haveAccess('User-Vms'))
       <li class="menu-item {{ (request()->is('dashboard/vms/maintenances*')) ? 'menu-item-active' : '' }}">
         <a href="/dashboard/vms/maintenances" class="menu-link">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
           <span class="menu-text"> Maintenances </span>
         </a>
       </li>
+      @endif
+      @if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Vms') || haveAccess('User-Vms'))
       <li class="menu-item {{ (request()->is('dashboard/vms/monitorings*')) ? 'menu-item-active' : '' }}">
         <a href="/dashboard/vms/monitorings" class="menu-link">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
           <span class="menu-text"> Monitorings </span>
         </a>
       </li>
+      @endif
+      @if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Vms'))
       <li class="menu-item {{ (request()->is('dashboard/vms/types*')) ? 'menu-item-active' : '' }}">
         <a href="/dashboard/vms/types" class="menu-link">
           <i class="menu-bullet menu-bullet-dot"><span></span></i>
           <span class="menu-text"> Types </span>
         </a>
       </li>
+      @endif
     </ul>
   </div>
 </li>

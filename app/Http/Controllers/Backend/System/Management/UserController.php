@@ -80,7 +80,7 @@ class UserController extends Controller {
 
   public function store(Request $request) {
     $users = [
-      'id_role' => $request['id_role'],
+      'id_access' => $request['id_access'],
       'username' => $request['username'],
       'name' => $request['name'],
       'email' => $request['email'],
