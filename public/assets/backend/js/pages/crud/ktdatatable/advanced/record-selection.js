@@ -232,10 +232,65 @@ var KTDatatableRecordSelectionDemo = function() {
         });
     };
 
+    var serverSelectorDemo = function() {
+        // enable extension
+        options.extensions = {
+            // boolean or object (extension options)
+            checkbox: true,
+        };
+        options.search = {
+            input: $('#kt_datatable_search_query_2'),
+            key: 'generalSearch'
+        };
+
+        var datatable = $('#kt_datatable_2').KTDatatable(options);
+
+        $('#kt_datatable_search_status_2').on('change', function() {
+            datatable.search($(this).val().toLowerCase(), 'Status');
+        });
+
+        $('#kt_datatable_search_type_2').on('change', function() {
+            datatable.search($(this).val().toLowerCase(), 'Type');
+        });
+
+        $('#kt_datatable_search_status_2, #kt_datatable_search_type_2').selectpicker();
+
+        datatable.on(
+            'datatable-on-click-checkbox',
+            function(e) {
+                // datatable.checkbox() access to extension methods
+                var ids = datatable.checkbox().getSelectedId();
+                var count = ids.length;
+
+                $('#kt_datatable_selected_records_2').html(count);
+
+                if (count > 0) {
+                    $('#kt_datatable_group_action_form_2').collapse('show');
+                } else {
+                    $('#kt_datatable_group_action_form_2').collapse('hide');
+                }
+            });
+
+        $('#kt_datatable_fetch_modal_2').on('show.bs.modal', function(e) {
+            var ids = datatable.checkbox().getSelectedId();
+            var c = document.createDocumentFragment();
+            for (var i = 0; i < ids.length; i++) {
+                var li = document.createElement('li');
+                li.setAttribute('data-id', ids[i]);
+                li.innerHTML = 'Selected record ID: ' + ids[i];
+                c.appendChild(li);
+            }
+            $('#kt_datatable_fetch_display_2').append(c);
+        }).on('hide.bs.modal', function(e) {
+            $('#kt_datatable_fetch_display_2').empty();
+        });
+    };
+
     return {
         // public functions
         init: function() {
             localSelectorDemo();
+            serverSelectorDemo();
         },
     };
 }();

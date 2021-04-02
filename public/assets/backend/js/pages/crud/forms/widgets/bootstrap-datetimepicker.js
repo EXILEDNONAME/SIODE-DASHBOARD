@@ -17,6 +17,7 @@ var KTBootstrapDatetimepicker = function () {
       format: 'yyyy-mm-dd hh:ii'
     });
 
+
     // minimal setup
     $('#kt_datetimepicker_1').datetimepicker({
       todayHighlight: true,

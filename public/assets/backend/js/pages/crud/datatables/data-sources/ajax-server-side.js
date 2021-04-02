@@ -12,7 +12,7 @@ var KTDatatablesDataSourceAjaxServer = function() {
 			serverSide: true,
 			ajax: {
 				url: HOST_URL + '/api/datatables/demos/server.php',
-				type: 'GET',
+				type: 'POST',
 				data: {
 					// parameters for custom backend script demo
 					columnsDef: [
