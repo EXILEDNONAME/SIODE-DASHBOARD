@@ -139,7 +139,7 @@
 @endpush
 
 @push('js')
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
 <script src="/assets/backend/js/pages/features/miscellaneous/bootstrap-notify.js?v=7.0.5"></script>
 <script src="/assets/backend/js/pages/features/miscellaneous/toastr.js?v=7.0.5"></script>
 <script src="/assets/backend/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>

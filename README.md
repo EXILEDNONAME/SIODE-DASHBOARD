@@ -17,7 +17,7 @@
 - Templating Management Menus
 --------------------------------------------------
 # To Do
-- Create Chart Traffics
-- Create Activities Single Data
-- Create Filter Dummy
 - Dashboard Per-Access
+- Create Activities Single Data
+- Create Chart
+- Create Filter Dummy
