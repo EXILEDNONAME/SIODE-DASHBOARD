@@ -1,5 +1,5 @@
 <div class="row">
-  
+
   <div class="col-xl-4">
     <div class="card card-custom gutter-b" data-card="true" id="kt_card_3">
       <div class="card-header">
@@ -85,9 +85,76 @@
         </div>
       </div>
       <div class="card-body">
-        <span class="text-muted"> Coming Soon ... </span>
+        <div id="chart"></div>
       </div>
     </div>
   </div>
 
 </div>
+
+@push('js')
+<script src="/assets/backend/js/pages/widgets.js?v=7.0.5"></script>
+
+<script>
+"use strict";
+const primary = '#6993FF';
+const success = '#1BC5BD';
+const info = '#8950FC';
+const warning = '#FFA800';
+const danger = '#F64E60';
+// Class definition
+// Class definition
+function generateBubbleData(baseval, count, yrange) {
+  var i = 0;
+  var series = [];
+  while (i < count) {
+    var x = Math.floor(Math.random() * (750 - 1 + 1)) + 1;;
+    var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+    var z = Math.floor(Math.random() * (75 - 15 + 1)) + 15;
+    series.push([x, y, z]);
+    baseval += 86400000;
+    i++;
+  }
+  return series;
+}
+function generateData(count, yrange) {
+  var i = 0;
+  var series = [];
+  while (i < count) {
+    var x = 'w' + (i + 1).toString();
+    var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+    series.push({
+      x: x,
+      y: y
+    });
+    i++;
+  }
+  return series;
+}
+var KTApexChartsDemo = function () {
+  var _demo1 = function () {
+    const apexChart = "#chart";
+
+    var created = [{{ chart_created($model) }}];
+    var options = {
+      series: [
+        { name: 'Created', data: created },
+      ],
+      chart: { height: 350, type: 'area' },
+      dataLabels: { enabled: true },
+      stroke: { curve: 'smooth' },
+      xaxis: { categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], },
+      colors: [success, warning, info]
+    };
+    var chart = new ApexCharts(document.querySelector(apexChart), options);
+    chart.render();
+  }
+  return {
+    init: function () {
+      _demo1();
+    }
+  };
+}();
+jQuery(document).ready(function () { KTApexChartsDemo.init(); });
+</script>
+@endpush

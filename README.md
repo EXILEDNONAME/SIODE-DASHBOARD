@@ -7,6 +7,7 @@
 - (Finish) - Edit Print Layout Column Print Checklist
 - (Finish) - Create Activities Global
 - (Finish) - Fix Column Layout Row
+- (Finish) - Create Chart
 --------------------------------------------------
 - Create Register & Welcome Pages
 - File Manager Access
@@ -19,5 +20,4 @@
 # To Do
 - Dashboard Per-Access
 - Create Activities Single Data
-- Create Chart
 - Create Filter Dummy
