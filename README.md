@@ -9,6 +9,7 @@
 - (Finish) - Fix Column Layout Row
 - (Finish) - Create Chart
 --------------------------------------------------
+- Create Ajax Validate Form
 - Create Register & Welcome Pages
 - File Manager Access
 - Create Invoices
