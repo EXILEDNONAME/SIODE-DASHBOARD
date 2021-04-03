@@ -15,8 +15,10 @@
 - Create Invoices
 - Create Reports
 - Create Messages
+- Create Chat Application
 - Page Index, Single Print For Page Reports
 - Templating Management Menus
+- System Online / Idle / Offline
 --------------------------------------------------
 # To Do
 - Dashboard Per-Access
