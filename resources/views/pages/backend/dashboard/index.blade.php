@@ -7,24 +7,12 @@
 
 @push('content')
 
-@if ($message = Session::get('success'))
-<div id="toast-container-effect" class="toast-bottom-right">
-  <div class="toast toast-success" aria-live="polite">
-    <div class="toast-message">{{ $message }}</div>
-  </div>
-</div>
-@endif
-
-@if ($message = Session::get('error'))
-<div id="toast-container-effect" class="toast-bottom-right">
-  <div class="toast toast-error" aria-live="polite">
-    <div class="toast-message">{{ $message }}</div>
-  </div>
-</div>
-@endif
-
-@if (Accesses('Full-Administrator'))
+@if (Auth::user()->accesses->name == 'Full-Administrator')
 @include('pages.backend.dashboard.access.full-administrator')
+@endif
+
+@if (Auth::user()->accesses->name == 'User-VMS')
+@include('pages.backend.dashboard.access.user-vms')
 @endif
 
 @endpush
