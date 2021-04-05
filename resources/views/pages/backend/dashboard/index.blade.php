@@ -6,6 +6,7 @@
 @endpush
 
 @push('content')
+
 @if ($message = Session::get('success'))
 <div id="toast-container-effect" class="toast-bottom-right">
   <div class="toast toast-success" aria-live="polite">
@@ -25,6 +26,7 @@
 @if (Accesses('Full-Administrator'))
 @include('pages.backend.dashboard.access.full-administrator')
 @endif
+
 @endpush
 
 
