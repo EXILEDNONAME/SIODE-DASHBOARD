@@ -27,10 +27,6 @@ class DashboardController extends Controller {
     $this->model = 'App\User';
   }
 
-  public function filemanager() {
-    return view('pages.backend.system.file-manager.index');
-  }
-
   /**
   **************************************************
   * @return Index
@@ -39,6 +35,10 @@ class DashboardController extends Controller {
 
   public function index(Request $request) {
     return view($this->path . '.index');
+  }
+
+  public function filemanager() {
+    return view('pages.backend.system.file-manager.index');
   }
 
   /**

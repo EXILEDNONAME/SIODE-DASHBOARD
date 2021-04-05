@@ -31,7 +31,6 @@
         </div>
 
         <div class="card-toolbar">
-          <a href="{{ URL::current() }}/create" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.create') }}"><i class="fas fa-plus"></i></a>
           <a id="file-refresh" class="btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.refresh') }}"><i class="la la-refresh"></i></a>
           <div class="dropdown dropdown-inline">
             <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,9 +65,6 @@
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="collapse" id="kt_datatable_group_action_form">
-            <a data-url="" class="delete-all btn btn-sm btn-icon btn-clean btn-icon-md"  data-toggle="tooltip" title="{{ trans('default.label.refresh') }}"><i class="text-danger fas fa-trash"></i></a>
           </div>
           <a class="btn btn-sm btn-icon btn-clean btn-light-md" data-card-tool="toggle"><i class="fas fa-caret-down"></i></a>
         </div>
