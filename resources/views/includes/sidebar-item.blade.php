@@ -61,6 +61,39 @@
 </li>
 @endif
 
+@if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Jasamarga'))
+<li class="menu-item menu-item-submenu {{ (request()->is('dashboard/jmtm*')) ? 'menu-item-active menu-item-open' : '' }}">
+  <a href="javascript:;" class="menu-link menu-toggle">
+    <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
+    <span class="menu-text"> JMTM </span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="menu-submenu">
+    <i class="menu-arrow"></i>
+    <ul class="menu-subnav">
+      <li class="menu-item {{ (request()->is('dashboard/jmtm/devices*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/jmtm/devices" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Devices </span>
+        </a>
+      </li>
+      <li class="menu-item {{ (request()->is('dashboard/jmtm/maintenances*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/jmtm/maintenances" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Maintenances </span>
+        </a>
+      </li>
+      <li class="menu-item {{ (request()->is('dashboard/jmtm/users*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/jmtm/users" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Users </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+@endif
+
 @if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Vms') || haveAccess('User-Vms'))
 <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/vms*')) ? 'menu-item-active menu-item-open' : '' }}">
   <a href="javascript:;" class="menu-link menu-toggle">
