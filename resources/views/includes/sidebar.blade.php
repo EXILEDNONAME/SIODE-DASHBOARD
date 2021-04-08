@@ -142,6 +142,16 @@
           <span class="menu-text"> Profile </span>
         </a>
       </li>
+
+      @if ( haveAccess('Full-Administrator') || haveAccess('Administrator'))
+      <li class="menu-item {{ (request()->is('dashboard/statistics*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+        <a href="/dashboard/statistics" class="menu-link">
+          <i class="menu-icon fas fa-bug"></i>
+          <span class="menu-text"> Statistics </span>
+        </a>
+      </li>
+      @endif
+
       <li class="menu-item">
         <a href="/dashboard/logout" class="menu-link" onclick="return confirm('Are you sure?')">
           <i class="menu-icon fas fa-sign-out-alt"></i>

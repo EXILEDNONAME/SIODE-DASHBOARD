@@ -25,4 +25,5 @@
 - Page Index, Single Print For Page Reports
 --------------------------------------------------
 # To Do
+- Create Statistic Logs
 - Create Filter Dummy
