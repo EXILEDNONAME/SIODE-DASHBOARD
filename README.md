@@ -16,11 +16,12 @@
 - Create Register & Welcome Pages
 - File Manager Access
 - Create Invoices
-- Create Reports
 - Create Chat Application
-- Page Index, Single Print For Page Reports
 - Templating Management Menus
 - System Online / Idle / Offline
+- Create Reports
+- Create RWGR System
+- Page Index, Single Print For Page Reports
 --------------------------------------------------
 # To Do
 - Create Activities Single Data
