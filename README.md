@@ -9,6 +9,7 @@
 - (Finish) - Fix Column Layout Row
 - (Finish) - Create Chart
 - (Finish) - Dashboard Per-Access (Table Monitoring)
+- (Finish) - Create Activities Single Data
 --------------------------------------------------
 - Create Notification
 - Create Messages Application
@@ -24,5 +25,4 @@
 - Page Index, Single Print For Page Reports
 --------------------------------------------------
 # To Do
-- Create Activities Single Data
 - Create Filter Dummy
