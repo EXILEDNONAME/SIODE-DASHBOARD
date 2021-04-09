@@ -104,9 +104,10 @@ var KTBootstrapDatepicker = function () {
         });
 
         $('#ex_datepicker_start').datepicker({
-            rtl: KTUtil.isRTL(),
-            todayHighlight: true,
-            templates: arrows
+          rtl: KTUtil.isRTL(),
+          todayHighlight: true,
+          format: 'yyyy-mm-dd',
+          templates: arrows
         });
 
          // inline picker
