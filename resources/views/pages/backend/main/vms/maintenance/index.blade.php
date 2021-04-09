@@ -31,13 +31,13 @@
   <div class="d-flex align-items-center">
     <label class="mr-3 mb-0 d-none d-md-block"> Filter </label>
     <div class="input-daterange input-group" id="ex_datepicker_start">
-      <input type="text" id="date_start" class="form-control" name="date_start">
+      <input type="text" id="date_start" class="form-control" name="date_start" autocomplete="off">
       <div class="input-group-append">
         <span class="input-group-text">
           <i class="la la-ellipsis-h"></i>
         </span>
       </div>
-      <input type="text" id="date_end" class="form-control" name="date_end">
+      <input type="text" id="date_end" class="form-control" name="date_end" autocomplete="off">
     </div>
   </div>
 </div>
