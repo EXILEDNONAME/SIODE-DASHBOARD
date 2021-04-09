@@ -25,7 +25,7 @@
   </div>
 
   <div class="form-group row">
-    <label class="col-lg-3 col-form-label"> Nama </label>
+    <label class="col-lg-3 col-form-label"> Permasalahan </label>
     <div class="col-lg-9">
       {!! Form::textarea('name', (isset($data->name) ? $data->name : ''), ['class' => $errors->has('name') ? 'form-control is-invalid' : 'form-control', 'rows'=>'3']) !!}
       @error('name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror

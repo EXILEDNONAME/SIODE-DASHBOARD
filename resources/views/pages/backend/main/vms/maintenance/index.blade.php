@@ -8,7 +8,7 @@
 <th width="1" class="text-nowrap"> Selesai </th>
 <th width="1" class="text-nowrap"> Selsih Waktu </th>
 <th> VMS </th>
-<th> Nama </th>
+<th> Permasalahan </th>
 <th> Tindakan </th>
 <th> Keterangan </th>
 @endpush
