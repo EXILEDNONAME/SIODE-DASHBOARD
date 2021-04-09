@@ -12,7 +12,7 @@
         <div class="card-toolbar">
           <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link" href="/dashboard/statistics">
+              <a class="nav-link {{ (request()->is('dashboard/statistics')) ? 'active' : '' }}" href="/dashboard/statistics">
                 <span class="nav-icon">
                   <i class="flaticon2-chat-1"></i>
                 </span>
@@ -20,7 +20,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/dashboard/statistics/logs">
+              <a class="nav-link {{ (request()->is('dashboard/statistics/logs*')) ? 'active' : '' }}" href="/dashboard/statistics/logs">
                 <span class="nav-icon">
                   <i class="flaticon2-layers-1"></i>
                 </span>
