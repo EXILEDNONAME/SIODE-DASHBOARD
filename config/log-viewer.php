@@ -13,14 +13,12 @@ return [
   ],
 
   'locale'        => 'auto',
-  'theme'         => 'bootstrap-4',
+  'theme'         => 'auto',
   'route'         => [
     'enabled'    => true,
-
     'attributes' => [
       'prefix'     => '/dashboard/statistics',
-
-      'middleware' => env('ARCANEDEV_LOGVIEWER_MIDDLEWARE') ? explode(',', env('ARCANEDEV_LOGVIEWER_MIDDLEWARE')) : null,
+      'middleware' => env('LOGVIEWER_MIDDLEWARE') ? explode(',', env('LOGVIEWER_MIDDLEWARE')) : 'null',
     ],
   ],
 
