@@ -16,7 +16,7 @@
                 <span class="nav-icon">
                   <i class="flaticon2-chat-1"></i>
                 </span>
-                <span class="nav-text">Home</span>
+                <span class="nav-text"> Main </span>
               </a>
             </li>
             <li class="nav-item">
@@ -24,7 +24,7 @@
                 <span class="nav-icon">
                   <i class="flaticon2-layers-1"></i>
                 </span>
-                <span class="nav-text">Profile</span>
+                <span class="nav-text"> Logs </span>
               </a>
             </li>
           </ul>
@@ -46,9 +46,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
-<script>
-Chart.defaults.global.responsive      = true;
-Chart.defaults.global.scaleFontFamily = "'Source Sans Pro'";
-Chart.defaults.global.animationEasing = "easeOutQuart";
-</script>
 @endpush
