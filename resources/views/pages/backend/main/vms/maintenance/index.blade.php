@@ -4,12 +4,13 @@
 @push('content-head')
 <th width="1"> Area </th>
 <th width="1"> Type </th>
-<th width="1" class="text-nowrap"> Date Start </th>
-<th width="1" class="text-nowrap"> Date End </th>
+<th width="1" class="text-nowrap"> Start </th>
+<th width="1" class="text-nowrap"> Selesai </th>
+<th width="1" class="text-nowrap"> Selsih Waktu </th>
 <th> VMS </th>
-<th> Name </th>
-<th> Troubleshoot </th>
-<th> Description </th>
+<th> Nama </th>
+<th> Tindakan </th>
+<th> Keterangan </th>
 @endpush
 
 @push('content-body')
@@ -17,6 +18,7 @@
 { data: 'vms_types'},
 { data: 'date_start'},
 { data: 'date_end' },
+{ data: 'time_difference' },
 { data: 'vms_directories' },
 { data: 'name' },
 { data: 'troubleshoot' },

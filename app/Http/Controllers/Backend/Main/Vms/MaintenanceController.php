@@ -40,6 +40,16 @@ class MaintenanceController extends Controller {
       ->editColumn('vms_directories', function($order) { return $order->vms_directories->name; })
       ->editColumn('vms_areas', function($order) { return $order->vms_directories->vms_areas->name; })
       ->editColumn('vms_types', function($order) { return $order->vms_directories->vms_types->name; })
+      ->editColumn('time_difference', function($order) {
+        $date1 = strtotime(\Carbon\Carbon::parse($order->date_start));
+        $date2 = strtotime(\Carbon\Carbon::parse($order->date_end));
+        $diff = abs($date2 - $date1);
+        $years = floor($diff / (365*60*60*24));
+        $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+        $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+        $hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60));
+        return floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60)) . ":" . floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60)/ 60) . ":00";
+      })
       ->rawColumns(['action', 'checkbox'])
       ->addIndexColumn()
       ->make(true);

@@ -120,8 +120,6 @@
                 <th> No. </th>
                 <th width="1"> Status </th>
                 <th> Name </th>
-                <th class="text-nowrap" width="1"> IP Address </th>
-                <th class="text-nowrap" width="1"> Port </th>
                 <th width="1"> Area </th>
                 <th width="1"> Type </th>
               </tr>
@@ -260,8 +258,6 @@ var KTDatatablesExtensionsKeytable = function() {
         },
         { data: 'status_device' },
         { data: 'name' },
-        { data: 'ip_address' },
-        { data: 'port' },
         { data: 'vms_areas' },
         { data: 'vms_types' },
       ],
