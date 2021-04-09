@@ -1,17 +1,15 @@
 @extends('layouts.custom.log-viewer')
+@push('title', 'Statistics')
+@push('header-title', 'Logs')
 
 @push('content-body')
-<h1 class="page-header">Logs</h1>
-
-{{ $rows->render() }}
-
 <div class="table-responsive">
   <table class="table table-condensed table-hover table-stats">
     <thead>
       <tr>
         @foreach($headers as $key => $header)
         <th class="{{ $key == 'date' ? 'text-left' : 'text-center' }}">
-          @if ($key == 'date') <span class="label label-info label-inline mr-2">{{ $header }}</span>
+          @if ($key == 'date') {{ $header }}
           @else <span class="level level-{{ $key }}"> {{ log_styler()->icon($key) }} {{ $header }} </span>
           @endif
         </th>
@@ -36,15 +34,8 @@
         </td>
         @endforeach
         <td class="text-right">
-          <a href="{{ route('log-viewer::logs.show', [$date]) }}" class="btn btn-xs btn-info">
-            <i class="fa fa-search"></i>
-          </a>
-          <a href="{{ route('log-viewer::logs.download', [$date]) }}" class="btn btn-xs btn-success">
-            <i class="fa fa-download"></i>
-          </a>
-          <a href="#delete-log-modal" class="btn btn-xs btn-danger" data-log-date="{{ $date }}">
-            <i class="fa fa-trash-o"></i>
-          </a>
+          <a href="{{ route('log-viewer::logs.show', [$date]) }}"><span class="navi-icon mr-2"><i class="flaticon2-expand"></i></span></a>
+          <a href="{{ route('log-viewer::logs.download', [$date]) }}"><span class="navi-icon"><i class="flaticon-download"></i></span></a>
         </td>
       </tr>
       @empty
