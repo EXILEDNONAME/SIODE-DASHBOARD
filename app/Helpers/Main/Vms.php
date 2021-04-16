@@ -10,7 +10,7 @@ function vms_areas() {
 }
 
 function vms_directories() {
-  $items = Directory::orderBy('name','asc')->where('id_type', '!=', 3)->pluck('name', 'id')->toArray();
+  $items = Directory::orderBy('name','asc')->pluck('name', 'id')->toArray();
   return $items;
 }
 
