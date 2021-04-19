@@ -10,6 +10,9 @@
 - (Finish) - Create Chart
 - (Finish) - Dashboard Per-Access (Table Monitoring)
 - (Finish) - Create Activities Single Data
+- (Finish) - Page VMS Maintenances Index Filter Date
+- (Finish) - Page VMS Maintenances Select All VMS Active/Non-Active
+- (Finish) - Create Statistic Logs
 --------------------------------------------------
 - Create Notification
 - Create Messages Application
@@ -25,7 +28,5 @@
 - Page Index, Single Print For Page Reports
 --------------------------------------------------
 # To Do
-- Page VMS Maintenances Index Filter Date
-- Page VMS Maintenances Select All VMS Active/Non-Active
-- Create Statistic Logs
+- Create SESKO Pages
 - Create Filter Dummy
