@@ -20,6 +20,7 @@ require __DIR__.'/backend/system/management.php';
 // MAIN
 require __DIR__.'/backend/main/jasamarga.php';
 require __DIR__.'/backend/main/jmtm.php';
+require __DIR__.'/backend/main/sesko.php';
 require __DIR__.'/backend/main/vms.php';
 
 // PROFILE

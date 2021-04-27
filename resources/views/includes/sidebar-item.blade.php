@@ -94,6 +94,39 @@
 </li>
 @endif
 
+@if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Sesko'))
+<li class="menu-item menu-item-submenu {{ (request()->is('dashboard/sesko*')) ? 'menu-item-active menu-item-open' : '' }}">
+  <a href="javascript:;" class="menu-link menu-toggle">
+    <span class="menu-icon"><i class="menu-icon fas fa-hashtag"></i></span>
+    <span class="menu-text"> SESKO </span>
+    <i class="menu-arrow"></i>
+  </a>
+  <div class="menu-submenu">
+    <i class="menu-arrow"></i>
+    <ul class="menu-subnav">
+      <li class="menu-item {{ (request()->is('dashboard/sesko/locations*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/sesko/locations" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Locations </span>
+        </a>
+      </li>
+      <li class="menu-item {{ (request()->is('dashboard/sesko/packets*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/sesko/packets" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Packets </span>
+        </a>
+      </li>
+      <li class="menu-item {{ (request()->is('dashboard/sesko/users*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/sesko/users" class="menu-link">
+          <i class="menu-bullet menu-bullet-dot"><span></span></i>
+          <span class="menu-text"> Users </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+@endif
+
 @if ( haveAccess('Full-Administrator') || haveAccess('Administrator') || haveAccess('Administrator-Vms') || haveAccess('User-Vms'))
 <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/vms*')) ? 'menu-item-active menu-item-open' : '' }}">
   <a href="javascript:;" class="menu-link menu-toggle">

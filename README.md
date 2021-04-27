@@ -29,4 +29,8 @@
 --------------------------------------------------
 # To Do
 - Create SESKO Pages
+  -- Invoices
+  -- Locations
+  -- Packets
+  -- Users
 - Create Filter Dummy
