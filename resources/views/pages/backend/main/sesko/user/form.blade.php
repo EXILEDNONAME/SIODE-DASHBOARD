@@ -57,7 +57,7 @@
   </div>
 
   <div class="form-group row">
-    <label class="col-lg-3 col-form-label"> Printer </label>
+    <label class="col-lg-3 col-form-label"> TV Include </label>
     <div class="col-lg-9">
       {{ Form::select('tv_include', ['2' => 'No', '1' => 'Yes'], (isset($data->tv_include) ? $data->tv_include : ''), ['class' => $errors->has('tv_include') ? 'form-control is-invalid' : 'form-control']) }}
       @error('tv_include') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
