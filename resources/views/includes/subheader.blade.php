@@ -13,7 +13,7 @@
     <div class="d-flex align-items-center">
 
       <div class="input-group input-group-sm input-group-solid max-w-175px">
-        <input type="text" class="form-control pl-4" placeholder="Search..." disabled>
+        <!-- <input type="text" class="form-control pl-4" placeholder="Search..." disabled>
         <div class="input-group-append">
           <span class="input-group-text">
             <span class="svg-icon svg-icon-md">
@@ -26,7 +26,7 @@
               </svg>
             </span>
           </span>
-        </div>
+        </div> -->
       </div>
 
     </div>
