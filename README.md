@@ -28,9 +28,8 @@
 - Page Index, Single Print For Page Reports
 --------------------------------------------------
 # To Do
-- Create SESKO Pages
-  -- Invoices
-  -- Locations
-  -- Packets
-  -- Users
+- Create SESKO Invoices
+- Create SESKO Locations
+- Create SESKO Packets
+- Create SESKO Users
 - Create Filter Dummy
