@@ -4,6 +4,7 @@
 @push('content-head')
 <th> Location </th>
 <th> Packet </th>
+<th> Code Customer </th>
 <th> Name </th>
 <th> IP Address </th>
 <th> MAC Address </th>
@@ -15,6 +16,7 @@
 @push('content-body')
 { data: 'id_location' },
 { data: 'id_packet' },
+{ data: 'code_customer' },
 { data: 'name' },
 { data: 'ip_address' },
 { data: 'mac_address' },
